@@ -92,7 +92,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into medianews(file) VALUES('$a');";
-               $desired_dir="../images/medianews/";
+               $desired_dir="assets/images/medianews/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

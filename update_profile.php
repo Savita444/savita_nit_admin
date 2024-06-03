@@ -98,13 +98,13 @@
                         {
 
                             ?>
-                                <img src="../images/admin/No-image-full.jpg" alt="" id="preview_img" height="100px" width="100px" />
+                                <img src="assets/images/admin/No-image-full.jpg" alt="" id="preview_img" height="100px" width="100px" />
                         <?php
                             }
                             else
                             {
                         ?>                                        
-                                <img src="../images/admin/<?php echo $fetch['fld_photo'];?>" id="preview_img" height="100px" width="100px"/>
+                                <img src="assets/images/admin/<?php echo $fetch['fld_photo'];?>" id="preview_img" height="100px" width="100px"/>
                         <?php
                             }
                         ?>
@@ -145,7 +145,7 @@
 
         if($name)
             {
-                $upload_dir = '../images/admin/';
+                $upload_dir = 'assets/images/admin/';
                 $imgExt = strtolower(pathinfo($name,PATHINFO_EXTENSION)); // get image extension
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
                 $photo = rand(1000,1000000).".".$imgExt;

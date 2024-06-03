@@ -76,7 +76,7 @@
                                                 </td> 
                                                 <td><?php echo $fetch['fld_pslider_title'];?></td>
                                                 <td><?php echo $fetch['fld_pslider_subtitle'];?></td>                     
-                                                <td><a href="../images/prize_slider/<?php echo $fetch['fld_pslider_image'];?>" target="_blank"><img src="../images/prize_slider/<?php echo $fetch['fld_pslider_image'];?>" height="75px" width="75px" ></a></td>
+                                                <td><a href="assets/images/prize_slider/<?php echo $fetch['fld_pslider_image'];?>" target="_blank"><img src="assets/images/prize_slider/<?php echo $fetch['fld_pslider_image'];?>" height="75px" width="75px" ></a></td>
 
                                                 <td><?php echo $fetch['fld_pslider_description'];?></td>
                                                 <td><?php echo $fetch['prize_slider_created_date'];?></td>   

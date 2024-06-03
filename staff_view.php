@@ -78,7 +78,7 @@
 									<td><?php echo $fetch['title'];?></td> 
 									<td class="td-actions">
 								    <center>
-								<a href="../images/staff_download/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+								<a href="assets/images/staff_download/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

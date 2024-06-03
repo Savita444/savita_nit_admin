@@ -137,7 +137,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_facility(facility_id,facility_description,photo) VALUES('$facility_id','$facility_description','$a');";
-                $desired_dir="../images/facility/";
+                $desired_dir="assets/images/facility/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

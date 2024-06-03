@@ -135,7 +135,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into curriculum(department_id,semister,file) VALUES('$department_id','$semister','$a');";
-               $desired_dir="../images/curriculum/";
+               $desired_dir="assets/images/curriculum/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

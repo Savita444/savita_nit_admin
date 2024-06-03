@@ -101,7 +101,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into fees(title,file) VALUES('$title','$a');";
-               $desired_dir="../images/fees/";
+               $desired_dir="assets/images/fees/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

@@ -95,13 +95,13 @@
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                            <img src="../images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
@@ -159,7 +159,7 @@
                 photo='".$a."'
                 where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="../images/activity/";
+                $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

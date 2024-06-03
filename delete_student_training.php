@@ -6,7 +6,7 @@ include "config.php";
 //                    $photo=$fetch["fld_affiliation_image"];                   
 //          }
 
-//           $photo="../images/affiliation_certificates/".$photo;
+//           $photo="assets/images/affiliation_certificates/".$photo;
 //           unlink($photo);
 
           

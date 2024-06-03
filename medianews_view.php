@@ -73,7 +73,7 @@
                         
                     </td> 
                     
-                     <td><a href="../images/medianews/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/images/medianews/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>

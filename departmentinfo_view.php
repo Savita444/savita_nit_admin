@@ -79,7 +79,7 @@
                     <td><?php echo $fetch['department_description'];?></td>
                     <td><?php echo $fetch['department_mission'];?></td>
                     <td><?php echo $fetch['department_vision'];?></td>
-                    <td><a href="../NIT/department/<?php echo $fetch['photo'];?>" target="_blank"><img src="../NIT/department/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
+                    <td><a href="assets/images/NIT/department/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/NIT/department/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

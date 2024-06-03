@@ -92,7 +92,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into termscondition(file) VALUES('$a');";
-               $desired_dir="../images/termscondition/";
+               $desired_dir="assets/images/termscondition/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

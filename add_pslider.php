@@ -137,7 +137,7 @@ error_reporting(0);
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="INSERT into tbl_prize_slider(fld_pslider_title, fld_pslider_subtitle, fld_pslider_image,fld_pslider_description) VALUES('$Slider_title','$Slider_subtitle','$a','$Slider_description'); ";
-                $desired_dir="../images/prize_slider/";
+                $desired_dir="assets/images/prize_slider/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

@@ -74,7 +74,7 @@
                                                     <a href="slider_delete.php?fld_slider_id=<?php echo $fetch['fld_slider_id'] ?>" onclick="return confirm('Are you sure to Delete Slider Image')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                                                 </td> 
                                                 <td><?php echo $fetch['fld_slider_title'];?></td>                     
-                                                <td><a href="../images/slider_img/<?php echo $fetch['fld_slider_image'];?>" target="_blank"><img src="../images/slider_img/<?php echo $fetch['fld_slider_image'];?>" height="75px" width="75px" ></a></td>
+                                                <td><a href="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" target="_blank"><img src="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" height="75px" width="75px" ></a></td>
                                                 <td><?php echo $fetch['fld_slider_subtitle'];?></td>
                                                 <td><?php echo $fetch['fld_slider_created_date'];?></td>   
                                                 <td><?php echo $fetch['fld_slider_modified_date'];?></td>   

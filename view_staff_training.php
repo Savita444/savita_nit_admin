@@ -85,7 +85,7 @@
                     <!-- <td><?php //echo $fetch['fld_staff_experiance'];?></td> -->
                     <!-- <td><?php //echo $fetch['fld_admin_email'];?></td>
                     <td><?php //echo $fetch['fld_admin_mobile'];?></td> -->
-                    <!-- <td><a href="../images/staff/<?php //echo $fetch['fld_staff_photo'];?>" target="_blank"><img src="../images/staff/<?php //echo $fetch['fld_staff_photo'];?>" height="75px" width="75px" ></a></td> --> 
+                    <!-- <td><a href="assets/images/staff/<?php //echo $fetch['fld_staff_photo'];?>" target="_blank"><img src="assets/images/staff/<?php //echo $fetch['fld_staff_photo'];?>" height="75px" width="75px" ></a></td> --> 
                     <td><?php echo $fetch['staff_training_created_date'];?></td>
                 </tr>
                 <?php } ?>

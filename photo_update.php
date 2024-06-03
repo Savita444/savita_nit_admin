@@ -77,13 +77,13 @@
                         if ($fetch['fld_gallery_photo']=="") 
                         {
                     ?>
-                            <img src="../images/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
@@ -120,7 +120,7 @@ error_reporting(0);
     $temp=$_FILES['photo']['tmp_name'];
         if($name)
             {
-                 $desired_dir="../images/gallery/";  
+                 $desired_dir="assets/images/gallery/";  
                  unlink($desired_dir.$fetch['photo']);             
                 $gallery_photo=uniqid().$name;
                 

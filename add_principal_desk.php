@@ -131,7 +131,7 @@ error_reporting(0);
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="INSERT into tbl_principal_desk(fld_principal_name, fld_principal_photo) VALUES('$principal_name','$a'); ";
-                $desired_dir="../images/principal/";
+                $desired_dir="assets/images/principal/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

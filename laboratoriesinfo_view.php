@@ -58,7 +58,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.* from tbl_laboratories s,department dp where s.Department_id=dp.Department_id  and s.fld_delete='0' order by s.fld_laboratories_id desc";
+                  $query="select s.*,dp.* from tbl_laboratories s,department dp where s.Department_id=dp.id  and s.fld_delete='0' order by s.fld_laboratories_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
@@ -71,11 +71,11 @@
                         <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
                         
                         <a href="delete_laboratoriesinfo.php?fld_laboratories_id=<?php echo $fetch['fld_laboratories_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Laboratories Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['laboratories_description'];?></td>
-                    <td><a href="../images/laboratories/<?php echo $fetch['photo'];?>" target="_blank"><img src="../images/laboratories/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
+                    <td><a href="assets/images/laboratories/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/laboratories/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

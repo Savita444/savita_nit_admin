@@ -60,7 +60,7 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 		cursor: pointer;
 		width: $trigger-width;
 		height: $trigger-height;
-		background-image: url('../images/transparent.png');
+		background-image: url('assets/images/transparent.png');
 
 		span {
 			width: 100%;
@@ -99,7 +99,7 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 				height: 100%;
 				display: block;
 			}
-			background-image: url('../images/transparent.png');
+			background-image: url('assets/images/transparent.png');
 			vertical-align: top;
 			display: inline-block;
 			*display: inline;
@@ -131,7 +131,7 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 				display: block;
 			}
 
-			background-image: url('../images/transparent.png');
+			background-image: url('assets/images/transparent.png');
 			display: block;
 			float: left;
 
@@ -154,7 +154,7 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 		width: $saturation-size;
 		height: $saturation-size;
 
-		background-image: url("../images/saturation.png");
+		background-image: url("assets/images/saturation.png");
 
 		i {
 			position: absolute;
@@ -178,11 +178,11 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 	}
 
 	&-hue {
-		background-image: url('../images/hue.png');
+		background-image: url('assets/images/hue.png');
 	}
 
 	&-alpha {
-		background-image: url('../images/alpha.png');
+		background-image: url('assets/images/alpha.png');
 	}
 
 	&-buttons, &-gradient-control {
@@ -359,7 +359,7 @@ $inner-border-color: rgba(0, 0, 0, 0.05) !default;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-image: url('../images/transparent.png');
+				background-image: url('assets/images/transparent.png');
 				content: '';
 				z-index: -1;
 			}

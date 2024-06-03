@@ -75,7 +75,7 @@
                     </td> 
                     <td><?php echo $fetch['achievement_title'];?></td>
                     <td><?php echo $fetch['achievement_description'];?></td>
-                    <td><a href="../images/achievement/<?php echo $fetch['photo'];?>" target="_blank"><img src="../images/achievement/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
+                    <td><a href="assets/images/achievement/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/achievement/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

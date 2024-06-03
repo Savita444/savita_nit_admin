@@ -58,11 +58,11 @@
                 <select name="activity_id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['activity_id'];?>"><?php echo $row['activities'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['activities'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -137,7 +137,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_activity(activity_id,activity_description,photo) VALUES('$activity_id','$activity_description','$a');";
-                $desired_dir="../images/activity/";
+                $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

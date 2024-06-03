@@ -78,7 +78,7 @@
                     <td><?php echo $fetch['academics_description'];?></td>
                   
                     <td><?php echo $fetch['academics_specification'];?></td>
-                    <!--<td><a href="../images/academics/<?php echo $fetch['photo'];?>" target="_blank"><img src="../images/academics/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> -->
+                    <!--<td><a href="assets/images/academics/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/academics/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> -->
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

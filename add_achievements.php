@@ -66,7 +66,7 @@ error_reporting(0);
                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
                  
                 $query="INSERT into tbl_awards(Department_id,imageTitle,fld_gallery_photo) VALUES('$department','$imageTitle','$a'); ";
-                $desired_dir="../images/awards/";
+                $desired_dir="assets/images/awards/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
@@ -145,11 +145,11 @@ error_reporting(0);
                 <select name="department" class="form-control">
                     <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>"><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['Department'];?></option>
                         <?php  }?>
                  </select>
               </div>

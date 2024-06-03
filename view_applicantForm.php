@@ -155,7 +155,7 @@ include('include/sidebar.php'); ?>
 								<tr>
 									<td class="table-plus"><?php echo ++$count; ?></td>
 									<td><?php echo $fetch['student_name'];?></td>
-									<td><img src="../images/<?php echo $fetch['photo']?>" height="50%" width="50%"></td>
+									<td><img src="assets/images/<?php echo $fetch['photo']?>" height="50%" width="50%"></td>
 									<td><?php echo $fetch['dob'];?></td>
 									<td><?php echo $fetch['local_address'];?></td>
 									<td><?php echo $fetch['mobile_number'];?></td>

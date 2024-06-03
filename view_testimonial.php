@@ -75,7 +75,7 @@
                     </td> 
 									<td><?php echo $fetch['personName'];?></td> 
 									<td><?php echo $fetch['feedback'];?></td> 
-									<td><a href="../images/testimonials/<?php echo $fetch['photo'];?>" target="_blank"><img src="../images/testimonials/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
+									<td><a href="assets/images/testimonials/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/testimonials/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
 									<td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

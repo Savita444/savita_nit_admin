@@ -78,7 +78,7 @@
                     <a href="delete_affiliation_certificates.php?fld_affiliation_id=<?php echo $fetch['fld_affiliation_id'] ?>" onclick="return confirm('Are You Sure To Delete Photo')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
                   </td>
                   <!-- <td><?php //echo $fetch['image_title'];?></td> -->
-                  <td><a href="../images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" target="_blank"><img src="../images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" height="75px" width="75px" ></a></td>           
+                  <td><a href="assets/images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" target="_blank"><img src="assets/images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" height="75px" width="75px" ></a></td>           
                   <td><?php echo $fetch['affiliation_certificates_created_date']; ?></td>
                   <td><?php echo $fetch['affiliation_certificates_modified_date']; ?></td>
                 </tr>

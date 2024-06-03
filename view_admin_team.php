@@ -85,7 +85,7 @@
                     <td><?php echo $fetch['fld_admin_experiance'];?></td>
                     <td><?php echo $fetch['fld_admin_email'];?></td>
                     <td><?php echo $fetch['fld_admin_mobile'];?></td>
-                    <td><a href="../images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" target="_blank"><img src="../images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" height="75px" width="75px" ></a></td> 
+                    <td><a href="assets/images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" target="_blank"><img src="assets/images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" height="75px" width="75px" ></a></td> 
                     <td><?php echo $fetch['admin_team_created_date'];?></td>
                 </tr>
                 <?php } ?>

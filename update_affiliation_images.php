@@ -60,13 +60,13 @@
                         if ($fetch['fld_affiliation_image']=="") 
                         {
                     ?>
-                            <img src="../images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
@@ -107,7 +107,7 @@ error_reporting(0);
 
         if($name)
             {
-                 $desired_dir="../images/affiliation_certificates/";  
+                 $desired_dir="assets/images/affiliation_certificates/";  
                  unlink($desired_dir.$fetch['photo']);             
                 $gallery_photo=uniqid().$name;
                 

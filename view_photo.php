@@ -80,8 +80,8 @@
 									<td><?php echo $fetch['fld_image_title'];?></td>
 
 									<td>
-										<a href="../images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" target="_blank">
-										<img src="../images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" height="75px" width="75px"></a></td>           
+										<a href="assets/images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" target="_blank">
+										<img src="assets/images/gallery/<?php echo $fetch['fld_gallery_photo'];?>" height="75px" width="75px"></a></td>           
 									<!-- <td><?php //echo $fetch['photo_description'];?></td> -->          
 									<td><?php echo $fetch['gallery_images_created_date'];?></td>
 

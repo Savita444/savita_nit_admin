@@ -180,7 +180,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_admin_team(fld_admin_name,Designation_id,Department_id,fld_admin_qualification,fld_admin_experiance,fld_admin_email,fld_admin_mobile,fld_admin_photo) VALUES('$name','$designation','$department','$qualification','$experiance','$email','$mobile','$a');";
-                $desired_dir="../images/admin_team/";
+                $desired_dir="assets/images/admin_team/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

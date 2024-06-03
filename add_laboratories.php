@@ -58,11 +58,11 @@
                 <select name="Department_id" class="form-control"  required="">
                         <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>"><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['Department'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -130,7 +130,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_laboratories(Department_id,laboratories_description,photo) VALUES('$Department_id','$laboratories_description','$a');";
-                $desired_dir="../images/laboratories/";
+                $desired_dir="assets/images/laboratories/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

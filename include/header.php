@@ -27,13 +27,13 @@ include "include/header_session.php";
                             if ($fetch['fld_photo']=="") 
                             {
                         ?>
-                                <!--<img src="../images/admin/No-image-full.jpg" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
+                                <!--<img src="assets/images/admin/No-image-full.jpg" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
                         <?php
                             }
                             else
                             {
                         ?>                                        
-                                <!--<img src="../images/admin/<?php echo $fetch['fld_photo'];?>" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
+                                <!--<img src="assets/images/admin/<?php echo $fetch['fld_photo'];?>" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
                         <?php
                             }
                         ?>

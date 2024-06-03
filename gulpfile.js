@@ -59,7 +59,7 @@ var path = {
 		config.srcDir + 'fonts/themify-icons/fonts/*.*',
 		config.srcDir + 'fonts/**/*.*',
 	],
-	images: 'src/images/**/*.*',
+	images: 'assets/images/**/*.*',
 	php: ['*.php']
 };
 

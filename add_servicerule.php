@@ -92,7 +92,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into service_rule(file) VALUES('$a');";
-               $desired_dir="../images/servicerule/";
+               $desired_dir="assets/images/servicerule/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

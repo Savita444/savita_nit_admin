@@ -81,7 +81,7 @@
                              <a href="principal_desk_update.php?fld_principal_id=<?php echo $fetch['fld_principal_id'] ?>" onclick="return confirm('Are you sure to Update Principal Desk')"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>
                                                 </td> 
                                     <td><?php echo $fetch['fld_principal_name'];?></td>    
-                                                <td><a href="../images/principal/<?php echo $fetch['fld_principal_photo'];?>" target="_blank"><img src="../images/principal/<?php echo $fetch['fld_principal_photo'];?>" height="75px" width="75px" ></a></td>
+                                                <td><a href="assets/images/principal/<?php echo $fetch['fld_principal_photo'];?>" target="_blank"><img src="assets/images/principal/<?php echo $fetch['fld_principal_photo'];?>" height="75px" width="75px" ></a></td>
                                                 <td><?php echo $fetch['fld_created_date'];?></td>   
                                                   
                                             </tr>

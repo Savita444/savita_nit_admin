@@ -66,7 +66,7 @@ error_reporting(0);
                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
                  
                 $query="INSERT into tbl_events(Department_id,imageTitle,fld_gallery_photo) VALUES('$department','$imageTitle','$a'); ";
-                $desired_dir="../images/events/";
+                $desired_dir="assets/images/events/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

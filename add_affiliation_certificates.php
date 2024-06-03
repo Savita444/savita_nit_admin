@@ -121,7 +121,7 @@
                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
                  
                 $query="INSERT into tbl_affiliation_certificates(fld_affiliation_image) VALUES('$a'); ";
-                $desired_dir="../images/affiliation_certificates/";
+                $desired_dir="assets/images/affiliation_certificates/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

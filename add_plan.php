@@ -53,11 +53,11 @@
                 <select name="Department_id" class="form-control">
                     <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>"><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['Department'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -150,7 +150,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into tbl_plan(Department_id,semister,plan_name,subject_name,file) VALUES('$Department_id','$semister','$plan_name','$subject_name','$a');";
-               $desired_dir="../images/plan/";
+               $desired_dir="assets/images/plan/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

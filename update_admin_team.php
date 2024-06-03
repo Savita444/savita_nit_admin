@@ -143,13 +143,13 @@
                         if ($fetch['fld_admin_photo']=="") 
                         {
                     ?>
-                            <img src="../images/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/admin_team/<?php echo $fetch['fld_admin_photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
@@ -210,7 +210,7 @@
                 fld_admin_photo='".$a."'
                 where fld_admin_id='".$_GET['fld_admin_id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="../images/admin_team/";
+                $desired_dir="assets/images/admin_team/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

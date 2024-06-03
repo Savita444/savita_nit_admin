@@ -77,8 +77,8 @@
                     <td><?php echo $fetch['Department'];?></td>
                     <!--<td><?php echo $fetch['year'];?></td>-->
                      <td><?php echo $fetch['semister'];?></td>
-                     <!--<td><a href="../images/syllabus/<?php echo $fetch['file'];?>" target="_blank"><img src="../images/syllabus/<?php echo $fetch['file'];?>" height="75px" width="75px" ></a></td> -->
-                     <td><a href="../images/syllabus/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <!--<td><a href="assets/images/syllabus/<?php echo $fetch['file'];?>" target="_blank"><img src="assets/images/syllabus/<?php echo $fetch['file'];?>" height="75px" width="75px" ></a></td> -->
+                     <td><a href="assets/images/syllabus/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>

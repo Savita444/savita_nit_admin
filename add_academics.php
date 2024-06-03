@@ -137,7 +137,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_academics(academics_id,academics_description,photo) VALUES('$academics_id','$academics_description','$a');";
-                $desired_dir="../images/academics/";
+                $desired_dir="assets/images/academics/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

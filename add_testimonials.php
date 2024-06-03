@@ -136,7 +136,7 @@
 //                 $a=uniqid().$file_name;
 //                 $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
 // 	                                        $query="INSERT INTO tbl_testimonials(personName,feedback) VALUES ('$personName','$feedback')";
-// 	                                        $desired_dir="../images/facility/";
+// 	                                        $desired_dir="assets/images/facility/";
 // 	                                        //echo $query."<br>";
 // 	                                        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
 //                                  }
@@ -184,7 +184,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_testimonials(personName,feedback,photo) VALUES('$personName','$feedback','$a');";
-                $desired_dir="../images/testimonials/";
+                $desired_dir="assets/images/testimonials/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

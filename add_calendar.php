@@ -92,7 +92,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into academiccalendar(file) VALUES('$a');";
-               $desired_dir="../images/academiccalendar/";
+               $desired_dir="assets/images/academiccalendar/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

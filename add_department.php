@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
             if (empty($errors)) {
                 $query = "INSERT INTO tbl_department (Department_id, department_description, department_mission, department_vision, photo) 
                           VALUES ('$department_id', '$department_description', '$department_mission', '$department_vision', '$a')";
-                $desired_dir = "src/images/NIT/department";
+                $desired_dir = "assets/images/NIT/department";
 
                 if (!is_dir($desired_dir)) {
                     mkdir($desired_dir, 0700);

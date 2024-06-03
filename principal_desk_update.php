@@ -75,14 +75,14 @@
                         if ($fetch['fld_principal_photo']=="") 
                         {
                     ?>
-                            <img src="../images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
                            <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-								<img src="../images/principal/<?php echo $fetch['fld_principal_photo'];?>" height="75px" width="75px" ></a></td>
+								<img src="assets/images/principal/<?php echo $fetch['fld_principal_photo'];?>" height="75px" width="75px" ></a></td>
                 <p class="help-block" style="color: red"> In width-709 X height-482 Size.</p>
                     <?php
                         }

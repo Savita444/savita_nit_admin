@@ -179,7 +179,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_placement_cell_member(fld_name,Designation_id,Department_id) VALUES('$name','$designation','$department');";
-                // $desired_dir="../images/staff/";
+                // $desired_dir="assets/images/staff/";
                 // move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)

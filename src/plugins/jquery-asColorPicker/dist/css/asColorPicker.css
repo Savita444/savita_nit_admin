@@ -56,7 +56,7 @@
   width: 38px;
   height: 100%;
   cursor: pointer;
-  background-image: url("../images/transparent.png");
+  background-image: url("assets/images/transparent.png");
 }
 .asColorPicker-trigger span {
   display: block;
@@ -95,7 +95,7 @@
 .asColorPicker-preview li {
   display: inline-block;
   vertical-align: top;
-  background-image: url("../images/transparent.png");
+  background-image: url("assets/images/transparent.png");
 
   *display: inline;
   *zoom: 1;
@@ -126,7 +126,7 @@
   text-indent: 100%;
   white-space: nowrap;
   cursor: pointer;
-  background-image: url("../images/transparent.png");
+  background-image: url("assets/images/transparent.png");
 }
 .asColorPicker-palettes li span {
   display: block;
@@ -139,7 +139,7 @@
   width: 175px;
   height: 175px;
   clear: both;
-  background-image: url("../images/saturation.png");
+  background-image: url("assets/images/saturation.png");
 
   *display: inline;
   *zoom: 1;
@@ -164,11 +164,11 @@
 }
 
 .asColorPicker-hue {
-  background-image: url("../images/hue.png");
+  background-image: url("assets/images/hue.png");
 }
 
 .asColorPicker-alpha {
-  background-image: url("../images/alpha.png");
+  background-image: url("assets/images/alpha.png");
 }
 
 .asColorPicker-buttons a, .asColorPicker-gradient-control a {
@@ -323,7 +323,7 @@
   width: 100%;
   height: 100%;
   content: "";
-  background-image: url("../images/transparent.png");
+  background-image: url("assets/images/transparent.png");
 }
 .asColorPicker-gradient-markers {
   top: -16px;
