@@ -65,7 +65,13 @@
 								</select>
 							</div>
 						</div>
-
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Address<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<!-- <textarea class="form-control" type="text" placeholder="Enter Name" name="gov_address" required=""> -->
+								<textarea class="textarea_editor form-control border-radius-0" name="gov_address" placeholder="Enter Academics Description"></textarea>
+							</div>
+						</div>
 						<br>
 
 						<div class="form-group row">
@@ -102,7 +108,7 @@
       // }
       //   else{
 
-	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id) VALUES ('$fld_bm_name','$fld_bm_designation')";
+	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id,gov_address) VALUES ('$fld_bm_name','$fld_bm_designation', '$gov_address')";
 		        
 		        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
 		        if ($row) 

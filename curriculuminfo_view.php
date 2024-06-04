@@ -76,14 +76,14 @@
                     <td>
                         <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
                         
-                        <a href="delete_curriculuminfo.php?curriculum_id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Curriculum Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
+                        <a href="delete_curriculuminfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Curriculum Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php //echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <!--<td><?php echo $fetch['year'];?></td>-->
                      <td><?php echo $fetch['semister'];?></td>
                      <!--<td><a href="assets/images/syllabus/<?php echo $fetch['file'];?>" target="_blank"><img src="assets/images/syllabus/<?php echo $fetch['file'];?>" height="75px" width="75px" ></a></td> -->
-                     <td><a href="assets/images/curriculum/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/documents/curriculum/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>

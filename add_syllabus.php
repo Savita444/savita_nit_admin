@@ -135,7 +135,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into syllabus(department_id,semister,file) VALUES('$department_id','$semister','$a');";
-               $desired_dir="assets/images/syllabus/";
+               $desired_dir="assets/documents/syllabus/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     

@@ -22,7 +22,7 @@
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									<li class="breadcrumb-item"><a href="#">Governing Board Members</a></li>
-									
+								
 								</ol>
 							</nav>
 						</div>
@@ -50,8 +50,11 @@
 									<th class="datatable-nosort">Action</th>
 									<th>Name</th>
 									<th>Designation</th>
+									<th>Address</th>
 									<th>Created Date</th>
 									<th>Modified Date</th>
+
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -75,7 +78,8 @@
                                         </a>
 									</td>
 									<td><?php echo $fetch['fld_bm_name'];?></td>
-									<td><?php echo $fetch['Designation'];?></td>                     
+									<td><?php echo $fetch['Designation'];?></td>  
+									<td><?php echo $fetch['gov_address'];?></td>  
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
                                     <td><?php echo $fetch['fld_modified_date'];?></td>   
                                 </tr>
