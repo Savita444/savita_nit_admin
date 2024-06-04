@@ -46,7 +46,7 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_department where fld_department_id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_department where id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
@@ -61,11 +61,11 @@
                 <select name="Department_id" class="form-control">
                     <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where is_deleted='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>" <?php if ($fetch['Department_id']==$row['Department_id']){echo "selected";} ?>><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['id']==$row['id']){echo "selected";} ?>><?php echo $row['Department'];?></option>
                     <?php  }?>
                  </select>
               </div>
