@@ -46,7 +46,7 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_activity where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_activity where id='".$_GET['id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
@@ -61,7 +61,7 @@
                 <select name="activity_id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
@@ -95,13 +95,13 @@
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="../images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="assets/images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="../images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
@@ -157,9 +157,9 @@
                 activity_description='".$_POST['activity_description']."',
                 activity_specification='".$_POST['activity_specification']."',
                 photo='".$a."'
-                where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="assets/images/activity/";
+                $desired_dir="../images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
