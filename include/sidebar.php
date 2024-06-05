@@ -264,6 +264,11 @@
 							<span class="fa fa-phone"></span><span class="mtext">Contact</span>
 						</a>
 					</li>
+					<li class="dropdown">
+						<a href="enquiry_view.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-phone"></span><span class="mtext">Enquiry</span>
+						</a>
+					</li>
 					<!--<li class="dropdown">-->
 					<!--	<a href="view_ratings.php" class="dropdown-toggle no-arrow">-->
 					<!--		<span class="fa fa-user-circle-o" style="font-size: 20px;"></span><span class="mtext">Ratings</span>-->
