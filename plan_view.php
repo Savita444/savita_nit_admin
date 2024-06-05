@@ -49,6 +49,7 @@
 									<th class="table-plus datatable-nosort">Sr No</th>
 									<th class="datatable-nosort">Action</th>
 									<th>Department</th>
+									<th>Year</th>
 									<th>Semister</th>
 									<th>Plan Name</th>
 									<th>Subject Name</th>
@@ -78,6 +79,7 @@
                                         </a>
 									</td>
 									<td><?php echo $fetch['Department'];?></td>
+									<td><?php echo $fetch['edu_year'];?></td>
 									<td><?php echo $fetch['semister'];?></td>
 									<td><?php echo $fetch['plan_name'];?></td> 
 									<td><?php echo $fetch['subject_name'];?></td> 

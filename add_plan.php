@@ -75,7 +75,22 @@
             <!--     </select>-->
             <!--  </div>-->
             <!--</div>-->
-            
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Year<span style="color: red;">*</span></label>
+              <div class="col-sm-12 col-md-10">
+                <select name="edu_year" class="form-control">
+                    <option value="">Select Year</option>
+                    <option value="First Year">First Year</option>
+                    <option value="Second Year">Second Year</option>
+                    <option value="Third Year">Third Year</option>
+                    <option value="Fourth Year">Fourth Year</option>
+                  
+                        
+                 </select>
+              </div>
+            </div>
+
+
              <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Semister<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
@@ -149,7 +164,7 @@
   $a=uniqid().$fileName;
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
-               $query="insert into tbl_plan(Department_id,semister,plan_name,subject_name,file) VALUES('$Department_id','$semister','$plan_name','$subject_name','$a');";
+               $query="insert into tbl_plan(Department_id,edu_year,semister,plan_name,subject_name,file) VALUES('$Department_id','$edu_year','$semister','$plan_name','$subject_name','$a');";
                $desired_dir="assets/images/plan/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
