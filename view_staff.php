@@ -63,7 +63,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.*,de.* from tbl_staff s,department dp,designation de where s.Designation_id=de.Designation_id and s.Department_id=dp.Department_id and s.fld_delete='0' order by s. fld_staff_id desc";
+                  $query="select s.*,dp.*,de.* from tbl_staff s,department dp,designation de where s.Designation_id=de.Designation_id and s.Department_id=dp.id and s.fld_delete='0' order by s. fld_staff_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {

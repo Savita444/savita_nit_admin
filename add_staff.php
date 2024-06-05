@@ -72,11 +72,11 @@
                 <select name="department" class="form-control">
                     <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>"><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['Department'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -161,6 +161,7 @@
                 // }       
                 $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$qualification','$experiance','$email','$mobile','$a');";
                 $desired_dir="assets/images/staff/";
+             
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
