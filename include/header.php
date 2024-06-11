@@ -1,5 +1,5 @@
 <?php include "config.php";
-include "include/header_session.php";
+//include "include/header_session.php";
  ?>
 	<div class="pre-loader"></div>
 	<div class="header clearfix">
@@ -20,24 +20,24 @@ include "include/header_session.php";
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<?php 
                                     
-                            $query=mysqli_query($connect,"select * from tbl_admin where fld_email='".$_SESSION['email']."'") or die(mysqli_error($connect));
-                            $fetch=mysqli_fetch_array($query);
-                            extract($fetch);
+                            // $query=mysqli_query($connect,"select * from tbl_admin where fld_email='".$_SESSION['email']."'") or die(mysqli_error($connect));
+                            // $fetch=mysqli_fetch_array($query);
+                            // extract($fetch);
                             
-                            if ($fetch['fld_photo']=="") 
-                            {
+                            // if ($fetch['fld_photo']=="") 
+                            // {
                         ?>
                                 <!--<img src="assets/images/admin/No-image-full.jpg" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
                         <?php
-                            }
-                            else
-                            {
+                            // }
+                            // else
+                            // {
                         ?>                                        
                                 <!--<img src="assets/images/admin/<?php echo $fetch['fld_photo'];?>" alt="No Image" style="border-radius: 100%;height: 40px;width: 40px" />-->
                         <?php
-                            }
+                            // }
                         ?>
-						<span class="user-name"><?php echo $fetch['fld_email']; ?></span>
+						<span class="user-name"><?php //echo $fetch['fld_email']; ?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<!-- <a class="dropdown-item" href="profile.php"><i class="fa fa-user-md" aria-hidden="true"></i> Profile</a>

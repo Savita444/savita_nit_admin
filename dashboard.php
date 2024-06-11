@@ -1,11 +1,15 @@
+<?php //include('include/header_session.php'); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
+    
 	<?php include('include/head.php'); ?>
 </head>
 <body>
 	<?php include('include/header.php'); ?>
 	<?php include('include/sidebar.php'); ?>
+	 <?php include ('config.php');?>
 	<div class="main-container">
 		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
 			<div class="row clearfix progress-box">

@@ -1,10 +1,12 @@
 <?php
-session_start();
-if(!isset($_SESSION['email']))
+if( empty(session_id()) && !headers_sent()){
+    session_start();
+}
+
+if(!(isset($_SESSION['admin_email'])))
 {
     echo "<script>";
-// echo "alert('Logout Successfull');";
 echo 'window.location.href="index.php";';
 echo "</script>";
-    }
+}
 ?>
