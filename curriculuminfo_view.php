@@ -74,7 +74,6 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
                         
                         <a href="delete_curriculuminfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Curriculum Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php //echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
