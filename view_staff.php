@@ -73,7 +73,6 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
                         
                         <a href="delete_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <a href="update_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
