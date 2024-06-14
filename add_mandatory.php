@@ -92,7 +92,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into Mandatory_Disclosure(file) VALUES('$a');";
-               $desired_dir="assets/images/mandatoryDisclosure/";
+               $desired_dir="assets/documents/mandatoryDisclosure/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     
