@@ -69,8 +69,6 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
-                        
                         <a href="delete_facilityinfo.php?fld_facility_id=<?php echo $fetch['fld_facility_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Facility Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <a href="update_facilityinfo.php?fld_facility_id=<?php echo $fetch['fld_facility_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
