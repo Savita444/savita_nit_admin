@@ -116,7 +116,7 @@
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
                 $query="insert into tbl_achievement(achievement_title,achievement_description,photo) VALUES('$achievement_title','$achievement_description','$a');";
-                $desired_dir="assets/images/awards/";
+                $desired_dir="assets/images/achievement/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
