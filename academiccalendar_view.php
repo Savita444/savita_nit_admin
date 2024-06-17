@@ -67,13 +67,12 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
                         
                         <a href="delete_calendar.php?calendar_id=<?php echo $fetch['calendar_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Academic Calendar')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         
                     </td> 
                     
-                     <td><a href="assets/images/academiccalendar/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/documents/academiccalendar/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>
