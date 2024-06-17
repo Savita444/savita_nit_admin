@@ -70,7 +70,7 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_activityinfo.php?fld_activity_id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_activityinfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <a href="update_activityinfo.php?fld_activity_id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['activities'];?></td>

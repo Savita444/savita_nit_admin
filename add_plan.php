@@ -165,7 +165,7 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into tbl_plan(Department_id,edu_year,semister,plan_name,subject_name,file) VALUES('$Department_id','$edu_year','$semister','$plan_name','$subject_name','$a');";
-               $desired_dir="assets/images/plan/";
+               $desired_dir="assets/documents/plan/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
     
