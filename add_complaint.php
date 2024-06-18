@@ -69,14 +69,14 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Mobile Number<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Mobile Number" name="mobilenumber" required="">
+								<input class="form-control" type="text" placeholder="Enter Mobile Number" name="mobilenumber" >
 							</div>
 						</div>
 						
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Email ID<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Email ID" name="email" required="">
+								<input class="form-control" type="text" placeholder="Enter Email ID" name="email" >
 							</div>
 						</div>
 
