@@ -73,7 +73,12 @@
 							</div>
 						</div>
 						<br>
-
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Education<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" placeholder="Enter Title" name="education" required="">
+							</div>
+						</div>
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
@@ -108,7 +113,7 @@
       // }
       //   else{
 
-	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id,gov_address) VALUES ('$fld_bm_name','$fld_bm_designation', '$gov_address')";
+	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id,gov_address, education) VALUES ('$fld_bm_name','$fld_bm_designation', '$gov_address', '$education')";
 		        
 		        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
 		        if ($row) 

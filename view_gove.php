@@ -51,6 +51,7 @@
 									<th>Name</th>
 									<th>Designation</th>
 									<th>Address</th>
+									<th>Education</th>
 									<th>Created Date</th>
 									<th>Modified Date</th>
 
@@ -80,6 +81,7 @@
 									<td><?php echo $fetch['fld_bm_name'];?></td>
 									<td><?php echo $fetch['Designation'];?></td>  
 									<td><?php echo $fetch['gov_address'];?></td>  
+									<td><?php echo $fetch['education'];?></td>    
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
                                     <td><?php echo $fetch['fld_modified_date'];?></td>   
                                 </tr>
