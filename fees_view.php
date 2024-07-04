@@ -51,7 +51,6 @@
 									<th>Title</th>
 									<th>File</th>
 									<th>Created Date</th>
-									<th>Modified Date</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -83,7 +82,6 @@
 									</a>
 								</td>
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
-                                    <td><?php echo $fetch['fld_modified_date'];?></td>   
                                 </tr>
                                             <?php } ?>
 							</tbody>

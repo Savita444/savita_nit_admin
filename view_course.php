@@ -16,20 +16,19 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>View Courese Offered</h4>
+								<h4>View Courese </h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Courese Offered</a></li>
-									<li class="breadcrumb-item active" aria-current="page">View Courese Offered</li>
+									<li class="breadcrumb-item active" aria-current="page">View Courese</li>
 								</ol>
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="course.php" role="button">
-									Add Courese Offered
+									Add Courese 
 								</a>
 							</div>
 						</div>
@@ -49,11 +48,11 @@
 									<th class="table-plus datatable-nosort">Sr No</th>
 									<th class="datatable-nosort">Action</th>
 									<th>Coures Name</th>
-									<th>Year</th>
+									<!-- <th>Year</th> -->
 									<th>Intake</th>
-									<th>Choice Code</th>
+									<!-- <th>Choice Code</th> -->
 									<th>Created Date</th>
-									<th>Modified Date</th>
+									<!-- <th>Modified Date</th> -->
 								</tr>
 							</thead>
 							<tbody>
@@ -70,18 +69,18 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<a href="course_update.php?fld_co_id=<?php echo $fetch['fld_co_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">
-										</a>
+										<!-- <a href="course_update.php?fld_co_id=<?php //echo $fetch['fld_co_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">
+										</a> -->
                                                     
-                                        <a href="course_delete.php?fld_co_id=<?php echo $fetch['fld_co_id'] ?>" onclick="return confirm('Are you sure to Delete Courese Offered')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="course_delete.php?fld_co_id=<?php echo $fetch['fld_co_id'] ?>" onclick="return confirm('Are you sure to Delete Courese Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $fetch['fld_co_course_name'];?></td>
-									<td><?php echo $fetch['fld_co_year'];?></td>
+									<!-- <td><?php //echo $fetch['fld_co_year'];?></td> -->
 									<td><?php echo $fetch['fld_co_intake'];?></td>
-									<td><?php echo $fetch['fld_co_choice_code'];?></td>                     
+									<!-- <td><?php //echo $fetch['fld_co_choice_code'];?></td>                      -->
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
-                                    <td><?php echo $fetch['fld_modified_date'];?></td>   
+                                    <!-- <td><?php //echo $fetch['fld_modified_date'];?></td>    -->
                                 </tr>
                                             <?php } ?>
 							</tbody>

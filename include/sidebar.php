@@ -70,20 +70,20 @@
 						<ul class="submenu">
 							<li><a href="mandatory_view.php">Mandatory Disclosure</a></li>
 							<li><a href="servicerule_view.php">Service Rules</a></li>
-							<li><a href="academiccalendar_view.php">Academic Calendar</a></li>
+							<li><a href="academiccalendar_view.php">Training And Placement</a></li>
 							<li><a href="termcondition_view.php">Terms And Condition</a></li>
 							<li><a href="medianews_view.php">Media News</a></li>
 							<li><a href="aicte_view.php">ADD AICTE EOA</a></li>
 							<li><a href="msbte_view.php">ADD MSBTE Affiliation</a></li>
 							<li><a href="fees_view.php">ADD Fees Regulating Authority</a></li>
-							<li><a href="student_view.php">Student Downloads</a></li>
+							<!-- <li><a href="student_view.php">Student Downloads</a></li> -->
 							<li><a href="staff_view.php">Staff Downloads</a></li>
 							<li><a href="view_gove.php">Governing Board Members</a></li>
 							<li><a href="antiragging_view.php">Antiragging Committee</a></li>
 							<li><a href="complaint_view.php">Internal Complaint Committee</a></li>
 							<li><a href="redressal_view.php">Grievance Redressal Committee</a></li>
 							<li><a href="scst_view.php">SC/ST Cell</a></li>
-							<li><a href="event_view.php">Events</a></li>
+							<!-- <li><a href="event_view.php">Events</a></li> -->
 							
 							
 							
@@ -125,7 +125,7 @@
 						</ul>
 					</li>
 					
-						<li class="dropdown">
+					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="fa fa-spinner"></span><span class="mtext">Academics</span>
 						</a>
@@ -133,10 +133,74 @@
 							<li><a href="academics_view.php">Academics Title</a></li>
 							<li><a href="academicsinfo_view.php">Academics Information</a></li>
 							 <!--<li><a href="view_video.php">Video</a></li> -->
-							
 						</ul>
 					</li>
-
+					<li class="dropdown">
+						<a href="academic_calendar_view.php" class="dropdown-toggle no-arrow">
+							<i class="fa fa-calendar" aria-hidden="true"></i><span class="mtext">Academic Calendar</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-users"></span><span class="mtext">Student Section</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="student_view.php">Downloads</a></li>
+							<li><a href="scholarship_view.php">Scholarship</a></li>
+							 <!--<li><a href="view_video.php">Video</a></li> -->
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="event_view.php" class="dropdown-toggle no-arrow">
+							<i class="fa fa-calendar" aria-hidden="true"></i><span class="mtext">Events</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-book"></span><span class="mtext">Library</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="library_staff_view.php">Library staff</a></li>
+							<!-- <li><a href="library_photos_view.php">Library photos</a></li> -->
+							 <li><a href="rules_regulations_view.php">Rules & regulations</a></li>
+							 <li><a href="books_section_view.php">Books section</a></li>
+							 <li><a href="journals_magazines_view.php">Journals and magazines</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-university"></span><span class="mtext">Admission</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="view_course.php">Course</a></li>
+							<li><a href="documents_view.php">Documents</a></li>
+							<li><a href="cap_view.php">CAP Round Process </a></li>
+							<li><a href="rules_process_view.php">Admission Rules And Process </a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-university"></span><span class="mtext">Plan</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="expert_lecture_view.php">Expert lecture</a></li>
+							<li><a href="industrial_visit_view.php">Industrial visit and mentor meeting</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="newsletters_view.php" class="dropdown-toggle no-arrow">
+							<i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="mtext">Newsletters</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-university"></span><span class="mtext">Notice</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="department_notice_view.php">Department Notice</a></li>
+							<li><a href="msbte_notice_view.php">MSBTE Notice</a></li>
+						</ul>
+					</li>				
 					<li class="dropdown">
 						<a href="view_marquee.php" class="dropdown-toggle no-arrow">
 							<span class="fa fa-magic" style="font-size: 20px;"></span><span class="mtext">Marquee</span>

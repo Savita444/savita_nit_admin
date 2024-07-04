@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Student Download Section</a></li>
+									<li class="breadcrumb-item">View Student Section</li>
 									
 								</ol>
 							</nav>
@@ -51,7 +51,6 @@
 									<th>Title</th>
 									<th>File</th>
 									<th>Created Date</th>
-									<th>Modified Date</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -83,7 +82,6 @@
 									</a>
 								</td>
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
-                                    <td><?php echo $fetch['fld_modified_date'];?></td>   
                                 </tr>
                                             <?php } ?>
 							</tbody>

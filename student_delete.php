@@ -1,10 +1,7 @@
 <?php
 include "config.php";
 
-
-
-
-$delete1 = mysqli_query($connect,"delete from student_download where student_id='".$_GET['student_id']."' ")or die(mysqli_error($connect));
+$delete1 = mysqli_query($connect,"update student_download set fld_delete='1' where student_id='".$_GET['student_id']."' ")or die(mysqli_error($connect));
 
 
 $back="student_view.php";

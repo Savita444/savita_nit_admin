@@ -8,7 +8,6 @@ include "config.php";
 
 $back="javascript:history.back()";
   if($delete1)
-
           {
             echo '<script type="text/javascript">';
             echo "alert('Testimonials Details Deleted');";

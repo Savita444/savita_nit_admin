@@ -15,7 +15,7 @@ $back="view_course.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Courese Offered deleted');";
+            echo "alert('Courese  deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -23,7 +23,7 @@ $back="view_course.php";
          else
           {
             echo '<script type="text/javascript">';
-            echo "alert('Courese Offered not deleted');";
+            echo "alert('Courese not deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              
