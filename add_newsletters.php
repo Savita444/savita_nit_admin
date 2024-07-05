@@ -38,7 +38,20 @@
 					</div>
 					<br>
 					<form method="post" enctype="multipart/form-data">
-					
+					<div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
+                            <div class="col-sm-12 col-md-10">
+                                <select name="department_id" class="form-control" required="">
+                                    <option value="">Select Department</option>
+                                    <?php
+                                        $query1 = mysqli_query($connect, "SELECT * FROM department WHERE Department_delete='0' ORDER BY id DESC");
+                                        while ($row = mysqli_fetch_assoc($query1)) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['Department'] . '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
 				
            
             
@@ -84,7 +97,7 @@
             $a=uniqid().$fileName;
             $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
-            $query="insert into newsletters(file) VALUES('$a');";
+            $query="insert into newsletters(Department_id,file) VALUES('$department_id','$a');";
             $desired_dir="assets/images/newsletters/";
             move_uploaded_file($fileTmpName,"$desired_dir/".$a);
             $add2=mysqli_query($connect,$query); 

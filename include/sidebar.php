@@ -57,9 +57,7 @@
 							<li><a href="events_view.php">Add Activities and Events </a></li>
 							<li><a href="mentor_view.php">Add Mentor</a></li>
 							<li><a href="plan_view.php">Add Plan</a></li>
-							
-							<!-- <li><a href="view_video.php">Video</a></li> -->
-							
+							<li><a href="newsletters_view.php">Newsletters</a></li>
 						</ul>
 					</li>
 					
@@ -187,11 +185,11 @@
 							<li><a href="industrial_visit_view.php">Industrial visit and mentor meeting</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<!-- <li class="dropdown">
 						<a href="newsletters_view.php" class="dropdown-toggle no-arrow">
 							<i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="mtext">Newsletters</span>
 						</a>
-					</li>
+					</li> -->
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="fa fa-university"></span><span class="mtext">Notice</span>
