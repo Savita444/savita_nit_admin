@@ -48,6 +48,7 @@
                 <tr>
                   <th class="table-plus datatable-nosort">Sr No</th>
                   <th>Action</th>
+                  <th>Department</th>
                   <th>Newsletters</th>
                   <th>Created Date</th>
                 </tr>
@@ -55,7 +56,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select * from newsletters where newsletters_delete='0' order by newsletters_id desc";
+                  $query="select d.*, n.* from newsletters n, department d  where n.department_id=d.id and newsletters_delete='0' order by newsletters_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
@@ -69,6 +70,7 @@
                         <a href="delete_newsletters.php?newsletters_id=<?php echo $fetch['newsletters_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Newsletters Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         
                     </td> 
+                    <td><?php echo $fetch['Department'];?></td>
                     <td><a href="assets/images/newsletters/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
