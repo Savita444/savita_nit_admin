@@ -90,7 +90,11 @@
 							
 						</ul>
 					</li>
-					
+					<li class="dropdown">
+						<a href="topers_list_view.php" class="dropdown-toggle no-arrow">
+							<i class="fa fa-calendar" aria-hidden="true"></i><span class="mtext">Topers list</span>
+						</a>
+					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="fa fa-university"></span><span class="mtext">Facility</span>
