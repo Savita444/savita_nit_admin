@@ -74,7 +74,7 @@
                         
                         
                         <a href="delete_departmentinfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!-- <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a> -->
+                        <!-- <a href="update_departmentinfo.php?fld_department_id=<?php //echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a> -->
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['department_description'];?></td>

@@ -16,20 +16,19 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div class="title">
-                <h4>View Faculty</h4>
+                <h4>View Non Teaching Staff</h4>
               </div>
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">View Faculty</li>
+                  <li class="breadcrumb-item active" aria-current="page">View Non Teaching Staff</li>
                 </ol>
               </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
-                <a class="btn btn-primary" href="add_staff.php" role="button">
-                  Add Faculty
+                <a class="btn btn-primary" href="add_non_teaching_staff.php" role="button">
+                  Add Non Teaching Staff
                 </a>
               </div>
             </div>
@@ -50,7 +49,7 @@
                   <th>Action</th>
                   <th>Name</th>
                   <th>Designation</th>
-                  <!-- <th>Department</th> -->
+                  <th>Department</th>
                   <th>Qualification</th>
                   <!--<th>Experiance</th>-->
                   <th>Email</th>
@@ -63,7 +62,8 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.*,de.* from tbl_staff s,department dp,designation de where s.Designation_id=de.Designation_id and s.Department_id=dp.id and s.fld_delete='0' order by s. fld_staff_id desc";
+                  $query="select s.*,dp.*,de.* from non_teaching_staff s,department dp,designation de where s.Designation_id=de.Designation_id and s.Department_id=dp.id and s.fld_delete='0' GROUP by s.non_teaching_staff_id desc";
+                  
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
@@ -74,17 +74,16 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
-                    </td> 
-                    <td><?php echo $fetch['fld_staff_name'];?></td>
+                        <a href="delete_non_teaching_staff.php?non_teaching_staff_id=<?php echo $fetch['non_teaching_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Non Teaching Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                      </td> 
+                    <td><?php echo $fetch['name'];?></td>
                     <td><?php echo $fetch['Designation'];?></td>
-                    <!-- <td><?php //echo $fetch['Department'];?></td>    -->
-                    <td><?php echo $fetch['fld_staff_qualification'];?></td>
+                    <td><?php echo $fetch['Department'];?></td>   
+                    <td><?php echo $fetch['qualification'];?></td>
                     <!--<td><?php //echo $fetch['fld_staff_experiance'];?></td>-->
-                    <td><?php echo $fetch['fld_staff_email'];?></td> 
-                    <td><?php echo $fetch['fld_staff_mobile'];?></td> 
-                    <td><a href="../NIT/staff/<?php echo $fetch['fld_staff_photo'];?>" target="_blank"><img src="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" height="75px" width="75px" ></a></td>
+                    <td><?php echo $fetch['email'];?></td> 
+                    <td><?php echo $fetch['mobile'];?></td> 
+                    <td><img src="assets/images/non_teaching_staff/<?php echo $fetch['files'];?>" height="75px" width="75px" ></a></td>
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

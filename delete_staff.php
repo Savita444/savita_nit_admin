@@ -15,7 +15,7 @@ $back="view_staff.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Staff Details Deleted');";
+            echo "alert('Faculty Details Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -23,7 +23,7 @@ $back="view_staff.php";
          else
           {
             echo '<script type="text/javascript">';
-            echo "alert('Staff Details not Deleted');";
+            echo "alert('Faculty Details not Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

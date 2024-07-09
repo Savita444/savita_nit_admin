@@ -17,20 +17,20 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Update Staff</h4>
+								<h4>Update Faculty</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="view_staff.php">Staff</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Update Staff</li>
+									<li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Update Faculty</li>
 								</ol>
 							</nav>
 						</div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="view_staff.php" role="button">
-                  View Staff
+                  View Faculty
                 </a>
               </div>
             </div>						
@@ -238,14 +238,14 @@
         if($query)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Staff Member Added Successfully.');";
+         echo " alert('Faculty Member Added Successfully.');";
          echo 'window.location.href = "view_staff.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Staff Member Not Added.');";
+         echo " alert('Faculty Member Not Added.');";
          echo 'window.location.href = "add_staff.php";';
          echo '<script>';
        }

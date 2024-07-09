@@ -58,6 +58,8 @@
 							<li><a href="mentor_view.php">Add Mentor</a></li>
 							<li><a href="plan_view.php">Add Plan</a></li>
 							<li><a href="newsletters_view.php">Newsletters</a></li>
+							<li><a href="view_staff.php">Faculty</a></li>
+							<li><a href="view_non_teaching_staff.php">Non Teaching Staff</a></li>
 						</ul>
 					</li>
 					
@@ -136,6 +138,11 @@
 					<li class="dropdown">
 						<a href="academic_calendar_view.php" class="dropdown-toggle no-arrow">
 							<i class="fa fa-calendar" aria-hidden="true"></i><span class="mtext">Academic Calendar</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="topers_list_view.php" class="dropdown-toggle no-arrow">
+							<i class="fa fa-calendar" aria-hidden="true"></i><span class="mtext">Topers list</span>
 						</a>
 					</li>
 					<li class="dropdown">
@@ -291,11 +298,11 @@
 					<!--		<span class="fa fa-object-ungroup" style="font-size: 20px;"></span><span class="mtext">Course Offered</span>-->
 					<!--	</a>-->
 					<!--</li>-->
-					<li class="dropdown">
+					<!-- <li class="dropdown">
 						<a href="view_staff.php" class="dropdown-toggle no-arrow">
-							<span class="fa fa-users" style="font-size: 20px;"></span><span class="mtext">Staff</span>
+							<span class="fa fa-users" style="font-size: 20px;"></span><span class="mtext">Faculty</span>
 						</a>
-					</li>
+					</li> -->
 					<!--<li class="dropdown">-->
 					<!--	<a href="view_staff_training.php" class="dropdown-toggle no-arrow">-->
 					<!--		<span class="fa fa-user-plus" style="font-size: 20px;"></span><span class="mtext">Staff Industrial Training</span>-->

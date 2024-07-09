@@ -17,20 +17,20 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Add Faculty</h4>
+								<h4>Add Non Teaching Staff</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Add Faculty</li>
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+									<!-- <li class="breadcrumb-item"><a href="view_non_teaching_staff.php">Non Teaching Staff</a></li> -->
+									<li class="breadcrumb-item active" aria-current="page">Add Non Teaching Staff</li>
 								</ol>
 							</nav>
 						</div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
-                <a class="btn btn-primary" href="view_staff.php" role="button">
-                  View Faculty
+                <a class="btn btn-primary" href="view_non_teaching_staff.php" role="button">
+                  View Non Teaching Staff
                 </a>
               </div>
             </div>						
@@ -48,7 +48,7 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Name" name="name" required="">
+								<input class="form-control" type="text" placeholder="Enter Name" name="staff_name" required="">
 							</div>
 						</div>
             <div class="form-group row">
@@ -110,7 +110,7 @@
 							<div class="col-sm-12 col-md-10">
                 <!-- <div id="preview_img"></div> -->
                 <div id="dvPreview"></div>
-								<input name="files[]" type="file" multiple accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+								<input name="photo" type="file" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
                 <p class="help-block" style="color: red">In width-750 X height-500 Size.</p> 
 
 							</div>
@@ -122,7 +122,7 @@
 							<div class="col-sm-6">
 								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="view_staff.php" class="btn btn-warning">Back</a>
+                <a href="view_non_teaching_staff.php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>
@@ -147,83 +147,34 @@
         extract($_POST);
 
 
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$qualification','$experiance','$email','$mobile','$a');";
-                $desired_dir="assets/images/staff/";
-             
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 $add2=mysqli_query($connect,$query); 
-
-                 $save = "$desired_dir/" . $a; //This is the new file you saving
-                  $file = "$desired_dir/" . $a; //This is the original file
-
-                  list($width, $height) = getimagesize($file) ;
-
-                  $modwidth = 750;
-
-                  // $diff = $width / $modwidth;
-
-                  // $modheight = $height / $diff;
-                  $modheight = 500;
-                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                 if($extension=="jpg" || $extension=="jpeg" )
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefromjpeg($file);
-
-                  }
-                  else if($extension=="png")
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefrompng($file);
-
-                  }
-
-                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-
-                  imagejpeg($tn, $save, 100) ;        
-                // }else{
-                //         print_r($errors);
-                // }
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
+        $name=$_FILES['photo']['name']; 
+        $type=$_FILES['photo']['type'];
+        $size=$_FILES['photo']['size'];  
+        $temp=$_FILES['photo']['tmp_name']; 
+        if($name){
+        
+                    $upload= "assets/images/non_teaching_staff/";  
+                    $imgExt=strtolower(pathinfo($name, PATHINFO_EXTENSION)); 
+                    $valid_ext= array('jpg','png','jpeg' );  
+                    $photo= rand(1000,1000000).".".$imgExt;  
+                    move_uploaded_file($temp,$upload.$photo);   
         }
+
+        $query="insert into non_teaching_staff(name,Designation_id,Department_id,qualification,experiance,email,mobile,photo) VALUES('$staff_name','$designation','$department','$qualification','$experiance','$email','$mobile','$photo');";
+        $add2=mysqli_query($connect,$query);      
 
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Faculty Member Added Successfully.');";
-         echo 'window.location.href = "view_staff.php";';
+         echo " alert('Non Teaching Staff Added Successfully.');";
+         echo 'window.location.href = "view_non_teaching_staff.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Faculty Member Not Added.');";
-         echo 'window.location.href = "add_staff.php";';
+         echo " alert('Non Teaching Staff Not Added.');";
+         echo 'window.location.href = "add_non_teaching_staff.php";';
          echo '<script>';
        }
     }
