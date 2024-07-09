@@ -5,8 +5,6 @@ include "config.php";
 
 
 $delete1 = mysqli_query($connect,"Update tbl_activity set is_delete='1' where id='".$_GET['id']."' ")or die(mysqli_error($connect));
-
-
 $back="activitiesinfo_view.php";
   if($delete1)
 
