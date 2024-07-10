@@ -88,19 +88,19 @@
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Experiance<span style="color: red;">*</span></label>
+              <label class="col-sm-12 col-md-2 col-form-label">Experiance</label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="text" placeholder="Enter Experiance" name="experiance">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Email<span style="color: red;">*</span></label>
+              <label class="col-sm-12 col-md-2 col-form-label">Email</label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="email" placeholder="Enter Email" name="email">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Mobile<span style="color: red;">*</span></label>
+              <label class="col-sm-12 col-md-2 col-form-label">Mobile</label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="tel" maxlength="10" minlength="10" pattern="[789]{1}[0-9]{9}" placeholder="Enter Mobile" name="mobile">
               </div>
@@ -111,7 +111,7 @@
                 <!-- <div id="preview_img"></div> -->
                 <div id="dvPreview"></div>
 								<input name="photo" type="file" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                <p class="help-block" style="color: red">In width-750 X height-500 Size.</p> 
+                <!-- <p class="help-block" style="color: red">In width-750 X height-500 Size.</p>  -->
 
 							</div>
 						</div>
