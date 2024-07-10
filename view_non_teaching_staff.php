@@ -49,7 +49,6 @@
                   <th>Action</th>
                   <th>Name</th>
                   <th>Designation</th>
-                  <th>Department</th>
                   <th>Qualification</th>
                   <!--<th>Experiance</th>-->
                   <th>Email</th>
@@ -62,7 +61,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.*,de.* from non_teaching_staff s,department dp,designation de where s.Designation_id=de.Designation_id and s.Department_id=dp.id and s.fld_delete='0' GROUP by s.non_teaching_staff_id desc";
+                  $query="select s.*,de.* from non_teaching_staff s,designation de where s.Designation_id=de.Designation_id and  s.fld_delete='0' GROUP by s.non_teaching_staff_id desc";
                   
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
@@ -78,12 +77,11 @@
                       </td> 
                     <td><?php echo $fetch['name'];?></td>
                     <td><?php echo $fetch['Designation'];?></td>
-                    <td><?php echo $fetch['Department'];?></td>   
                     <td><?php echo $fetch['qualification'];?></td>
                     <!--<td><?php //echo $fetch['fld_staff_experiance'];?></td>-->
                     <td><?php echo $fetch['email'];?></td> 
                     <td><?php echo $fetch['mobile'];?></td> 
-                    <td><img src="assets/images/non_teaching_staff/<?php echo $fetch['files'];?>" height="75px" width="75px" ></a></td>
+                    <td><img src="assets/images/non_teaching_staff/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td>
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

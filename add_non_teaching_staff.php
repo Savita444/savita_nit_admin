@@ -67,21 +67,6 @@
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
-              <div class="col-sm-12 col-md-10">
-                <select name="department" class="form-control">
-                    <option value="">Select Department</option>
-                        <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
-                            while($row=mysqli_fetch_assoc($query1)){
-                              extract($row);
-                          ?>
-                    <option value="<?php echo $row['id'];?>"><?php echo $row['Department'];?></option>
-                        <?php  }?>
-                 </select>
-              </div>
-            </div>
-            <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Qualification<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="text" placeholder="Enter Qualification" name="qualification">
@@ -145,8 +130,7 @@
     if(isset($_POST['submit']))
     {
         extract($_POST);
-
-
+        
         $name=$_FILES['photo']['name']; 
         $type=$_FILES['photo']['type'];
         $size=$_FILES['photo']['size'];  
@@ -160,7 +144,7 @@
                     move_uploaded_file($temp,$upload.$photo);   
         }
 
-        $query="insert into non_teaching_staff(name,Designation_id,Department_id,qualification,experiance,email,mobile,photo) VALUES('$staff_name','$designation','$department','$qualification','$experiance','$email','$mobile','$photo');";
+        $query="insert into non_teaching_staff(name,Designation_id,qualification,experiance,email,mobile,photo) VALUES('$staff_name','$designation','$qualification','$experiance','$email','$mobile','$photo');";
         $add2=mysqli_query($connect,$query);      
 
         if($add2)
