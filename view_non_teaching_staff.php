@@ -76,7 +76,6 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        
                         <a href="delete_non_teaching_staff.php?non_teaching_staff_id=<?php echo $fetch['non_teaching_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Non Teaching Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                       </td> 
                     <td><?php echo $fetch['name'];?></td>
