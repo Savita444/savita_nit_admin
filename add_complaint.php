@@ -38,7 +38,6 @@
 				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
 					<div class="clearfix">
 						<div class="pull-left">
-							<!-- <h4 class="text-blue">Add Services</h4> -->
 						</div>
 					</div>
 					<br>
@@ -103,7 +102,6 @@
 		</div>
 	</div>
 	<?php include('include/script.php'); 
-        // include('include/footer.php');
   ?>
 </body>
 </html>
@@ -113,15 +111,7 @@
     if (isset($_POST['submit'])) 
     {
         
-        extract($_POST);
-      //   $asd=mysqli_query($connect,"select * from tbl_alumini_committee where service_name='".$_POST['service_name']."' and fld_delete='0'") or die(mysqli_error($connect));
-      //   if (mysqli_num_rows($asd)==1) {
-      //     echo "<script>";
-      //     echo "alert('Service Already Exist...!')";
-      //     echo "window.location.href='service_add.php';";
-      //     echo "</script>";
-      // }
-      //   else{
+        extract($_POST);   
 
 	$query="INSERT INTO tbl_complaint_members(fld_bm_name,Designation_id,mobilenumber,email,work_as) VALUES ('$fld_bm_name','$fld_bm_designation','$mobilenumber','$email','$work_as')";
 		        
@@ -140,5 +130,4 @@
 		            echo "</script>";
 		        }
 		    }    
-    // }
 ?>
