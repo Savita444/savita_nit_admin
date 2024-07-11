@@ -60,18 +60,18 @@
               </thead>
               <tbody>
                 <?php 
-                  $count=0; 
+                      $count=0; 
 
-                  $row = mysqli_query($connect, "SELECT s., de. 
-                                                 FROM non_teaching_staff s 
-                                                 JOIN designation de 
-                                                 ON s.Designation_id = de.Designation_id 
-                                                 WHERE s.fld_delete = '0' 
-                                                 ORDER BY s.non_teaching_staff_id DESC") 
-                         or die(mysqli_error($connect));
-                  
-                  while($fetch = mysqli_fetch_array($row)) {
-                      extract($fetch);
+                      $row = mysqli_query($connect, "SELECT s., de. 
+                                                    FROM non_teaching_staff s 
+                                                    JOIN designation de 
+                                                    ON s.Designation_id = de.Designation_id 
+                                                    WHERE s.fld_delete = '0' 
+                                                    ORDER BY s.non_teaching_staff_id DESC") 
+                            or die(mysqli_error($connect));
+                      
+                      while($fetch = mysqli_fetch_array($row)) {
+                          extract($fetch);
                  ?> 
                 <tr>
                     <td><?php echo ++$count; ?></td>
