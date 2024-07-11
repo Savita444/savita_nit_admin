@@ -61,7 +61,7 @@
 							<tbody>
 								<?php 
                                 $count=0; 
-                                $query="select d.*,b.* from designation d,tbl_board_members b where d.Designation_id=b.Designation_id and d.Designation_delete='0' and b.fld_delete='0' order by b.fld_bm_id desc";
+                                $query="select d.*,b.* from designation d,tbl_board_members b where d.Designation_id=b.Designation_id and d.fld_delete='0' and b.fld_delete='0' order by b.fld_bm_id desc";
                                 $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                 
                                 while($fetch=mysqli_fetch_array($row)) {

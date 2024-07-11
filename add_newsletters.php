@@ -96,13 +96,9 @@
             $fileTmpName=$_FILES["file"]["tmp_name"];  
             $a=uniqid().$fileName;
             $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
-<<<<<<< HEAD
 
             $query="insert into newsletters(Department_id,file) VALUES('$department_id','$a');";
-=======
-			$query="insert into newsletters(department_id,file) VALUES('$department_id','$a');";
             
->>>>>>> 5b3eb96776f629cccd2ffea3d2fe60408cb0843e
             $desired_dir="assets/images/newsletters/";
             move_uploaded_file($fileTmpName,"$desired_dir/".$a);
             $add2=mysqli_query($connect,$query); 
