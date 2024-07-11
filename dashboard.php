@@ -167,7 +167,7 @@
 								</div>
 							</div>
 							<?php
-                            $res4=mysqli_query($connect,"select * from designation where Designation_delete='0' order by Designation_id desc") or die (mysqli_error($connect));
+                            $res4=mysqli_query($connect,"select * from designation where fld_delete='0' order by Designation_id desc") or die (mysqli_error($connect));
                             $count4=mysqli_num_rows($res4);
                             ?>
 							<div class="project-info-right">
