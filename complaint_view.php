@@ -52,6 +52,7 @@
 									<th>Designation</th>
 									<th>Mobile Number</th>
 									<th>Email</th>
+									<th>Work As</th>
 									<th>Created Date</th>
 									<th>Modified Date</th>
 								</tr>
@@ -80,6 +81,7 @@
 									<td><?php echo $fetch['Designation'];?></td>                     
                                     <td><?php echo $fetch['mobilenumber'];?></td>
                                     <td><?php echo $fetch['email'];?></td>
+                                    <td><?php echo $fetch['work_as'];?></td>
                                     <td><?php echo $fetch['fld_created_date'];?></td>   
                                     <td><?php echo $fetch['fld_modified_date'];?></td>   
                                 </tr>

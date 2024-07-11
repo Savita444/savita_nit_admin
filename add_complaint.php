@@ -72,6 +72,13 @@
 								<input class="form-control" type="text" placeholder="Enter Mobile Number" name="mobilenumber" >
 							</div>
 						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Work As<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" placeholder="Enter Work As" name="work_as" >
+							</div>
+						</div>
 						
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Email ID<span style="color: red;">*</span> : </label>
@@ -116,7 +123,7 @@
       // }
       //   else{
 
-	$query="INSERT INTO tbl_complaint_members(fld_bm_name,Designation_id,mobilenumber,email) VALUES ('$fld_bm_name','$fld_bm_designation','$mobilenumber','$email')";
+	$query="INSERT INTO tbl_complaint_members(fld_bm_name,Designation_id,mobilenumber,email,work_as) VALUES ('$fld_bm_name','$fld_bm_designation','$mobilenumber','$email','$work_as')";
 		        
 		        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
 		        if ($row) 

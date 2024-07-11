@@ -85,13 +85,13 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Mobile No <span style="color: red;">*</span> : </label>
               <div class="col-sm-12 col-md-10">
-                <input type="text"  maxlength="10" minlength="10" pattern="[7-9]{1}[0-9]{9}" value="<?php echo $fetch['contact_us_mobile']; ?>" name="mobile" class="form-control" placeholder="Enter Mobile Number" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+                <input type="text"  value="<?php echo $fetch['contact_us_mobile']; ?>" name="mobile" class="form-control" placeholder="Enter Mobile Number" required  />
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Telephone No <span style="color: red;">*</span> : </label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" minlength="11" maxlength="13" value="<?php echo $fetch['contact_us_telephone']; ?>" name="phone" class="form-control" placeholder="Enter Mobile Number" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+                <input type="text"  value="<?php echo $fetch['contact_us_telephone']; ?>" name="phone" class="form-control" placeholder="Enter Mobile Number" required  />
               </div>
             </div>
             <div class="form-group row">
