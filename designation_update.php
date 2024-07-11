@@ -10,7 +10,7 @@ if (isset($_POST['update']))
        // $designation=ucwords(strtolower($designation1));
         
         $coulmn=array();
-        $query1=mysqli_query($connect,"select * from designation where Designation_id!='".$_GET['designation_id']."' and Designation_delete='0'");
+        $query1=mysqli_query($connect,"select * from designation where Designation_id!='".$_GET['designation_id']."' and fld_delete='0'");
         while ($row=mysqli_fetch_assoc($query1))
         {
           $coulmn[]=$row['Designation'];

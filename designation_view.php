@@ -138,7 +138,7 @@ include('include/sidebar.php'); ?>
 							<tbody>
 								<?php 
                                     $count=0; 
-                                    $query="select * from designation where Designation_delete='0' order by Designation_id desc ";
+                                    $query="select * from designation where fld_delete='0' order by Designation_id desc ";
                                     $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                     
                                     while($fetch=mysqli_fetch_array($row)) {
