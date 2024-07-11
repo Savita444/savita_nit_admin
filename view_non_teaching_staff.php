@@ -61,7 +61,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,de.* from non_teaching_staff s,designation de where s.Designation_id=de.Designation_id and  s.fld_delete='0' GROUP by s.non_teaching_staff_id desc";
+                  $query="select s.*, de.* from non_teaching_staff s,designation de where s.Designation_id=de.Designation_id and s.fld_delete='0' GROUP by s.non_teaching_staff_id desc";
                   
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
