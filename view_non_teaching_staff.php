@@ -62,7 +62,7 @@
                 <?php 
                   $count=0; 
                   
-                  $row=mysqli_query($connect,"select s.*, de.* from non_teaching_staff s,designation de where s.Designation_id=de.Designation_id and s.fld_delete='0' GROUP by s.non_teaching_staff_id desc") or die(mysqli_error($connect));
+                  $row=mysqli_query($connect,"select s.*, de.* from non_teaching_staff s, designation de where s.Designation_id=de.Designation_id and s.fld_delete='0' GROUP by s.non_teaching_staff_id desc") or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
 
