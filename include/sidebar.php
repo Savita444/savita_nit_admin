@@ -49,14 +49,14 @@
 							<!--<li><a href="departmentsubtitle_view.php">Department Sub Title</a></li>-->
 							<li><a href="departmentinfo_view.php">Department Information</a></li>
 							<li><a href="laboratoriesinfo_view.php">Laboratories Information</a></li>
-							<li><a href="syllabusinfo_view.php">Add Syllabus</a></li>
+							<!-- <li><a href="syllabusinfo_view.php">Add Syllabus</a></li> -->
 							<li><a href="curriculuminfo_view.php">Add Curriculum</a></li>
 							<li><a href="timetableinfo_view.php">Add Time Table</a></li>
 							<li><a href="sainfo_view.php">Add Students Association</a></li>
 							<li><a href="achievements_view.php">Add Achievements and Awards </a></li>
 							<li><a href="events_view.php">Add Activities and Events </a></li>
 							<li><a href="mentor_view.php">Add Mentor</a></li>
-							<li><a href="plan_view.php">Add Plan</a></li>
+							<li><a href="plan_view.php">Add Syllabus</a></li>
 							<li><a href="newsletters_view.php">Newsletters</a></li>
 							<li><a href="view_staff.php">Faculty</a></li>
 							<li><a href="view_non_teaching_staff.php">Non Teaching Staff</a></li>
