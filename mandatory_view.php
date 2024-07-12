@@ -57,7 +57,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select * from mandatory_disclosure  where syllabus_delete='0' order by mandatory_id desc";
+                  $query="select * from mandatory_disclosure where syllabus_delete='0' order by mandatory_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
