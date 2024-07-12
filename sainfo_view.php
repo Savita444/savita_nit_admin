@@ -58,7 +58,7 @@
 							<tbody>
 								<?php 
                                 $count=0; 
-                                $query="select d.*,b.*,f.* from designation d,department f,tbl_sa_members b where d.Designation_id=b.Designation_id and b.Department_id=f.id and d.Designation_delete='0' and b.fld_delete='0' and f.Department_delete='0' order by b.fld_bm_id desc";
+                                $query="select d.*,b.*,f.* from designation d,department f,tbl_sa_members b where d.Designation_id=b.Designation_id and b.Department_id=f.id and d.fld_delete='0' and b.fld_delete='0' and f.Department_delete='0' order by b.fld_bm_id desc";
                                 $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                 
                                 while($fetch=mysqli_fetch_array($row)) {

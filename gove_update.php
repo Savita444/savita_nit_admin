@@ -59,7 +59,7 @@
 								<select name="Designation_id" class="form-control" required="" id="Designation_id">
 									<option value="">--Select Designation--</option>
 									<?php 
-											$query=mysqli_query($connect,"select * from designation where Designation_delete='0' order by Designation_id asc");
+											$query=mysqli_query($connect,"select * from designation where fld_delete='0' order by Designation_id asc");
 											while ($row=mysqli_fetch_assoc($query)) {
 												extract($row);
 											
