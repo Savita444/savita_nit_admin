@@ -59,11 +59,12 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  // $query="select s.*,d.* from curriculum s,department d  where s.department_id=d.id and syllabus_delete='0' order by id desc";
-                  $query = "SELECT s.*, d.* 
-                  FROM curriculum s, department d  
-                  WHERE s.department_id = d.id AND syllabus_delete = '0' 
-                  ORDER BY s.id DESC"; // Specify s.id or d.id to resolve ambiguity
+                  $query="select s.*, d.* from curriculum s, department d  where s.department_id=d.id and syllabus_delete='0' order by s.curriculum_id desc";
+                  // $query = "SELECT s.*, d.* 
+                  // FROM curriculum s, department d  
+                  // WHERE s.department_id = d.id AND syllabus_delete = '0' 
+                  // ORDER BY s.curriculum_id DESC"; 
+                  // Specify s.id or d.id to resolve ambiguity
                 
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
@@ -75,13 +76,11 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_curriculuminfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Curriculum Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_curriculuminfo.php?curriculum_id=<?php echo $fetch['curriculum_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Curriculum Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php //echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
-                    <!--<td><?php echo $fetch['year'];?></td>-->
                      <td><?php echo $fetch['semister'];?></td>
-                     <!--<td><a href="assets/images/syllabus/<?php echo $fetch['file'];?>" target="_blank"><img src="assets/images/syllabus/<?php echo $fetch['file'];?>" height="75px" width="75px" ></a></td> -->
                      <td><a href="assets/documents/curriculum/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>

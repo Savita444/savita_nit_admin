@@ -2,9 +2,7 @@
 include "config.php";
 
 
-
-
-$delete1 = mysqli_query($connect,"delete from curriculum  where id='".$_GET['id']."' ")or die(mysqli_error($connect));
+$delete1 = mysqli_query($connect,"delete from curriculum where curriculum_id='".$_GET['curriculum_id']."' ")or die(mysqli_error($connect));
 
 
 $back="curriculuminfo_view.php";
