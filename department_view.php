@@ -36,10 +36,8 @@ include('include/sidebar.php'); ?>
                             <a href="#" data-toggle="modal" data-target="#department_add" type="button"><button
                                     class="btn btn-primary">Add Department</button></a>
                         </div>
-
                     </div>
                 </div>
-
 
                 <div class="modal fade bs-example-modal-lg" id="department_add" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -76,73 +74,63 @@ include('include/sidebar.php'); ?>
                                     <input class="btn btn-success" value="Submit" type="submit" name="submit">
                                     <input class="btn btn-danger" value="Reset" type="reset">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <?php
-                                    
-                                    if (isset($_POST['submit'])) 
-                                    {
-                                        
-                                        extract($_POST);
+                    if (isset($_POST['submit'])) 
+                    {
+                        extract($_POST);
 
-                                        $department=$_POST['department'];
-                                        $coulmn=array();
-								        $query1=mysqli_query($connect,"select * from department where Department_delete='0'");
-								        while ($row=mysqli_fetch_assoc($query1))
-								        {
-								          $coulmn[]=$row['Department'];
-								        }
+                        $department=$_POST['department'];
+                        $coulmn=array();
+                        $query1=mysqli_query($connect,"select * from department where Department_delete='0'");
+                        while ($row=mysqli_fetch_assoc($query1))
+                        {
+                            $coulmn[]=$row['Department'];
+                        }
+                        if (in_array($department, $coulmn)) 
+                        {
+                            echo '<script type="text/javascript">'; 
+                            echo 'alert("Department Is Already Exist");';
+                            echo "window.location.href = 'department_view.php';";
+                            echo '</script>'; 
+                            return true;
+                        }    
+                        else
+                        {
+                            $fileName=$_FILES["files"]["name"];
+                            $fileSize=$_FILES["files"]["size"];
+                            $fileType=$_FILES["files"]["type"];
+                            $fileTmpName=$_FILES["files"]["tmp_name"];  
+                            $a=uniqid().$fileName;
+                            $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
-								        if (in_array($department, $coulmn)) 
-										{
-											echo '<script type="text/javascript">'; 
-											echo 'alert("Department Is Already Exist");';
-											echo "window.location.href = 'department_view.php';";
-											echo '</script>'; 
-											return true;
+                                $query="INSERT INTO department(Department,files) VALUES ('$department','$a');";
+                                $desired_dir="assets/images/departmenticon/";
+                                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
+                                $add2=mysqli_query($connect,$query); 
 
-										}    
-								        else
-								        {
-
-											$fileName=$_FILES["files"]["name"];
-											$fileSize=$_FILES["files"]["size"];
-											$fileType=$_FILES["files"]["type"];
-											$fileTmpName=$_FILES["files"]["tmp_name"];  
-											$a=uniqid().$fileName;
-											$extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
-
-														$query="INSERT INTO department(Department,files) VALUES ('$department','$a');";
-														$desired_dir="assets/images/departmenticon/";
-														move_uploaded_file($fileTmpName,"$desired_dir/".$a);
-														$add2=mysqli_query($connect,$query); 
-
-	                                        // $query="INSERT INTO department(Department) VALUES ('$department')";
-	                                        //echo $query."<br>";
-	                                        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
-	                                        if ($row) 
-	                                        {
-	                                            echo "<script>";
-	                                            echo "alert('Department Added Successfully');";
-	                                            echo "window.location.href='department_view.php';";
-	                                            echo "</script>";                 
-	                                        }
-	                                        else
-	                                        {
-	                                            echo "<script>";
-	                                            echo "alert('Error');";
-	                                            echo "window.location.href='department_view.php';";
-	                                            echo "</script>";
-	                                        }
-	                                    }    
-                                    }
-                                ?>
-
+                            $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
+                            if ($row) 
+                            {
+                                echo "<script>";
+                                echo "alert('Department Added Successfully');";
+                                echo "window.location.href='department_view.php';";
+                                echo "</script>";                 
+                            }
+                            else
+                            {
+                                echo "<script>";
+                                echo "alert('Error');";
+                                echo "window.location.href='department_view.php';";
+                                echo "</script>";
+                            }
+                        }    
+                    }
+                ?>
 
                 <!-- Export Datatable start -->
                 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
@@ -161,7 +149,6 @@ include('include/sidebar.php'); ?>
                                     <th>Department</th>
                                     <th>Department Icon</th>
                                     <th>Date</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -169,14 +156,8 @@ include('include/sidebar.php'); ?>
                                     $count=0; 
                                     $query="select * from department where Department_delete='0' order by id desc ";
                                     $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
-                                    
                                     while($fetch=mysqli_fetch_array($row)) {
-
                                     extract($fetch);
-
-                                    
-                                   
-                                
                                 ?>
                                 <tr>
                                     <td class="table-plus"><?php echo ++$count; ?></td>
@@ -186,18 +167,13 @@ include('include/sidebar.php'); ?>
                                             title="Edit Department"><i class="fa fa-pencil-square-o text-success"
                                                 style="font-size: 20px"></i> </a> -->
 
-
-
                                         <a href="department_trash.php?id=<?php echo $fetch['id'] ?>"
                                             onclick="return confirm('Are You Sure To Delete Department.')"
                                             title="Delete Department"><i class="fa fa-trash text-danger"
                                                 style="font-size: 20px; padding-left: 10px"></i></a>
-
-
-
-
                                     </td>
                                     <td><?php echo $fetch['Department'];?></td>
+
                                     <td><img src="assets/images/departmenticon/<?php echo $fetch['files'];?>" width="100"  height="100"></td>
 
                                     <td><?php echo $fetch['Department_date'];?></td>
@@ -215,10 +191,9 @@ include('include/sidebar.php'); ?>
                                                 </div>
 
                                                 <?php 
-
-	$abc=mysqli_query($connect,"select * from department where id='".$fetch['id']."'") or die(mysqli_error($connect));
-	$view=mysqli_fetch_array($abc);
-?>
+                                                    $abc=mysqli_query($connect,"select * from department where id='".$fetch['id']."'") or die(mysqli_error($connect));
+                                                    $view=mysqli_fetch_array($abc);
+                                                ?>
                                                 <form method="post"
                                                     action="department_update.php?department_id=<?php echo $fetch['Department_id'] ?>">
                                                     <div class="modal-body">
@@ -236,20 +211,16 @@ include('include/sidebar.php'); ?>
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="modal-footer">
                                                         <input class="btn btn-success" value="Update" type="submit"
                                                             name="update">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Close</button>
-
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </tr>
                                 <?php } ?>
                             </tbody>

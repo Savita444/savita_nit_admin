@@ -143,22 +143,20 @@
     $type=$_FILES['photo']['type'];
     $temp=$_FILES['photo']['tmp_name'];
 
-        if($name)
-            {
-                $upload_dir = 'assets/images/admin/';
-                $imgExt = strtolower(pathinfo($name,PATHINFO_EXTENSION)); // get image extension
-                $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
-                $photo = rand(1000,1000000).".".$imgExt;
-                unlink($upload_dir.$fetch['Photo']);
-                move_uploaded_file($temp,$upload_dir.$photo);
+    if($name)
+        {
+            $upload_dir = 'assets/images/admin/';
+            $imgExt = strtolower(pathinfo($name,PATHINFO_EXTENSION)); // get image extension
+            $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+            $photo = rand(1000,1000000).".".$imgExt;
+            unlink($upload_dir.$fetch['Photo']);
+            move_uploaded_file($temp,$upload_dir.$photo);
 
-            }
-        else
-            {
-                $photo=$fetch['fld_photo'];
-            }
-
-      
+        }
+    else
+        {
+            $photo=$fetch['fld_photo'];
+        }
       
      $update=mysqli_query($connect,"update tbl_admin set
                 fld_name='".$uname."', 

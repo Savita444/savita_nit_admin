@@ -75,7 +75,7 @@
                     <td>
                         
                         <a href="delete_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <!-- <a href="update_staff.php?fld_staff_id=<?php //echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a> -->
                     </td> 
                     <td><?php echo $fetch['fld_staff_name'];?></td>
                     <td><?php echo $fetch['Designation'];?></td>

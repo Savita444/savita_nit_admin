@@ -76,11 +76,11 @@
                 <select name="department" class="form-control">
                     <option value="">Select Department</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by Department_id desc");
+                            $query1=mysqli_query($connect,"select * from department where Department_delete='0'");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['Department_id'];?>" <?php if ($fetch['Department_id']==$row['Department_id']){echo "selected";} ?>><?php echo $row['Department'];?></option>
+                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['Department_id']==$row['Department_id']){echo "selected";} ?>><?php echo $row['department'];?></option>
                     <?php  }?>
                  </select>
               </div>
@@ -91,53 +91,50 @@
                 <input class="form-control" type="text" placeholder="Enter Qualification" name="qualification" value="<?php echo $fetch['fld_staff_qualification'];?>">
               </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Experiance<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" placeholder="Enter Experiance" name="experiance" value="<?php echo $fetch['fld_staff_experiance'];?>">
+                <input class="form-control" type="text" placeholder="Enter Experiance" name="experiance" value="<?php //echo $fetch['fld_staff_experiance'];?>">
               </div>
-            </div>
-            <!-- <div class="form-group row">
+            </div> -->
+            <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Email<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="email" placeholder="Enter Email" name="email">
+                <input class="form-control" type="email" placeholder="Enter Email" name="email" value="<?php echo $fetch['fld_staff_email'];?>">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Mobile<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="tel" maxlength="10" minlength="10" pattern="[789]{1}[0-9]{9}" placeholder="Enter Mobile" name="mobile">
+                <input class="form-control" type="tel" maxlength="10" minlength="10" pattern="[789]{1}[0-9]{9}" placeholder="Enter Mobile" name="mobile" value="<?php echo $fetch['fld_staff_mobile'];?>">
               </div>
-            </div> -->
+            </div>
 						<div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                
-                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-                <br>
                 <div id="dvPreview">
                   <?php
-                        if ($fetch['fld_staff_photo']=="") 
-                        {
-                    ?>
-                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                    if($fetch['fld_staff_photo'] =="")
+                    {
+                        ?>
+                            <img src="assets/images/staff/No-image-full.jpg" alt="" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
-                    ?>
+                   ?>
                 </div>
-						
-
+                <input  name="photo" type="file" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+              </div>
+            </div>
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
-								<input type="submit" name="update" class="btn btn-success" value="Submit">&nbsp;
+								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
                 <a href="view_staff.php" class="btn btn-warning">Back</a>
 							</div>
@@ -154,103 +151,56 @@
 </body>
 </html>
 
-
 <?php
-
-
-// error_reporting(0);
-
-    if(isset($_POST['update']))
+    
+    if(isset($_POST['submit']))
     {
-        extract($_POST);
+     extract($_POST);
 
 
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query=mysqli_query($connect,"update tbl_staff set
+    $name=$_FILES['photo']['name'];
+    $size=$_FILES['photo']['size'];
+    $type=$_FILES['photo']['type'];
+    $temp=$_FILES['photo']['tmp_name'];
+
+    if($name)
+        {
+            $upload_dir = 'assets/images/staff/';
+            $imgExt = strtolower(pathinfo($name,PATHINFO_EXTENSION)); // get image extension
+            $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+            $photo = rand(1000,1000000).".".$imgExt;
+            unlink($upload_dir.$fetch['photo']);
+            move_uploaded_file($temp,$upload_dir.$photo);
+
+        }
+    else
+        {
+            $photo=$fetch['fld_staff_photo'];
+        }
+      
+      $update=mysqli_query($connect,"update tbl_staff set
                 fld_staff_name='".$name."', 
                 Designation_id='".$_POST['designation']."',
                 Department_id='".$_POST['department']."',
                 fld_staff_qualification='".$_POST['qualification']."',
-                fld_staff_experiance='".$_POST['experiance']."',
-                fld_staff_photo='".$a."'
-                where fld_staff_id='".$_GET['fld_staff_id']."'") or die(mysqli_error($connect));
-
-                $desired_dir="assets/images/staff/";
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 // $add2=mysqli_query($connect,$query); 
-
-                 $save = "$desired_dir/" . $a; //This is the new file you saving
-                  $file = "$desired_dir/" . $a; //This is the original file
-
-                  list($width, $height) = getimagesize($file) ;
-
-                  $modwidth = 750;
-
-                  // $diff = $width / $modwidth;
-
-                  // $modheight = $height / $diff;
-                  $modheight = 500;
-                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                  if($extension=="jpg" || $extension=="jpeg" )
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefromjpeg($file);
-
-                  }
-                  else if($extension=="png")
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefrompng($file);
-
-                  }
-                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-                  imagejpeg($tn, $save, 100) ;        
-                // }else{
-                //         print_r($errors);
-                // }
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
-        }
-
-        if($query)
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Faculty Member Added Successfully.');";
-         echo 'window.location.href = "view_staff.php";';
-         echo '</script>';
-        }
-        else
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Faculty Member Not Added.');";
-         echo 'window.location.href = "add_staff.php";';
-         echo '<script>';
-       }
+                fld_staff_photo='".$photo."'
+                where fld_staff_id='".$_SESSION['fld_staff_id']."'") or die(mysqli_error($connect));
+     if($update)
+      {
+        echo '<script type="text/javascript">';
+        echo " alert('Faculty Member Update Successfully.');";
+        echo 'window.location.href = "view_staff.php";';
+        echo '</script>';
+      }
+      else
+      {
+        echo '<script type="text/javascript">';
+        echo "alert('Faculty Member Not Update.');";
+        echo '<script>';
+      }
     }
-?>               
+?> 
+       
 
 <!-- <script language="javascript" type="text/javascript">
 $(function () {
