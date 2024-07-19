@@ -82,6 +82,16 @@
               </div>
             </div>
             <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Staff<span style="color: red;">*</span></label>
+              <div class="col-sm-12 col-md-10">
+                <select name="fld_staff" class="form-control"  required="">
+                    <option value="">Select Staff</option>
+                    <option value="1">Non Teaching Staff</option>
+                    <option value="2">Teaching Staff</option>
+                 </select>
+              </div>
+            </div>
+            <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Qualification<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="text" placeholder="Enter Qualification" name="qualification">
@@ -159,7 +169,7 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$qualification','$experiance','$email','$mobile','$a');";
+                $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$fld_staff','$qualification','$experiance','$email','$mobile','$a');";
                 $desired_dir="assets/images/staff/";
              
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
