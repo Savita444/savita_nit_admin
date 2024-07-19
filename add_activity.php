@@ -22,14 +22,14 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="activitiesinfo_view.php">Activity Information</a></li>
+									<!-- <li class="breadcrumb-item"><a href="activitiesinfo_view.php">Activity Information</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Add Activity Information</li>
 								</ol>
 							</nav>
 						</div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
-                <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">
+                <a class="btn btn-primary" href="activitiesinfo_view.php" role="button">
                   View Activity Information
                 </a>
               </div>
@@ -58,11 +58,11 @@
                 <select name="activity_id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['id'];?>"><?php echo $row['activities'];?></option>
+                    <option value="<?php echo $row['activity_id'];?>"><?php echo $row['activities'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -87,7 +87,7 @@
 							<div class="col-sm-12 col-md-10">
                 <!-- <div id="preview_img"></div> -->
                 <div id="dvPreview"></div>
-								<input name="files[]" type="file" multiple accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+								<input name="files[]" type="file" required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
                 <p class="help-block" style="color: red">In width-750 X height-500 Size.</p> 
 
 							</div>
@@ -195,7 +195,7 @@
        {
          echo '<script type="text/javascript">';
          echo " alert('Activity Information Not Added.');";
-         echo 'window.location.href = "add_activity.php";';
+         echo 'window.location.href = "activitiesinfo_view.php";';
          echo '<script>';
        }
     }

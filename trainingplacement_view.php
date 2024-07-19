@@ -69,10 +69,11 @@
                     <td>
                         
                         <a href="delete_trainingplacement.php?trainingplacement_id=<?php echo $fetch['trainingplacement_id'] ?>" onclick="return confirm('Are you sure to Delete Training And Placement Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_trainingplacement.php?trainingplacement_id=<?php echo $fetch['trainingplacement_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                         
                     </td> 
                     
-                     <td><a href="assets/documents/trainingplacement/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/documents/trainingplacement/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['trainingplacement_date'];?></td>

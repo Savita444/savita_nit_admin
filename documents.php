@@ -20,6 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                  					<li class="breadcrumb-item">View Documents </li>
                   					<li class="breadcrumb-item">Add Documents </li>
 								</ol>
 							</nav>

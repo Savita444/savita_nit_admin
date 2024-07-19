@@ -38,7 +38,7 @@
                 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
                     <form method="post" enctype="multipart/form-data">            
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Affiliation Certificates Photo<span style="color: red;">*</span></label>
                             <div class="col-sm-12 col-md-10">
                                 <div id="dvPreview"></div>
                                 <input name="files[]" type="file" multiple accept=".jpg, .jpeg, .png, .gif" id="fileupload" required>

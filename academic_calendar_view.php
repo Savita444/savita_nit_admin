@@ -67,11 +67,12 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_academic_calendar.php?academic_cal_id=<?php echo $fetch['academic_cal_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Academic Calendar Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_academic_calendar.php?academic_cal_id=<?php echo $fetch['academic_cal_id'] ?>" onclick="return confirm('Are you sure to Delete Academic Calendar Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="academic_calendar_update.php?academic_cal_id=<?php echo $fetch['academic_cal_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                         
                     </td> 
                     <td><?php echo $fetch['academic_title'];?></td>
-                    <td><a href="assets/documents/academiccalendar/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                    <td><a href="assets/documents/academiccalendar/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['academic_cal_date'];?></td>

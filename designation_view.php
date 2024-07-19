@@ -20,12 +20,12 @@ include('include/sidebar.php'); ?>
 					<div class="row">
 						<div class="col-md-10 col-sm-10">
 							<div class="title">
-								<h4>Designation Details</h4>
+								<h4>View Designation</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Designation Details</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">View Designation</li>
 								</ol>
 							</nav>
 						</div>
@@ -154,7 +154,7 @@ include('include/sidebar.php'); ?>
 										
 
 										
-										<a href="designation_trash.php?designation_id=<?php echo $fetch['Designation_id'] ?>" onclick="return confirm('Are You Sure To Delete Designation.')" title="Delete Designation" ><i class="fa fa-trash text-danger" style="font-size: 20px; padding-left: 10px" ></i></a>
+										<a href="designation_trash.php?designation_id=<?php echo $fetch['Designation_id'] ?>" onclick="return confirm('Are You Sure To Delete Designation Record')" title="Delete Designation" ><i class="fa fa-trash text-danger" style="font-size: 20px; padding-left: 10px" ></i></a>
 
 										
 									</td>

@@ -17,23 +17,22 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Add Cap Admission</h4>
+								<h4>Add CAP Round Process </h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item">Add Cap Admission</li>
-									
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+									<li class="breadcrumb-item">Add CAP Round Process </li>
 								</ol>
 							</nav>
 						</div>
-            <!--<div class="col-md-6 col-sm-12 text-right">-->
-            <!--  <div class="dropdown">-->
-            <!--    <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">-->
-            <!--      View Facility Information-->
-            <!--    </a>-->
-            <!--  </div>-->
-            <!--</div>						-->
+                        <div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                            <a class="btn btn-primary" href="cap_view.php" role="button">
+                                View CAP Round Process 
+                            </a>
+                            </div>
+                        </div>						
 					</div>
 				</div>
 				<!-- Default Basic Forms Start -->
@@ -98,14 +97,14 @@
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Cap Added Successfully.');";
+         echo " alert('CAP Round Process Added Successfully.');";
          echo 'window.location.href = "cap_view.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Cap Not Added.');";
+         echo " alert('CAP Round Process Not Added.');";
          echo 'window.location.href = "cap_view.php";';
          echo '<script>';
        }

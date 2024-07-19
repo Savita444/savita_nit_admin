@@ -68,11 +68,12 @@
 									<td>
                                         <a href="journals_magazines_delete.php?journals_magazines_id=<?php echo $fetch['journals_magazines_id'] ?>" onclick="return confirm('Are you sure to Delete Journals and magazines Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
+										<a href="journals_magazines_update.php?journals_magazines_id=<?php echo $fetch['journals_magazines_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
+                                        </a>
 									</td>
 								
 									<td class="td-actions">
-								    <center>
-										<a href="assets/images/journalsmagazines/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+										<a href="assets/images/journalsmagazines/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

@@ -74,6 +74,7 @@
 									<td class="table-plus"><?php echo ++$count; ?></td>
 									<td>	
 										<a href="library_staff_delete.php?library_staff_id=<?php echo $fetch['library_staff_id'] ?>" onclick="return confirm('Are You Sure To Delete Library staff Photo Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a>	
+										<a href="library_staff_update.php?library_staff_id=<?php echo $fetch['library_staff_id'] ?>" ><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>	
 									</td>
 									<td><?php echo $fetch['name_staff'];?></td>
 									<td><?php echo $fetch['designation'];?></td>

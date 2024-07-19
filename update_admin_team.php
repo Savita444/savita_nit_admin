@@ -252,7 +252,7 @@
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Admin Member Update Successfully.');";
+         echo " alert('Slider Images Added Successfully.');";
          echo 'window.location.href = "view_admin_team.php";';
          echo '</script>';
         }

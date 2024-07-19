@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="academicsinfo_view.php">Academics Information</a></li>
+                  <!-- <li class="breadcrumb-item"><a href="academicsinfo_view.php">Academics Information</a></li> -->
                   <li class="breadcrumb-item active" aria-current="page">View Academics Information</li>
                 </ol>
               </nav>
@@ -51,7 +51,7 @@
                   <th>Academics Name</th>
                   <th>Academics Description</th>
                   <th>Academics Specification</th>
-                  <!--<th>Image</th>-->
+                  <th>Image</th>
                   <th>Created Date</th>
                   
                 </tr>
@@ -78,7 +78,7 @@
                     <td><?php echo $fetch['academics_description'];?></td>
                   
                     <td><?php echo $fetch['academics_specification'];?></td>
-                    <!--<td><a href="assets/images/academics/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/academics/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> -->
+                    <td><a href="assets/images/academics/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/academics/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td>
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

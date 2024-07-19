@@ -22,7 +22,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Affiliation Certificates</li>
+                  <li class="breadcrumb-item active" aria-current="page">View Affiliation Certificates</li>
                   
                 </ol>
               </nav>
@@ -30,7 +30,7 @@
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="add_affiliation_certificates.php" role="button">
-                  ADD Photo
+                  ADD Affiliation Certificates
                 </a>
               </div>
             </div>
@@ -53,7 +53,7 @@
                   <th class="table-plus datatable-nosort">Sr No</th>
                   <th class="datatable-nosort">Action</th>
                                    <!--  <th>Image Title</th> -->
-                                    <th>Photo</th>
+                                    <th>Affiliation Certificates Photo</th>
                                     <!-- <th>Photo Description</th> -->
                                     <th>Created Date</th>
                                     <th>Modified Date</th>
@@ -74,8 +74,8 @@
                 <tr>
                   <td class="table-plus"><?php echo ++$count; ?></td>
                   <td>  
-                    <!--<a href="update_affiliation_images.php?fld_affiliation_id=<?php echo $fetch['fld_affiliation_id'] ?>"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>-->
-                    <a href="delete_affiliation_certificates.php?fld_affiliation_id=<?php echo $fetch['fld_affiliation_id'] ?>" onclick="return confirm('Are You Sure To Delete Photo')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
+                    <a href="update_affiliation_images.php?fld_affiliation_id=<?php echo $fetch['fld_affiliation_id'] ?>"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>
+                    <a href="delete_affiliation_certificates.php?fld_affiliation_id=<?php echo $fetch['fld_affiliation_id'] ?>" onclick="return confirm('Are You Sure To Delete Affiliation Certificates Photo Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
                   </td>
                   <!-- <td><?php //echo $fetch['image_title'];?></td> -->
                   <td><a href="assets/images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" target="_blank"><img src="assets/images/affiliation_certificates/<?php echo $fetch['fld_affiliation_image'];?>" height="75px" width="75px" ></a></td>           

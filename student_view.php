@@ -67,17 +67,16 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!--<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">-->
-										<!--</a>-->
-                                                    
                                         <a href="student_delete.php?student_id=<?php echo $fetch['student_id'] ?>" onclick="return confirm('Are you sure to Delete Student Download Section Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="student_update.php?student_id=<?php echo $fetch['student_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 								
 									<td><?php echo $fetch['title'];?></td> 
 									<td class="td-actions">
-								    <center>
-								<a href="assets/images/studentDownload/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+								   
+									<a href="assets/documents/studentDownload/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

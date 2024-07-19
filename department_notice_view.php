@@ -73,12 +73,12 @@
                     <td>
                         
                         <a href="delete_department_notice.php?department_notice_id=<?php echo $fetch['department_notice_id'] ?>" onclick="return confirm('Are you sure to Delete Department Notice Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php //echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
+                      <a href="update_department_notice.php?department_notice_id=<?php echo $fetch['department_notice_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['title'];?></td>
                     <td><?php echo $fetch['department_name'];?></td>
                     <td><?php echo $fetch['notice'];?></td>
-                     <td><a href="assets/documents/departmentnotice/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                    <td><a href="assets/documents/departmentnotice/<?php echo $fetch['file'];?>" target="_blank" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['department_notice_date'];?></td>

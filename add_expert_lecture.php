@@ -23,10 +23,16 @@
 								<ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									<li class="breadcrumb-item">Add Expert lecture</li>
-									
 								</ol>
 							</nav>
 						</div>
+						<div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="expert_lecture_view.php" role="button">
+                                    View Expert lecture
+                                </a>
+                            </div>
+                        </div>
 					</div>
 				</div>
 				<!-- Default Basic Forms Start -->

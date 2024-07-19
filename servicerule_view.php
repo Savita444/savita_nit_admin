@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="servicerule_view.php">Service Rules</a></li>
+                  <li class="breadcrumb-item">View Service Rules</li>
                   
                 </ol>
               </nav>
@@ -67,13 +67,12 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <!-- <a href="slider_details.php?Slider_id=<?php// echo $fetch['Slider_id'] ?>"  class="fa fa-eye text-primary" style="font-size: 20px;"></a> -->
-                        
-                        <a href="delete_servicerule.php?service_id=<?php echo $fetch['service_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Service Rule')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_servicerule.php?service_id=<?php echo $fetch['service_id'] ?>" onclick="return confirm('Are you sure to Delete Service Rule Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_servicerule.php?service_id=<?php echo $fetch['service_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                         
                     </td> 
                     
-                     <td><a href="assets/images/servicerule/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/images/servicerule/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>

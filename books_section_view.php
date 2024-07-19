@@ -74,6 +74,7 @@
 									<td class="table-plus"><?php echo ++$count; ?></td>
 									<td>	
 										<a href="books_section_delete.php?books_section_id=<?php echo $fetch['books_section_id'] ?>" onclick="return confirm('Are You Sure To Delete Books section Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a>	
+										<a href="books_section_update.php?books_section_id=<?php echo $fetch['books_section_id'] ?>" ><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>	
 									</td>
 									<td><?php echo $fetch['course_name'];?></td>
 									<td><?php echo $fetch['aicte'];?></td>

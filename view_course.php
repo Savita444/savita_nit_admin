@@ -69,8 +69,8 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!-- <a href="course_update.php?fld_co_id=<?php //echo $fetch['fld_co_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">
-										</a> -->
+										<a href="course_update.php?fld_co_id=<?php echo $fetch['fld_co_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">
+										</a> 
                                                     
                                         <a href="course_delete.php?fld_co_id=<?php echo $fetch['fld_co_id'] ?>" onclick="return confirm('Are you sure to Delete Courese Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>

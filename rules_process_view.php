@@ -68,11 +68,13 @@
 									<td>
                                         <a href="rules_process_delete.php?rules_process_id=<?php echo $fetch['rules_process_id'] ?>" onclick="return confirm('Are you sure to Delete Admission Rules And Process Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
+										<a href="rules_process_update.php?rules_process_id=<?php echo $fetch['rules_process_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
+                                        </a>
 									</td>
 								
 									<td class="td-actions">
 								    <center>
-										<a href="assets/images/rulesprocess/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+										<a href="assets/images/rulesprocess/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

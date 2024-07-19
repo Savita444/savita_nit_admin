@@ -66,7 +66,9 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-                                        <a href="rules_regulations_delete.php?rules_regulations_id=<?php echo $fetch['rules_regulations_id'] ?>" onclick="return confirm('Are you sure to Delete Rules And Regulations Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="rules_regulations_delete.php?rules_regulations_id=<?php echo $fetch['rules_regulations_id'] ?>" onclick="return confirm('Are you sure to Delete Rules And Regulations Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">&nbsp;
+											
+                                        <a href="rules_regulations_update.php?rules_regulations_id=<?php echo $fetch['rules_regulations_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $fetch['rules_regulations'];?></td>  

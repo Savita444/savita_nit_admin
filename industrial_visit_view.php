@@ -66,12 +66,13 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-                                        <a href="industrial_visit_delete.php?industrial_visit_id=<?php echo $fetch['industrial_visit_id'] ?>" onclick="return confirm('Are you sure to Delete Industrial Visit And Mentor Meeting Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="industrial_visit_delete.php?industrial_visit_id=<?php echo $fetch['industrial_visit_id'] ?>" onclick="return confirm('Are you sure to Delete Industrial Visit And Mentor Meeting Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">&nbsp;
+                                        <a href="industrial_visit_update.php?industrial_visit_id=<?php echo $fetch['industrial_visit_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 									<td class="td-actions">
-								    <center>
-								        <a href="assets/images/industrialvisit/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+								
+								        <a href="assets/images/industrialvisit/<?php echo $fetch['file'];?>" target="_blank" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

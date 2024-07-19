@@ -16,12 +16,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>View Cap</h4>
+								<h4>View CAP Round Process </h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item">View Cap</li>
+									<li class="breadcrumb-item">View CAP Round Process </li>
 									
 								</ol>
 							</nav>
@@ -29,7 +29,7 @@
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="cap.php" role="button">
-									Add Cap
+									Add CAP Round Process 
 								</a>
 							</div>
 						</div>
@@ -66,14 +66,15 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-                                        <a href="cap_delete.php?cap_id=<?php echo $fetch['cap_id'] ?>" onclick="return confirm('Are you sure to Delete Cap Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="cap_delete.php?cap_id=<?php echo $fetch['cap_id'] ?>" onclick="return confirm('Are you sure to Delete CAP Round Process	 Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="cap_update.php?cap_id=<?php echo $fetch['cap_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 								
 									<td class="td-actions">
-								    <center>
-										<a href="assets/images/cap/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok">Download</i>										
+										<a href="assets/images/cap/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
+										<i class="btn-icon-only icon-ok">Download</i>							
 									</a>
 								</td>
                                     <td><?php echo $fetch['fld_created_date'];?></td>   

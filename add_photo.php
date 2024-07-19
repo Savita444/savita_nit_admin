@@ -65,7 +65,7 @@ error_reporting(0);
 
                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
                  
-                $query="INSERT into tbl_gallery_images(fld_image_title_id,  fld_gallery_photo) VALUES('$image_id','$a'); ";
+                $query="INSERT into tbl_gallery_images(fld_image_title_id, fld_gallery_photo) VALUES('$image_id','$a'); ";
                 $desired_dir="assets/images/gallery/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<?php include('include/head.php'); ?>
-	 <!-- <style>
+    <?php include('include/head.php'); ?>
+    <!-- <style>
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
@@ -26,86 +27,94 @@
                     readerObj.readAsDataURL(imgData.files[0]);
                 }
             }
-        </script> -->     
+        </script> -->
 
 </head>
-<body>
-	<?php include('include/header.php'); ?>
-	<?php include('include/sidebar.php'); ?>
-	<div class="main-container">
-		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-			<div class="min-height-200px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>Add Slider Images</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="view_slider.php">Home Slider</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Add Slider Images</li>
-								</ol>
-							</nav>
-						</div>
-            <div class="col-md-6 col-sm-12 text-right">
-              <div class="dropdown">
-                <a class="btn btn-primary" href="view_slider.php" role="button">
-                  View Slider
-                </a>
-              </div>
-            </div>						
-					</div>
-				</div>
-				<!-- Default Basic Forms Start -->
-				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-					<div class="clearfix">
-						<div class="pull-left">
-							<!-- <h4 class="text-blue">Add Slider Images</h4> -->
-						</div>
-					</div>
-					<br>
-					<form method="post" enctype="multipart/form-data">
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Title<span style="color: red;">*</span></label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Slider Image Title" name="Slider_title" required="">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Slider Images<span style="color: red;">*</span></label>
-							<div class="col-sm-12 col-md-10">
-								<input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                <p class="help-block" style="color: red">Select multiple images. In width-1680 X height-700 Size.</p>
-                <br>
-                <div id="dvPreview"></div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Slider Subtitle</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="Slider_description" placeholder="Enter Slider Subtitle"></textarea>
-							</div>
-						</div>
 
-						<div class="form-group row">
-							<div class="col-md-5"></div>
-							<div class="col-sm-6">
-								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
-								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="view_slider.php" class="btn btn-warning">Back</a>
-							</div>
-						</div>
-					</form>
-			</div>
-			<?php include('include/footer.php'); ?>
-		</div>
-	</div>
-	<?php include('include/script.php'); 
+<body>
+    <?php include('include/header.php'); ?>
+    <?php include('include/sidebar.php'); ?>
+    <div class="main-container">
+        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+            <div class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="title">
+                                <h4>Add Slider Images</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="view_slider.php">Home Slider</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Add Slider Images</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="view_slider.php" role="button">
+                                    View Slider
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Default Basic Forms Start -->
+                <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <!-- <h4 class="text-blue">Add Slider Images</h4> -->
+                        </div>
+                    </div>
+                    <br>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Title<span
+                                    style="color: red;">*</span></label>
+                            <div class="col-sm-12 col-md-10">
+                                <input class="form-control" type="text" placeholder="Enter Slider Image Title"
+                                    name="Slider_title" required="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Slider Images<span
+                                    style="color: red;">*</span></label>
+                            <div class="col-sm-12 col-md-10">
+                                <div id="dvPreview"></div>
+                                <input name="photo" type="file" required="" accept=" .jpg , .jpeg , .png , .gif"
+                                    id="fileupload">
+                                <!-- <p class="help-block" style="color: red">Select multiple images. In width-1680 X height-700 Size.</p> -->
+                                <br>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Slider Subtitle</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="textarea_editor form-control border-radius-0" name="Slider_description"
+                                    placeholder="Enter Slider Subtitle"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-5"></div>
+                            <div class="col-sm-6">
+                                <input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
+                                <input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
+                                <a href="view_slider.php" class="btn btn-warning">Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php include('include/footer.php'); ?>
+            </div>
+        </div>
+        <?php include('include/script.php'); 
         // include('include/footer.php');
   ?>
 </body>
+
 </html>
 
 
@@ -118,57 +127,20 @@ error_reporting(0);
     {
         extract($_POST);
 
-
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query="INSERT into tbl_slider(fld_slider_title, fld_slider_image,fld_slider_subtitle) VALUES('$Slider_title','$a','$Slider_description'); ";
-                $desired_dir="assets/images/slider_img/";
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 $add2=mysqli_query($connect,$query); 
-
-                 $save = "$desired_dir/" . $a; //This is the new file you saving
-                  $file = "$desired_dir/" . $a; //This is the original file
-
-                  list($width, $height) = getimagesize($file) ;
-
-                  $modwidth = 1680;
-
-                  // $diff = $width / $modwidth;
-
-                  // $modheight = $height / $diff;
-                  $modheight = 700;
-                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                  $image = imagecreatefromjpeg($file) ;
-                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-
-                  imagejpeg($tn, $save, 100) ;        
-                // }else{
-                //         print_r($errors);
-                // }
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
+        $name=$_FILES['photo']['name']; 
+        $type=$_FILES['photo']['type'];
+        $size=$_FILES['photo']['size'];  
+        $temp=$_FILES['photo']['tmp_name']; 
+        if($name){
+        
+                    $upload= "assets/images/slider_img/";  
+                    $imgExt=strtolower(pathinfo($name, PATHINFO_EXTENSION)); 
+                    $valid_ext= array('jpg','png','jpeg' );  
+                    $photo= rand(1000,1000000).".".$imgExt;  
+                    move_uploaded_file($temp,$upload.$photo);   
         }
+        $query="INSERT into tbl_slider(fld_slider_title, fld_slider_image,fld_slider_subtitle) VALUES('$Slider_title','$photo','$Slider_description'); ";
+        $add2=mysqli_query($connect,$query); 
 
         if($add2)
        {
@@ -185,7 +157,7 @@ error_reporting(0);
          echo '<script>';
        }
     }
-?>               
+?>
 
 <!-- <script language="javascript" type="text/javascript">
 $(function () {

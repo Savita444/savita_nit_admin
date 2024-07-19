@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="activitiesinfo_view.php">Activity Information</a></li>
+									<!-- <li class="breadcrumb-item"><a href="activitiesinfo_view.php">Activity Information</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Update Activity Information</li>
 								</ol>
 							</nav>
@@ -46,7 +46,7 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_activity where id='".$_GET['id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_activity where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
@@ -61,7 +61,7 @@
                 <select name="activity_id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
@@ -76,38 +76,37 @@
 								<textarea class="textarea_editor form-control border-radius-0" name="activity_description" placeholder="Enter Activity Description"><?php echo $fetch['activity_description'];?></textarea>
 							</div>
 						</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Activity Specification</label>
 							<div class="col-sm-12 col-md-10">
 								<textarea class="textarea_editor form-control border-radius-0" name="activity_specification" placeholder="Enter Activity Specification"><?php echo $fetch['activity_specification'];?></textarea>
 							</div>
-						</div>
+						</div> -->
            
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                
-                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-                <br>
                 <div id="dvPreview">
                   <?php
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                            <img src="../images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/activity/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/activity/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
+                    
                 </div>
-						
-
+                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+                    <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
+              </div>      
+            </div>
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
@@ -151,15 +150,14 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query=mysqli_query($connect,"update tbl_activity set
+                $query1=mysqli_query($connect,"update tbl_activity set
                 
                 activity_id='".$_POST['activity_id']."',
                 activity_description='".$_POST['activity_description']."',
-                activity_specification='".$_POST['activity_specification']."',
                 photo='".$a."'
-                where id='".$_GET['id']."'") or die(mysqli_error($connect));
+                where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="../images/activity/";
+                $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
@@ -203,18 +201,18 @@
             }
         }
 
-        if($query)
+        if($query1)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Activity Information Added Successfully.');";
+         echo " alert('Activity Information Update Successfully.');";
          echo 'window.location.href = "activitiesinfo_view.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Activity Information Not Added.');";
-         echo 'window.location.href = "add_activity.php";';
+         echo " alert('Activity Information Not Update.');";
+         echo 'window.location.href = "activitiesinfo_view.php";';
          echo '<script>';
        }
     }

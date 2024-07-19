@@ -68,7 +68,9 @@
                                     <td><?php echo ++$count; ?></td>
 									<td>
 										                                                   
-                                        <a href="scholarship_delete.php?scholarship_id=<?php echo $fetch['scholarship_id'] ?>" onclick="return confirm('Are you sure to Delete SScholarship Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="scholarship_delete.php?scholarship_id=<?php echo $fetch['scholarship_id'] ?>" onclick="return confirm('Are you sure to Delete Scholarship Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="scholarship_update.php?scholarship_id=<?php echo $fetch['scholarship_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 								

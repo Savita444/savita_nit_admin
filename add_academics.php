@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="academicsinfo_view.php">Activity Information</a></li>
+									<!-- <li class="breadcrumb-item">View Activity Information</li> -->
 									<li class="breadcrumb-item active" aria-current="page">Add Activity Information</li>
 								</ol>
 							</nav>
@@ -99,7 +99,7 @@
 							<div class="col-sm-6">
 								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="view_staff.php" class="btn btn-warning">Back</a>
+                <a href="academicsinfo_view .php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>

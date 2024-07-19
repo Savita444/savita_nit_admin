@@ -13,7 +13,7 @@ $back="cap_view.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Cap Deleted');";
+            echo "alert('CAP Round Process  Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -21,7 +21,7 @@ $back="cap_view.php";
          else
           {
             echo '<script type="text/javascript">';
-            echo "alert('Cap not Deleted');";
+            echo "alert('CAP Round Process  not Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

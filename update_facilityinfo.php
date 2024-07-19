@@ -76,12 +76,12 @@
 								<textarea class="textarea_editor form-control border-radius-0" name="facility_description" placeholder="Enter Facility Description"><?php echo $fetch['facility_description'];?></textarea>
 							</div>
 						</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Facility Description</label>
 							<div class="col-sm-12 col-md-10">
 								<textarea class="textarea_editor form-control border-radius-0" name="facility_specification" placeholder="Enter Facility Specification"><?php echo $fetch['facility_specification'];?></textarea>
 							</div>
-						</div>
+						</div> -->
            
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>

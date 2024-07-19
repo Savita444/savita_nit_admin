@@ -15,21 +15,20 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Update Photo</h4>
+								<h4>Update  Library staff</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Gallery</a></li>
-                  <li class="breadcrumb-item"><a href="view_photo.php">Photo</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Update Photo</li>
+									<li class="breadcrumb-item">View  Library staff</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Update Library staff</li>
 								</ol>
 							</nav>
 						</div>
 			       <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="view_photo.php" role="button">
-                  View Photo
+                  View Library staff
                 </a>
               </div>
             </div>

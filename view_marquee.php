@@ -22,7 +22,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Marquee</li>
+                  <!-- <li class="breadcrumb-item active" aria-current="page">Marquee</li> -->
                   <li class="breadcrumb-item active" aria-current="page">View Marquee</li>
                 </ol>
               </nav>
@@ -75,7 +75,7 @@
                   <td class="table-plus"><?php echo ++$count; ?></td>
                   <td>  
                     <a href="update_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>
-                    <a href="delete_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>" onclick="return confirm('Are You Sure To Delete Marquee')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
+                    <a href="delete_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>" onclick="return confirm('Are You Sure To Delete Marquee Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
                   </td>
                   <td><?php echo $fetch['marquee_text']; ?></td>
                   <td><?php echo $fetch['created_date']; ?></td>

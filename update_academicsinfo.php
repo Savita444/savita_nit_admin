@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="academicsinfo_view.php">Activity Information</a></li>
+									<!-- <li class="breadcrumb-item"><a href="academicsinfo_view.php">Activity Information</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Update Activity Information</li>
 								</ol>
 							</nav>
@@ -68,47 +68,47 @@
             	<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Academics Description</label>
 							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="facility_description" placeholder="Enter Facility Description"><?php echo $fetch['facility_description'];?></textarea>
+								<textarea class="textarea_editor form-control border-radius-0" name="academics_description" placeholder="Enter Facility Description"><?php echo $fetch['academics_description'];?></textarea>
 							</div>
 						</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Facility Description</label>
 							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="facility_specification" placeholder="Enter Facility Specification"><?php echo $fetch['facility_specification'];?></textarea>
+								<textarea class="textarea_editor form-control border-radius-0" name="facility_specification" placeholder="Enter Facility Specification"><?php echo $fetch['	academics_specification'];?></textarea>
 							</div>
-						</div>
+						</div> -->
            
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
                 
-                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-                <br>
                 <div id="dvPreview">
                   <?php
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/academics/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="assets/images/facility/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/academics/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
                 </div>
-						
+                <input  name="files[]" type="file"  accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+                
+                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
+                <br>
 
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
 								<input type="submit" name="update" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="facilitiesinfo_view.php" class="btn btn-warning">Back</a>
+                <a href="academicsinfo_view.php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>
@@ -146,15 +146,14 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query=mysqli_query($connect,"update tbl_facility set
+                $query=mysqli_query($connect,"update tbl_academics set
                 
-                facility_id='".$_POST['facility_id']."',
-                facility_description='".$_POST['facility_description']."',
-                facility_specification='".$_POST['facility_specification']."',
+                academics_id='".$_POST['academics_id']."',
+                academics_description='".$_POST['academics_description']."',
                 photo='".$a."'
-                where fld_facility_id='".$_GET['fld_facility_id']."'") or die(mysqli_error($connect));
+                where fld_academics_id='".$_GET['fld_academics_id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="assets/images/facility/";
+                $desired_dir="assets/images/academics/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
@@ -201,15 +200,15 @@
         if($query)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Facility Information Added Successfully.');";
-         echo 'window.location.href = "facilitiesinfo_view.php";';
+         echo " alert('Activity Information Update Successfully.');";
+         echo 'window.location.href = "academicsinfo_view.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Facility Information Not Added.');";
-         echo 'window.location.href = "add_facility.php";';
+         echo " alert('Activity Information Not Update.');";
+         echo 'window.location.href = "update_academicsinfo.php";';
          echo '<script>';
        }
     }

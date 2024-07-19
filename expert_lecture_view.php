@@ -66,12 +66,14 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-                                        <a href="expert_lecture_delete.php?expert_lecture_id=<?php echo $fetch['expert_lecture_id'] ?>" onclick="return confirm('Are you sure to Delete Expert Lecture Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a  href="expert_lecture_delete.php?expert_lecture_id=<?php echo $fetch['expert_lecture_id']; ?>"  onclick="return confirm('Are you sure to Delete Expert Lecture Record');" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a  href="expert_lecture_update.php?expert_lecture_id=<?php echo $fetch['expert_lecture_id']; ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;" >
                                         </a>
 									</td>
 									<td class="td-actions">
-								    <center>
-								        <a href="assets/images/expertlecture/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+								    
+								        <a href="assets/images/expertlecture/<?php echo $fetch['file'];?>" target="_blank" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

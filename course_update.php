@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="view_course.php">Coures Offered</a></li>
+                  					<!-- <li class="breadcrumb-item"><a href="view_course.php">Coures Offered</a></li> -->
                   					<li class="breadcrumb-item">View Coures Offered</li>
                   					<li class="breadcrumb-item">Update Coures Offered</li>
 								</ol>
@@ -54,24 +54,24 @@
 								<input class="form-control" type="text" placeholder="Enter Course Name" name="fld_co_course_name" value="<?php echo $fetch['fld_co_course_name'];?>">
 							</div>
 						</div>
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Year<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" placeholder="Enter Year" name="fld_co_year" value="<?php echo $fetch['fld_co_year'];?>">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Intake<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" placeholder="Enter Intake" name="fld_co_intake" value="<?php echo $fetch['fld_co_intake'];?>">
 							</div>
 						</div>
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Choice Code<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" placeholder="Enter Choice Code" name="fld_co_choice_code" value="<?php echo $fetch['fld_co_choice_code'];?>">
 							</div>
-						</div>
+						</div> -->
 						
 
 						<br>

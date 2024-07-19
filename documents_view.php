@@ -68,6 +68,8 @@
 									<td>
                                         <a href="documents_delete.php?documents_id=<?php echo $fetch['documents_id'] ?>" onclick="return confirm('Are you sure to Delete Documents Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
+										<a href="documents_update.php?documents_id=<?php echo $fetch['documents_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
+                                        </a>
 									</td>
 									<td><?php echo $fetch['documents_required'];?></td>
 									<td><?php echo $fetch['category'];?></td>

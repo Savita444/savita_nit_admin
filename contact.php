@@ -16,12 +16,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Contact Details</h4>
+								<h4>View Contact</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Contact</li>
+									<li class="breadcrumb-item active" aria-current="page">View Contact</li>
 								</ol>
 							</nav>
 						</div>
@@ -67,7 +67,7 @@
                                 <tr>
                                    <td><?php echo ++$count; ?></td>
 									<td>
-										<a href="contact_delete.php?fld_contact_id=<?php echo $fetch['fld_contact_id'] ?>" onclick="return confirm('Are you sure to Delete Contact')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+										<a href="contact_delete.php?fld_contact_id=<?php echo $fetch['fld_contact_id'] ?>" onclick="return confirm('Are you sure to Delete Contact Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $fld_contact_name; ?></td>              

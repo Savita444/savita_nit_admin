@@ -201,7 +201,7 @@
 							<i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="mtext">Newsletters</span>
 						</a>
 					</li> -->
-					<li class="dropdown">
+					<!-- <li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="fa fa-university"></span><span class="mtext">Notice</span>
 						</a>
@@ -209,7 +209,7 @@
 							<li><a href="department_notice_view.php">Department Notice</a></li>
 							<li><a href="msbte_notice_view.php">MSBTE Notice</a></li>
 						</ul>
-					</li>				
+					</li>				 -->
 					<li class="dropdown">
 						<a href="view_marquee.php" class="dropdown-toggle no-arrow">
 							<span class="fa fa-magic" style="font-size: 20px;"></span><span class="mtext">Marquee</span>

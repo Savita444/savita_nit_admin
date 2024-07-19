@@ -15,22 +15,27 @@
             <div class="min-height-200px">
                 <div class="page-header">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-8 col-sm-12">
                             <div class="title">
-                                <h4>Add Library staff</h4>
+                                <h4>ADD Library staff</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Library staff</li>
+                                    <li class="breadcrumb-item">View Library staff </li>
+                                    <li class="breadcrumb-item">ADD Library staff</li>
                                 </ol>
                             </nav>
                         </div>
-
+                        <div class="col-md-4 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="library_staff_view.php" role="button">
+                                    View Library staff
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
 
                 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
                     <div class="clearfix">
@@ -123,11 +128,12 @@ error_reporting(0);
                             <label class="col-sm-12 col-md-2 col-form-label">Photo <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-12 col-md-10">
+                            <div id="dvPreview"></div>
                                 <input name="files" type="file" multiple required=""
                                     accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
                                 <!-- <p class="help-block" style="color: red">Select multiple images. In width=4928px X height=3264px Size.</p> -->
-                                <br>
-                                <div id="dvPreview"></div>
+                               
+                               
                             </div>
                         </div>
 

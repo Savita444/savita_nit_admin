@@ -20,13 +20,19 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Affiliation Certificates</li>
-                  <li class="breadcrumb-item active" aria-current="page">View Affiliation Certificates</li>
+									<!-- <li class="breadcrumb-item active" aria-current="page">Affiliation Certificates</li> -->
+                  <!-- <li class="breadcrumb-item active" aria-current="page">View Affiliation Certificates</li> -->
                   <li class="breadcrumb-item active" aria-current="page">Update Affiliation Certificates</li>
 								</ol>
 							</nav>
 						</div>
-			
+            <div class="col-md-6 col-sm-12 text-right">
+              <div class="dropdown">
+                <a class="btn btn-primary" href="view_affiliation_images.php" role="button">
+                  View Affiliation Certificates
+                </a>
+              </div>
+            </div>
 					</div>
 				</div>
 
@@ -53,7 +59,7 @@
 						</div> -->
 						
 						<div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Photo</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Affiliation Certificates Photo<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">               
                  <div class="preview_box">
                     <?php
@@ -72,7 +78,7 @@
                     ?>
                     
                 </div>
-                <input type="file" name="photo" id="image"  />     
+                <input type="file" name="photo" id="image"  accept=".jpg, .jpeg, .png, .gif"/>     
               </div>
             </div>
 

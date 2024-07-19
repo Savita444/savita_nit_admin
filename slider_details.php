@@ -1,206 +1,195 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<?php include('include/head.php'); ?>
-	 <style>
-        .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
-        .preview_box img{max-width: 150px; max-height: 150px;}
+    <?php include('include/head.php'); ?>
+    <style>
+    .preview_box {
+        clear: both;
+        padding: 5px;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .preview_box img {
+        max-width: 150px;
+        max-height: 150px;
+    }
     </style>
 
     <script type="text/javascript">
-            $(document).ready(function(){
-               
-                $("#image").change(function(){
-                    readImageData(this);
-                });
-            });
-             
-            function readImageData(imgData){
-                if (imgData.files && imgData.files[0]) {
-                    var readerObj = new FileReader();
-                    
-                    readerObj.onload = function (element) {
-                        $('#preview_img').attr('src', element.target.result);
-                    }
-                    
-                    readerObj.readAsDataURL(imgData.files[0]);
-                }
+    $(document).ready(function() {
+
+        $("#image").change(function() {
+            readImageData(this);
+        });
+    });
+
+    function readImageData(imgData) {
+        if (imgData.files && imgData.files[0]) {
+            var readerObj = new FileReader();
+
+            readerObj.onload = function(element) {
+                $('#preview_img').attr('src', element.target.result);
             }
-        </script>     
+
+            readerObj.readAsDataURL(imgData.files[0]);
+        }
+    }
+    </script>
 
 </head>
-<body>
-	<?php include('include/header.php'); ?>
-	<?php include('include/sidebar.php'); ?>
-	<div class="main-container">
-		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-			<div class="min-height-200px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>Slider Details</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Home Slider</li>
-                                    <li class="breadcrumb-item active" aria-current="page">View Slider</li>
-									<li class="breadcrumb-item active" aria-current="page">Slider Details</li>
-								</ol>
-							</nav>
-						</div>
-						
-					</div>
-				</div>
-				<!-- Default Basic Forms Start -->
-				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-					<div class="clearfix">
-						<div class="pull-left">
-							<!-- <h4 class="text-blue">Slider Details</h4> -->
-						</div>
-					</div>
-					<br>
-            <?php 
-                $sel=mysqli_query($connect,"select * from  home_slider where Slider_id='".$_GET['Slider_id']."'") or die(mysqli_error($connect));
-                $fetch=mysqli_fetch_array($sel);
-            ?>  
-					<form method="post" enctype="multipart/form-data">
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Title</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Slider Image Title" value="<?php echo $fetch['Slider_title'];?>" name="Slider_title" readonly="">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Slider Images</label>
-							<div class="col-sm-12 col-md-10">
-								<div class="preview_box">
-                    <?php
-                        if ($fetch['photo']=="") 
-                        {
-                    ?>
-                            <img src="assets/images/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
-                    <?php
-                        }
-                        else
-                        {
-                    ?>                                        
-                            <img src="assets/images/home/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
-                    <?php
-                        }
-                    ?>
-                    
-                </div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Slider Description</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea class="form-control border-radius-0" name="Slider_description" placeholder="Enter text ..." readonly=""><?php echo $fetch['Slider_description'];?></textarea>
-							</div>
-						</div>
 
-						<div class="form-group row">
-							<div class="col-md-5"></div>
-							<div class="col-sm-6">
-								<a href="javascript:history.back()"><button class="btn btn-warning btn-lg" type="button">Back</button></a>
-							</div>
-						</div>
-					</form>
-			</div>
-			<?php include('include/footer.php'); ?>
-		</div>
-	</div>
-	<?php include('include/script.php'); ?>
+<body>
+    <?php include('include/header.php'); ?>
+    <?php include('include/sidebar.php'); ?>
+    <div class="main-container">
+        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+            <div class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="title">
+                                <h4>Update Home Slider</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">View Slider</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Update Home Slider</li>
+                                </ol>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Default Basic Forms Start -->
+                <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <!-- <h4 class="text-blue">Slider Details</h4> -->
+                        </div>
+                    </div>
+                    <br>
+                    <?php 
+                $sel=mysqli_query($connect,"select * from  tbl_slider where fld_slider_id='".$_GET['fld_slider_id']."'") or die(mysqli_error($connect));
+                $fetch=mysqli_fetch_array($sel);
+            ?>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Title</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input class="form-control" type="text" placeholder="Enter Slider Image Title"
+                                    value="<?php echo $fetch['fld_slider_title'];?>" name="Slider_title">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Slider Images</label>
+                            <div class="col-sm-12 col-md-10">
+                                <div class="preview_box">
+                                    <?php 
+                                        if($fetch['fld_slider_image']=="")
+                                        { 
+                                    ?>
+                                    <img id="preview_img" src="assets/images/slider_img/" height="100" width="100" />
+                                    <?php }
+                                        else
+                                        {
+                                    ?>
+                                    <img id="preview_img" src="assets/images/slider_img/<?php echo $fetch['fld_slider_image']?>" height="100"
+                                        width="100" />
+
+                                    <?php } ?>
+
+                                    <input type="file" id="image" name="fld_slider_image" accept=" .png, .jpg, .jpeg " />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Slider Description</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="form-control border-radius-0" name="Slider_description"
+                                    placeholder="Enter text ..."><?php echo $fetch['fld_slider_subtitle'];?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-5"></div>
+                            <div class="col-sm-6">
+                                <input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
+                                <a href="javascript:history.back()"><button class="btn btn-warning btn-lg"
+                                        type="button">Back</button></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php include('include/footer.php'); ?>
+            </div>
+        </div>
+        <?php include('include/script.php'); ?>
 </body>
+
 </html>
+
+
 
 
 <?php
 
 
-error_reporting(0);
+// error_reporting(0);
 
     if(isset($_POST['submit']))
     {
         extract($_POST);
 
+        $name=$_FILES['fld_slider_image']['name'];
+        $size=$_FILES['fld_slider_image']['size'];
+        $type=$_FILES['fld_slider_image']['type'];
+        $temp=$_FILES['fld_slider_image']['tmp_name'];
 
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query="INSERT into home_slider(Slider_title,photo,Slider_description) VALUES('$Slider_title','$a','$Slider_description'); ";
-                $desired_dir="images/home/";
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 $add2=mysqli_query($connect,$query); 
-
-                 $save = "$desired_dir/" . $a; //This is the new file you saving
-                  $file = "$desired_dir/" . $a; //This is the original file
-
-                  list($width, $height) = getimagesize($file) ;
-
-                  $modwidth = 760;
-
-                  // $diff = $width / $modwidth;
-
-                  // $modheight = $height / $diff;
-                  $modheight = 503;
-                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                  $image = imagecreatefromjpeg($file) ;
-                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-
-                  imagejpeg($tn, $save, 100) ;        
-                // }else{
-                //         print_r($errors);
-                // }
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
+        if($name){
+	  
+            $upload= "assets/images/slider_img/";  
+            $imgExt=strtolower(pathinfo($name, PATHINFO_EXTENSION)); 
+            $valid_ext= array('jpg','png','jpeg' );  
+            $fld_slider_image= rand(1000,1000000).".".$imgExt;  
+            move_uploaded_file($temp,$upload.$fld_slider_image);   
         }
+        else
+        {
+        $fld_slider_image=$fetch['fld_slider_image'];
+        }
+        
+        $query=mysqli_query($connect,"update tbl_slider set
+        
+        fld_slider_title='".$_POST['Slider_title']."',
+        fld_slider_image='".$fld_slider_image."',
+        fld_slider_subtitle='".$_POST['Slider_description']."'
+        
+        where fld_slider_id='".$_GET['fld_slider_id']."'") or die(mysqli_error($connect));
 
-        if($add2)
-                          {
-       echo '<script type="text/javascript">';
-       echo " alert('Slider Images Added Successfully.');";
-       echo 'window.location.href = "add_slider.php";';
-       echo '</script>';
-  
-                      }
-                     else
-                     {
-       echo '<script type="text/javascript">';
-       echo " alert('Slider Images Not Added.');";
-       echo '<script>';
-                        
-  
-                     }
+             
 
-
+        if($query)
+       {
+         echo '<script type="text/javascript">';
+         echo " alert('Home Slider Update Successfully.');";
+         echo 'window.location.href = "view_slider.php";';
+         echo '</script>';
+        }
+        else
+       {
+         echo '<script type="text/javascript">';
+         echo " alert('Home Slider Not Update.');";
+         echo 'window.location.href = "slider_details.php";';
+         echo '<script>';
+       }
     }
+?>
 
-?>               
-
-<script language="javascript" type="text/javascript">
+<!-- <script language="javascript" type="text/javascript">
 $(function () {
     $("#fileupload").change(function () {
         if (typeof (FileReader) != "undefined") {
@@ -229,4 +218,4 @@ $(function () {
         }
     });
 });
-</script>
+</script> -->

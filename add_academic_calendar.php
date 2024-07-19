@@ -38,13 +38,13 @@
                                 </ol>
                             </nav>
                         </div>
-                        <!--<div class="col-md-6 col-sm-12 text-right">-->
-                        <!--  <div class="dropdown">-->
-                        <!--    <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">-->
-                        <!--      View Facility Information-->
-                        <!--    </a>-->
-                        <!--  </div>-->
-                        <!--</div>						-->
+                        <div class="col-md-6 col-sm-12 text-right">
+                         <div class="dropdown">
+                           <a class="btn btn-primary" href="academic_calendar_view.php" role="button">
+                             View Academic Calendar
+                           </a>
+                         </div>
+                        </div>						
                     </div>
                 </div>
                 <!-- Default Basic Forms Start -->
@@ -60,7 +60,8 @@
                             <label class="col-sm-12 col-md-2 col-form-label">Academic Title<span
                                     style="color: red;">*</span></label>
                             <div class="col-sm-12 col-md-10">
-                                <input class="form-control" type="text" placeholder="Enter Academic Title" name="academic_title" required="">
+                                <input class="form-control" type="text" placeholder="Enter Academic Title"
+                                    name="academic_title" required="">
                             </div>
                         </div>
                         <div class="form-group row">

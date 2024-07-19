@@ -162,10 +162,10 @@ include('include/sidebar.php'); ?>
                                 <tr>
                                     <td class="table-plus"><?php echo ++$count; ?></td>
                                     <td>
-                                        <!-- <a href="#" data-toggle="modal"
-                                            data-target="department_update<?php //echo $fetch['designation_id'] ?>"
+                                        <a href="#" data-toggle="modal"
+                                            data-target="department_update?id=<?php echo $fetch['id'] ?>"
                                             title="Edit Department"><i class="fa fa-pencil-square-o text-success"
-                                                style="font-size: 20px"></i> </a> -->
+                                                style="font-size: 20px"></i> </a>
 
                                         <a href="department_trash.php?id=<?php echo $fetch['id'] ?>"
                                             onclick="return confirm('Are You Sure To Delete Department.')"
@@ -195,7 +195,7 @@ include('include/sidebar.php'); ?>
                                                     $view=mysqli_fetch_array($abc);
                                                 ?>
                                                 <form method="post"
-                                                    action="department_update.php?department_id=<?php echo $fetch['Department_id'] ?>">
+                                                    action="department_update.php?id=<?php echo $fetch['id'] ?>">
                                                     <div class="modal-body">
                                                         <div class="form-group row">
                                                             <label class="col-sm-12 col-md-3 col-form-label">Department

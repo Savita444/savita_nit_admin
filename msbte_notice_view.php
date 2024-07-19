@@ -78,7 +78,7 @@
                     <td><?php echo $fetch['title'];?></td>
                     <td><?php echo $fetch['msbte_notice_name'];?></td>
                     <td><?php echo $fetch['notice'];?></td>
-                     <td><a href="assets/documents/msbtenotice/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                    <td><a href="assets/documents/msbtenotice/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['msbte_notice_date'];?></td>
