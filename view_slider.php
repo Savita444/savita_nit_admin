@@ -58,7 +58,7 @@
 							<tbody>
 								<?php 
                                             $count=0; 
-                                            $query="select * from tbl_slider where is_deleted='0' order by fld_slider_id desc";
+                                            $query="select * from tbl_slider where is_deleted='0' order by id desc";
                                             $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                             
                                             while($fetch=mysqli_fetch_array($row)) {
@@ -69,8 +69,8 @@
                                             <tr>
                                                 <td><?php echo ++$count; ?></td>
                                                 <td>
-                                                    <a href="slider_delete.php?fld_slider_id=<?php echo $fetch['fld_slider_id'] ?>" onclick="return confirm('Are You Sure To Delete Home Slider Image')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                                                    <a href="slider_details.php?fld_slider_id=<?php echo $fetch['fld_slider_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                                                    <a href="slider_delete.php?id=<?php echo $fetch['id'] ?>" onclick="return confirm('Are You Sure To Delete Home Slider Image')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                                                    <a href="slider_details.php?id=<?php echo $fetch['id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                                                 </td> 
                                                 <td><?php echo $fetch['fld_slider_title'];?></td>                     
                                                 <td><a href="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" target="_blank"><img src="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" height="75px" width="75px" ></a></td>

@@ -22,7 +22,7 @@
 								</div>
 							</div>
 							<?php
-                            $res1=mysqli_query($connect,"select * from tbl_slider where is_deleted='0' order by fld_slider_id desc") or die (mysqli_error($connect));
+                            $res1=mysqli_query($connect,"select * from tbl_slider where is_deleted='0' order by id desc") or die (mysqli_error($connect));
                             $count1=mysqli_num_rows($res1);
                             ?>
 							<div class="project-info-right">

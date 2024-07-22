@@ -78,7 +78,7 @@
                     </div>
                     <br>
                     <?php 
-                $sel=mysqli_query($connect,"select * from  tbl_slider where fld_slider_id='".$_GET['fld_slider_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from  tbl_slider where id='".$_GET['fld_sliidder_id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
             ?>
                     <form method="post" enctype="multipart/form-data">
@@ -174,7 +174,7 @@
         fld_slider_image='".$fld_slider_image."',
         fld_slider_subtitle='".$_POST['Slider_description']."'
         
-        where fld_slider_id='".$_GET['fld_slider_id']."'") or die(mysqli_error($connect));
+        where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
              
 
