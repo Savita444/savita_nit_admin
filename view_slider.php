@@ -58,7 +58,7 @@
 							<tbody>
 								<?php 
                                             $count=0; 
-                                            $query="select * from tbl_slider where fld_delete='0' order by fld_slider_id desc";
+                                            $query="select * from tbl_slider where is_deleted='0' order by fld_slider_id desc";
                                             $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                             
                                             while($fetch=mysqli_fetch_array($row)) {
