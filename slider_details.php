@@ -55,12 +55,18 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">View Slider</li>
+                                    <!-- <li class="breadcrumb-item active" aria-current="page">View Slider</li> -->
                                     <li class="breadcrumb-item active" aria-current="page">Update Home Slider</li>
                                 </ol>
                             </nav>
                         </div>
-
+                        <div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="view_slider.php" role="button">
+                                    View Slider
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Default Basic Forms Start -->

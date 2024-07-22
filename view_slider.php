@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item" ria-current="page">Home Slider</li>
+									<li class="breadcrumb-item" ria-current="page">View Home Slider</li>
 									<!-- <li class="breadcrumb-item active" aria-current="page">View Slider Images</li> -->
 								</ol>
 							</nav>

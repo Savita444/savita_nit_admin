@@ -67,7 +67,7 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        <a href="delete_media.php?media_id=<?php echo $fetch['media_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Media News')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_media.php?media_id=<?php echo $fetch['media_id'] ?>" onclick="return confirm('Are you sure to Delete Media News')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
                         <a href="update_media.php?media_id=<?php echo $fetch['media_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     

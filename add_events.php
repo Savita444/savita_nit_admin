@@ -21,12 +21,18 @@
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									
-									<li class="breadcrumb-item active" aria-current="page">Activities and Events</li>
+									<li class="breadcrumb-item active" aria-current="page">Add Activities and Events</li>
                   
 								</ol>
 							</nav>
 						</div>
-			
+            <div class="col-md-6 col-sm-12 text-right">
+							<div class="dropdown">
+								<a class="btn btn-primary" href="add_events.php" role="button">
+									View Activities and Events 
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 

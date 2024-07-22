@@ -17,23 +17,23 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Add Plan</h4>
+								<h4>Add Syllabus</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item">Plan</li>
+									<li class="breadcrumb-item">Add Syllabus</li>
 									
 								</ol>
 							</nav>
 						</div>
-            <!--<div class="col-md-6 col-sm-12 text-right">-->
-            <!--  <div class="dropdown">-->
-            <!--    <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">-->
-            <!--      View Facility Information-->
-            <!--    </a>-->
-            <!--  </div>-->
-            <!--</div>						-->
+            <div class="col-md-6 col-sm-12 text-right">
+             <div class="dropdown">
+               <a class="btn btn-primary" href="plan_view.php" role="button">
+                 View Syllabus
+               </a>
+             </div>
+            </div>						
 					</div>
 				</div>
 				<!-- Default Basic Forms Start -->
@@ -108,7 +108,7 @@
             </div>
             
             <div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Plan Name<span style="color: red;">*</span> : </label>
+							<label class="col-sm-12 col-md-2 col-form-label">Syllabus Name<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" placeholder="Enter Plan Name" name="plan_name" required="">
 							</div>
@@ -133,7 +133,7 @@
 							<div class="col-sm-6">
 								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="dashboard.php" class="btn btn-warning">Back</a>
+                <a href="plan_view.php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>
@@ -165,22 +165,21 @@
   $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
                $query="insert into tbl_plan(Department_id,edu_year,semister,plan_name,subject_name,file) VALUES('$Department_id','$edu_year','$semister','$plan_name','$subject_name','$a');";
-               $desired_dir="assets/documents/plan/";
+               $desired_dir="assets/documents/syllabus/";
                move_uploaded_file($fileTmpName,"$desired_dir/".$a);
                $add2=mysqli_query($connect,$query); 
-    
-
+        
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Plan Added Successfully.');";
+         echo " alert('Syllabus Added Successfully.');";
          echo 'window.location.href = "plan_view.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Plan Information Not Added.');";
+         echo " alert('Syllabus Not Added.');";
          echo 'window.location.href = "plan_view.php";';
          echo '<script>';
        }

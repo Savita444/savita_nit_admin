@@ -4,7 +4,7 @@ include "config.php";
 
 
 
-$delete1 = mysqli_query($connect,"Delete from tbl_department where id='".$_GET['id']."' ")or die(mysqli_error($connect));
+$delete1 = mysqli_query($connect,"Delete from tbl_department where fld_department_id='".$_GET['fld_department_id  ']."' ")or die(mysqli_error($connect));
 
 
 $back="departmentinfo_view.php";

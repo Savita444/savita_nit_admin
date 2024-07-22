@@ -15,7 +15,7 @@ $back="plan_view.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Plan deleted');";
+            echo "alert('Syllabus Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -23,7 +23,7 @@ $back="plan_view.php";
          else
           {
             echo '<script type="text/javascript">';
-            echo "alert('Plan not deleted');";
+            echo "alert('Syllabus Not Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

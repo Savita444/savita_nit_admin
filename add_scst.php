@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="scst_view.php">SC/ST Cell Members</a></li>
+                  					<li class="breadcrumb-item">Add SC/ST Cell Members</li>
                   					
 								</ol>
 							</nav>

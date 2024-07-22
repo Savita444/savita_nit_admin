@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Mentors</a></li>
+									<li class="breadcrumb-item">View Mentors</li>
 									
 								</ol>
 							</nav>
@@ -48,6 +48,7 @@
 								<tr>
 									<th class="table-plus datatable-nosort">Sr No</th>
 									<th class="datatable-nosort">Action</th>
+									<th>Department</th>
 									<th>Class Name</th>
 									<th>Roll Numbers</th>
 									<th>Mentor Name</th>
@@ -58,7 +59,7 @@
 							<tbody>
 								<?php 
                                 $count=0; 
-                                $query="select * from tbl_mentors where fld_delete='0' order by fld_bm_id desc";
+                                $query="select m.*, d.* from tbl_mentors m, department d  where m.department_id=d.id and fld_delete='0' order by fld_bm_id desc";
                                 $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                 
                                 while($fetch=mysqli_fetch_array($row)) {
@@ -69,12 +70,12 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!--<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">-->
-										<!--</a>-->
-                                                    
                                         <a href="mentor_delete.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" onclick="return confirm('Are you sure to Delete Mentor')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
+										<a href="mentor_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
+                                        </a>
 									</td>
+									<td><?php echo $fetch['Department'];?></td>
 									<td><?php echo $fetch['class_name'];?></td>
 									<td><?php echo $fetch['roll_no'];?></td> 
 									<td><?php echo $fetch['mentor_name'];?></td>                     

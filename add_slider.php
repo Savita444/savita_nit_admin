@@ -46,7 +46,7 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="view_slider.php">Home Slider</a></li>
+                                    <!-- <li class="breadcrumb-item"><a href="view_slider.php">Home Slider</a></li> -->
                                     <li class="breadcrumb-item active" aria-current="page">Add Slider Images</li>
                                 </ol>
                             </nav>

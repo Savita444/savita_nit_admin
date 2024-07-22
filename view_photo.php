@@ -23,7 +23,7 @@
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									<li class="breadcrumb-item">Gallery</li>
-									<li class="breadcrumb-item active" aria-current="page">Photo</li>
+									<!-- <li class="breadcrumb-item active" aria-current="page">Photo</li> -->
 									<li class="breadcrumb-item active" aria-current="page">View Photo</li>
 								</ol>
 							</nav>
@@ -31,7 +31,7 @@
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="add_photo.php" role="button">
-									ADD Photo
+									Add Photo
 								</a>
 							</div>
 						</div>

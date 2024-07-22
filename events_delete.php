@@ -18,7 +18,7 @@ $back="events_view.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Records deleted');";
+            echo "alert('Activities And Events Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -26,7 +26,7 @@ $back="events_view.php";
          else
          {
             echo '<script type="text/javascript">';
-            echo "alert('Record not deleted');";
+            echo "alert('Activities And Events Not Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

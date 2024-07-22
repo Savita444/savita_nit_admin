@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="antiragging_view.php">Antiragging Committee Members</a></li>
+                  					<li class="breadcrumb-item">Add Antiragging Committee Members</li>
                   					
 								</ol>
 							</nav>
@@ -87,7 +87,7 @@
 							<div class="col-sm-6">
 								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="submit" class="btn btn-danger" value="Cancel">&nbsp;
-                				<a href="view_gove.php" class="btn btn-warning">Back</a>
+                				<a href="antiragging_view.php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>

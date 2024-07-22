@@ -16,12 +16,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>View Plan</h4>
+								<h4>View Syllabus</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Plan</a></li>
+									<li class="breadcrumb-item">View Syllabus</li>
 									
 								</ol>
 							</nav>
@@ -29,7 +29,7 @@
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="add_plan.php" role="button">
-									Add Plan
+									Add Syllabus
 								</a>
 							</div>
 						</div>
@@ -72,10 +72,10 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!--<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">-->
-										<!--</a>-->
                                                     
-                                        <a href="plan_delete.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" onclick="return confirm('Are you sure to Delete Plan')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        <a href="plan_delete.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" onclick="return confirm('Are you sure to Delete Plan Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="plan_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $fetch['Department'];?></td>
@@ -84,8 +84,7 @@
 									<td><?php echo $fetch['plan_name'];?></td> 
 									<td><?php echo $fetch['subject_name'];?></td> 
 									<td class="td-actions">
-								    <center>
-								<a href="assets/documents/plan/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+									<a href="assets/documents/syllabus/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

@@ -22,18 +22,18 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item">Time Table Information</li>
+									<!-- <li class="breadcrumb-item">Time Table Information</li> -->
 									<li class="breadcrumb-item active" aria-current="page">Add Time Table Information</li>
 								</ol>
 							</nav>
 						</div>
-            <!--<div class="col-md-6 col-sm-12 text-right">-->
-            <!--  <div class="dropdown">-->
-            <!--    <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">-->
-            <!--      View Facility Information-->
-            <!--    </a>-->
-            <!--  </div>-->
-            <!--</div>						-->
+            <div class="col-md-6 col-sm-12 text-right">
+             <div class="dropdown">
+               <a class="btn btn-primary" href="timetableinfo_view.php" role="button">
+                  Add Time Table Information
+               </a>
+             </div>
+            </div>						
 					</div>
 				</div>
 				<!-- Default Basic Forms Start -->
@@ -103,7 +103,7 @@
 							<div class="col-sm-6">
 								<input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
 								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="dashboard.php" class="btn btn-warning">Back</a>
+                <a href="timetableinfo_view.php" class="btn btn-warning">Back</a>
 							</div>
 						</div>
 					</form>

@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li>
+                  <li class="breadcrumb-item">View Department Information</li>
                   
                 </ol>
               </nav>
@@ -60,7 +60,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.is_delete='0' order by s.id desc";
+                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.fld_delete='0' order by s.fld_department_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                 
                 
@@ -73,14 +73,14 @@
                     <td>
                         
                         
-                        <a href="delete_departmentinfo.php?id=<?php echo $fetch['id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!-- <a href="update_departmentinfo.php?fld_department_id=<?php //echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a> -->
+                        <a href="delete_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>" onclick="return confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['department_description'];?></td>
                     <td><?php echo $fetch['department_mission'];?></td>
                     <td><?php echo $fetch['department_vision'];?></td>
-                    <td><a href="assets/images/NIT/department/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/NIT/department/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
+                    <td><a href="assets/images/NIT/department/<?php echo $fetch['photo'];?>"><img src="assets/images/NIT/department/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

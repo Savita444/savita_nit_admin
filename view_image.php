@@ -23,7 +23,7 @@
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item">Gallery</li>
-									<li class="breadcrumb-item">Image Title</li>
+									<!-- <li class="breadcrumb-item">Image Title</li> -->
 									<li class="breadcrumb-item active" aria-current="page">View Image Title</li>
 								</ol>
 							</nav>
@@ -31,7 +31,7 @@
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="add_image.php" role="button">
-									ADD Image Title
+									Add Image Title
 								</a>
 							</div>
 						</div>

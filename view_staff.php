@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
+                  <!-- <li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li> -->
                   <li class="breadcrumb-item active" aria-current="page">View Faculty</li>
                 </ol>
               </nav>
@@ -50,7 +50,8 @@
                   <th>Action</th>
                   <th>Name</th>
                   <th>Designation</th>
-                  <!-- <th>Department</th> -->
+                  <th>Department</th>
+                  <!-- <th>Staff</th> -->
                   <th>Qualification</th>
                   <!--<th>Experiance</th>-->
                   <th>Email</th>
@@ -75,16 +76,17 @@
                     <td>
                         
                         <a href="delete_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Staff Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!-- <a href="update_staff.php?fld_staff_id=<?php //echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a> -->
+                        <a href="update_staff.php?fld_staff_id=<?php echo $fetch['fld_staff_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['fld_staff_name'];?></td>
                     <td><?php echo $fetch['Designation'];?></td>
-                    <!-- <td><?php //echo $fetch['Department'];?></td>    -->
+                    <td><?php echo $fetch['Department'];?></td>   
+                    <!-- <td><?php //echo $fetch['fld_staff'];?></td> -->
                     <td><?php echo $fetch['fld_staff_qualification'];?></td>
                     <!--<td><?php //echo $fetch['fld_staff_experiance'];?></td>-->
                     <td><?php echo $fetch['fld_staff_email'];?></td> 
                     <td><?php echo $fetch['fld_staff_mobile'];?></td> 
-                    <td><a href="../NIT/staff/<?php echo $fetch['fld_staff_photo'];?>" target="_blank"><img src="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" height="75px" width="75px" ></a></td>
+                    <td><a href="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" target="_blank"><img src="assets/images/staff/<?php echo $fetch['fld_staff_photo'];?>" height="75px" width="75px" ></a></td>
                     <td><?php echo $fetch['fld_created_date'];?></td>
                 </tr>
                 <?php } ?>

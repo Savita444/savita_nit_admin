@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <?php include('include/head.php'); ?>
     <style>
-        .preview_box {
-            clear: both;
-            padding: 5px;
-            margin-top: 10px;
-            text-align: left;
-        }
-        .preview_box img {
-            max-width: 150px;
-            max-height: 150px;
-        }
+    .preview_box {
+        clear: both;
+        padding: 5px;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .preview_box img {
+        max-width: 150px;
+        max-height: 150px;
+    }
     </style>
 </head>
+
 <body>
     <?php include('include/header.php'); ?>
     <?php include('include/sidebar.php'); ?>
@@ -30,8 +33,10 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Department Information</li>
+                                    <!-- <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department
+                                            Information</a></li> -->
+                                    <li class="breadcrumb-item active" aria-current="page">Add Department Information
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
@@ -41,7 +46,7 @@
                                     View Department Information
                                 </a>
                             </div>
-                        </div>						
+                        </div>
                     </div>
                 </div>
                 <!-- Default Basic Forms Start -->
@@ -52,7 +57,8 @@
                     <br>
                     <form method="post" enctype="multipart/form-data">
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Department<span
+                                    style="color: red;">*</span></label>
                             <div class="col-sm-12 col-md-10">
                                 <select name="department_id" class="form-control" required="">
                                     <option value="">Select Department</option>
@@ -65,42 +71,48 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Department Description</label>
                             <div class="col-sm-12 col-md-10">
-                                <textarea class="textarea_editor form-control border-radius-0" name="department_description" placeholder="Enter Department Description" required></textarea>
+                                <textarea class="textarea_editor form-control border-radius-0"
+                                    name="department_description" placeholder="Enter Department Description"
+                                    required></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Department Mission</label>
                             <div class="col-sm-12 col-md-10">
-                                <textarea class="textarea_editor form-control border-radius-0" name="department_mission" placeholder="Enter Department Mission"></textarea>
+                                <textarea class="textarea_editor form-control border-radius-0" name="department_mission"
+                                    placeholder="Enter Department Mission"></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Department Vision</label>
                             <div class="col-sm-12 col-md-10">
-                                <textarea class="textarea_editor form-control border-radius-0" name="department_vision" placeholder="Enter Department Vision"></textarea>
+                                <textarea class="textarea_editor form-control border-radius-0" name="department_vision"
+                                    placeholder="Enter Department Vision"></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Photo<span
+                                    style="color: red;">*</span></label>
                             <div class="col-sm-12 col-md-10">
                                 <div id="dvPreview"></div>
-                                <input name="files[]" type="file" multiple accept=".jpg, .jpeg, .png, .gif" id="fileupload">
+                                <input name="files[]" type="file" multiple accept=".jpg, .jpeg, .png, .gif"
+                                    id="fileupload">
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <div class="col-md-5"></div>
                             <div class="col-sm-6">
                                 <input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
                                 <input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                                <a href="view_staff.php" class="btn btn-warning">Back</a>
+                                <a href="departmentinfo_view.php" class="btn btn-warning">Back</a>
                             </div>
                         </div>
                     </form>
@@ -111,6 +123,7 @@
     </div>
     <?php include('include/script.php'); ?>
 </body>
+
 </html>
 
 <?php

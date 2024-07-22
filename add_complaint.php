@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="complaint_view.php">Internal Complaint Committee Members</a></li>
+                  					<li class="breadcrumb-item">Add Internal Complaint Committee Members</li>
                   					
 								</ol>
 							</nav>
@@ -111,7 +111,8 @@
     if (isset($_POST['submit'])) 
     {
         
-        extract($_POST);   
+        extract($_POST);  
+		 
 
 	$query="INSERT INTO tbl_complaint_members(fld_bm_name,Designation_id,mobilenumber,email,work_as) VALUES ('$fld_bm_name','$fld_bm_designation','$mobilenumber','$email','$work_as')";
 		        

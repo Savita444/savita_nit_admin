@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="view_gove.php">Governing Board Members</a></li>
+                  					<!-- <li class="breadcrumb-item"><a href=	"view_gove.php">Governing Board Members</a></li> -->
                   					<li class="breadcrumb-item">Update Governing Board Members</li>
 								</ol>
 							</nav>
@@ -69,6 +69,20 @@
 								</select>
 							</div>
 						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Address<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<!-- <textarea class="form-control" type="text" placeholder="Enter Name" name="gov_address" required=""> -->
+								<textarea class="textarea_editor form-control border-radius-0" name="gov_address" placeholder="Enter Academics Description"><?php echo $fetch['gov_address']?></textarea>
+							</div>
+						</div>
+						<br>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Education<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" placeholder="Enter Title" name="education"  value="<?php echo $fetch['education']?>">
+							</div>
+						</div>
 
 						<br>
 
@@ -98,7 +112,9 @@
       extract($_POST);
      $asv="update tbl_board_members set
                 fld_bm_name='".$_POST['fld_bm_name']."',
-                Designation_id='".$_POST['Designation_id']."'             
+                Designation_id='".$_POST['Designation_id']."',
+				gov_address='".$_POST['gov_address']."',
+				education='".$_POST['education']."'           
                 where fld_bm_id='".$_GET['fld_bm_id']."'";
 
      $update=mysqli_query($connect,$asv) or die(mysqli_error($connect));

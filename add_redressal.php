@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="redressal_view.php">Grievance Redressal Committee Members</a></li>
+                  					<li class="breadcrumb-item">Add Grievance Redressal Committee Members</li>
                   					
 								</ol>
 							</nav>

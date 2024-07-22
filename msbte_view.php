@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">MSBTE Affiliation</a></li>
+									<li class="breadcrumb-item"><a href="#">View MSBTE Affiliation</a></li>
 									
 								</ol>
 							</nav>
@@ -68,16 +68,16 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										
-                                                    
                                         <a href="msbte_delete.php?msbte_id=<?php echo $fetch['msbte_id'] ?>" onclick="return confirm('Are you sure to Delete MSBTE Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="msbte_update.php?msbte_id=<?php echo $fetch['msbte_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 								
 									<td><?php echo $fetch['title'];?></td> 
 									<td class="td-actions">
-								    <center>
-								<a href="assets/documents/affiliationmsbte/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+								   
+								<a href="assets/documents/affiliationmsbte/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a>
 								</td>

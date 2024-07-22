@@ -18,7 +18,7 @@ $back="achievements_view.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Records deleted');";
+            echo "alert('Achievements And Awards Records Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -26,7 +26,7 @@ $back="achievements_view.php";
          else
          {
             echo '<script type="text/javascript">';
-            echo "alert('Record not deleted');";
+            echo "alert('Achievements And Awards Record Not Deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

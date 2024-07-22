@@ -48,8 +48,6 @@
                         
                         $view=mysqli_query($connect,"select * from cap where cap_id='".$_GET['cap_id']."'") or die(mysqli_error($connect));
                         $fetch = mysqli_fetch_array($view);
-                        
-                    
                         ?>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Upload PDf<span style="color: red;">*</span></label>

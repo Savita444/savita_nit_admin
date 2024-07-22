@@ -26,7 +26,13 @@
 								</ol>
 							</nav>
 						</div>
-            
+						<div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="newsletters_view.php" role="button">
+                                    View Newsletters 
+                                </a>
+                            </div>
+                        </div>
 					</div>
 				</div>
 				<!-- Default Basic Forms Start -->

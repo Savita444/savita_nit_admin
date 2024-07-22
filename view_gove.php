@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Governing Board Members</a></li>
+									<li class="breadcrumb-item">View Governing Board Members</li>
 								
 								</ol>
 							</nav>
@@ -72,11 +72,10 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!--<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">-->
-										<!--</a>-->
-                                                    
                                         <a href="gove_delete.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" onclick="return confirm('Are you sure to Delete Governing Board Members')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
+										<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">
+										</a>
 									</td>
 									<td><?php echo $fetch['fld_bm_name'];?></td>
 									<td><?php echo $fetch['Designation'];?></td>  

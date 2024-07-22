@@ -20,7 +20,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  					<li class="breadcrumb-item"><a href="view_alumini_committee.php">Governing Board Members</a></li>
+                  					<!-- <li class="breadcrumb-item"><a href="view_alumini_committee.php">Governing Board Members</a></li> -->
                   					<li class="breadcrumb-item">Add Governing Board Members</li>
 								</ol>
 							</nav>
@@ -76,7 +76,7 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Education<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Title" name="education" required="">
+								<input class="form-control" type="text" placeholder="Enter Title" name="education" >
 							</div>
 						</div>
 						<div class="form-group row">
@@ -113,7 +113,7 @@
       // }
       //   else{
 
-	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id,gov_address, education) VALUES ('$fld_bm_name','$fld_bm_designation', '$gov_address', '$education')";
+	$query="INSERT INTO tbl_board_members(fld_bm_name,Designation_id,gov_address,education) VALUES ('$fld_bm_name','$fld_bm_designation', '$gov_address', '$education')";
 		        
 		        $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
 		        if ($row) 

@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
+									<!-- <li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Update Faculty</li>
 								</ol>
 							</nav>
@@ -45,58 +45,61 @@
 					</div>
 					<br>
 					<form method="post" enctype="multipart/form-data">
-            <?php 
-                $sel=mysqli_query($connect,"select * from tbl_staff where fld_staff_id='".$_GET['fld_staff_id']."'") or die(mysqli_error($connect));
-                $fetch=mysqli_fetch_array($sel);
+          <?php 
+                        
+              $view=mysqli_query($connect,"select * from tbl_staff where fld_staff_id='".$_GET['fld_staff_id']."'") or die(mysqli_error($connect));
+              $fetch = mysqli_fetch_array($view);
               ?>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php echo $fetch['fld_staff_name'];?>">
+								<input class="form-control" type="text" placeholder="Enter Name" name="fld_staff_name" required="" value="<?php echo $fetch['fld_staff_name'];?>">
 							</div>
 						</div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Desgination<span style="color: red;">*</span></label>
+              <label class="col-sm-12 col-md-2 col-form-label">Designation<span
+                      style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <select name="designation" class="form-control"  required="">
-                    <option value="">Select Designation</option>
-                        <?php
-                            $query1=mysqli_query($connect,"select * from designation where fld_delete='0' order by Designation_id desc");
-                            while($row=mysqli_fetch_assoc($query1)){
-                              extract($row);
-                          ?>
-                    <option value="<?php echo $row['Designation_id'];?>" <?php if ($fetch['Designation_id']==$row['Designation_id']){echo "selected";} ?>><?php echo $row['Designation'];?></option>
-                    <?php  }?>
-                 </select>
+                  <select name="Designation_id" class="form-control">
+                      <option value="">Select Designation</option>
+                      <?php
+                $query1=mysqli_query($connect,"select * from designation where fld_delete='0' order by Designation_id desc");
+                while($row=mysqli_fetch_assoc($query1)){
+                  extract($row);
+              ?>
+                      <option value="<?php echo $row['Designation_id']; ?>"
+                          <?php if($fetch['Designation_id']==$row['Designation_id']) {echo "selected";} ?>>
+                          <?php echo $row['Designation']; ?></option>
+                      <?php  }?>
+                  </select>
               </div>
-            </div>
+          </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
-              <div class="col-sm-12 col-md-10">
-                <select name="department" class="form-control">
-                    <option value="">Select Department</option>
-                        <?php
-                            $query1=mysqli_query($connect,"select * from department where Department_delete='0'");
-                            while($row=mysqli_fetch_assoc($query1)){
-                              extract($row);
-                          ?>
-                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['Department_id']==$row['Department_id']){echo "selected";} ?>><?php echo $row['department'];?></option>
-                    <?php  }?>
-                 </select>
-              </div>
-            </div>
+                            <label class="col-sm-12 col-md-2 col-form-label">Department<span
+                                    style="color: red;">*</span></label>
+                            <div class="col-sm-12 col-md-10">
+                                <select name="Department_id" class="form-control">
+                                    <option value="">Select Department</option>
+                                    <?php
+                              $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
+                              while($row=mysqli_fetch_assoc($query1)){
+                                extract($row);
+                            ?>
+                                    <option value="<?php echo $row['id']; ?>"
+                                        <?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>>
+                                        <?php echo $row['Department']; ?></option>
+                                    <?php  }?>
+                                </select>
+                            </div>
+                        </div>
+           
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Qualification<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
                 <input class="form-control" type="text" placeholder="Enter Qualification" name="qualification" value="<?php echo $fetch['fld_staff_qualification'];?>">
               </div>
             </div>
-            <!-- <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Experiance<span style="color: red;">*</span></label>
-              <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" placeholder="Enter Experiance" name="experiance" value="<?php //echo $fetch['fld_staff_experiance'];?>">
-              </div>
-            </div> -->
+           
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Email<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
@@ -128,9 +131,11 @@
                         }
                    ?>
                 </div>
-                <input  name="photo" type="file" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+                <input name="photo" type="file" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
               </div>
             </div>
+						
+
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
@@ -141,10 +146,9 @@
 						</div>
 					</form>
 			</div>
-			
+			<?php include('include/footer.php'); ?>
 		</div>
 	</div>
-  <?php include('include/footer.php'); ?>
 	<?php include('include/script.php'); 
         // include('include/footer.php');
   ?>
@@ -153,6 +157,8 @@
 
 <?php
     
+    error_reporting(0);
+
     if(isset($_POST['submit']))
     {
      extract($_POST);
@@ -179,12 +185,12 @@
         }
       
       $update=mysqli_query($connect,"update tbl_staff set
-                fld_staff_name='".$name."', 
-                Designation_id='".$_POST['designation']."',
-                Department_id='".$_POST['department']."',
+                fld_staff_name='".$fld_staff_name."', 
+                Designation_id='".$_POST['Designation_id']."',
+                Department_id='".$_POST['Department_id']."',
                 fld_staff_qualification='".$_POST['qualification']."',
                 fld_staff_photo='".$photo."'
-                where fld_staff_id='".$_SESSION['fld_staff_id']."'") or die(mysqli_error($connect));
+                where fld_staff_id='".$_GET['fld_staff_id']."'") or die(mysqli_error($connect));
      if($update)
       {
         echo '<script type="text/javascript">';
@@ -199,8 +205,7 @@
         echo '<script>';
       }
     }
-?> 
-       
+?>                
 
 <!-- <script language="javascript" type="text/javascript">
 $(function () {

@@ -21,7 +21,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Antiragging Committee Members</a></li>
+									<li class="breadcrumb-item">Add Antiragging Committee Members</li>
 									
 								</ol>
 							</nav>
@@ -70,10 +70,9 @@
                                 <tr>
                                     <td><?php echo ++$count; ?></td>
 									<td>
-										<!--<a href="gove_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>"  class="fa fa-edit" style="font-size: 20px; color: green;">-->
-										<!--</a>-->
-                                                    
                                         <a href="antiragging_delete.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" onclick="return confirm('Are you sure to Delete Antiragging Committee Members')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+                                        </a>
+										<a href="antiragging_update.php?fld_bm_id=<?php echo $fetch['fld_bm_id'] ?>" class="fa fa-edit"  style="color: green;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $fetch['fld_bm_name'];?></td>

@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li>
+									<!-- <li class="breadcrumb-item"><a href="view_staff.php">Faculty</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Add Faculty</li>
 								</ol>
 							</nav>

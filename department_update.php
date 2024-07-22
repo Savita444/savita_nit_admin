@@ -8,7 +8,7 @@ if (isset($_POST['update']))
         $department1=$_POST['department'];
          $department=ucwords(strtolower($department1));
         $coulmn=array();
-        $query1=mysqli_query($connect,"select * from department where Department_id!='".$_GET['department_id']."' and Department_delete='0'");
+        $query1=mysqli_query($connect,"select * from department where id!='".$_GET['id']."' and Department_delete='0'");
         while ($row=mysqli_fetch_assoc($query1))
         {
           $coulmn[]=$row['Department'];
@@ -28,7 +28,7 @@ if (isset($_POST['update']))
         else
         {
 
-            $query="Update department set Department='".$department."' where Department_id='".$_GET['department_id']."' ";
+            $query="Update department set Department='".$department."' where id='".$_GET['id']."' ";
             //echo $query."<br>";
             $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
             if ($row) 

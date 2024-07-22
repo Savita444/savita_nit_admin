@@ -12,7 +12,7 @@
 	<?php include('include/sidebar.php'); ?>
 	<div class="main-container">
 		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-			<div class="min-height-200px">
+			<di class="min-height-200px">
 				<div class="page-header">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li>
+									<!-- <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li> -->
 									<li class="breadcrumb-item active" aria-current="page">Update Department Information</li>
 								</ol>
 							</nav>
@@ -46,31 +46,31 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_department where id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_department where fld_department_id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
 						<!--	<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>-->
 						<!--	<div class="col-sm-12 col-md-10">-->
-						<!--		<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php echo $fetch['fld_staff_name'];?>">-->
+						<!--		<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php //echo $fetch['fld_staff_name'];?>">-->
 						<!--	</div>-->
 						<!--</div>-->
-                <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
-              <div class="col-sm-12 col-md-10">
-                <select name="Department_id" class="form-control">
-                    <option value="">Select Department</option>
-                        <?php
-                            $query1=mysqli_query($connect,"select * from department where is_deleted='0' order by id desc");
-                            while($row=mysqli_fetch_assoc($query1)){
-                              extract($row);
-                          ?>
-                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['id']==$row['id']){echo "selected";} ?>><?php echo $row['Department'];?></option>
-                    <?php  }?>
-                 </select>
-              </div>
+            <div class="form-group row">
+                <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
+                <div class="col-sm-12 col-md-10">
+                  <select name="Department_id" class="form-control">
+                      <option value="">Select Department</option>
+                          <?php
+                              $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
+                              while($row=mysqli_fetch_assoc($query1)){
+                                extract($row);
+                            ?>
+                        <option value="<?php echo $row['id']; ?>"<?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>><?php echo $row['Department']; ?></option>	
+                      <?php  }?>
+                  </select>
+                </div>
             </div>
-            	<div class="form-group row">
+            <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Department Description</label>
 							<div class="col-sm-12 col-md-10">
 								<textarea class="textarea_editor form-control border-radius-0" name="department_description" placeholder="Enter Department Description"><?php echo $fetch['department_description'];?></textarea>
@@ -103,28 +103,24 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                
-                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-                <br>
                 <div id="dvPreview">
                   <?php
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                            <img src="assets/images/admin/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                            <img src="assets/images/NIT/department/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
                     <?php
                         }
                         else
                         {
                     ?>                                        
-                            <img src="../NIT/department/<?php echo $fetch['photo'];?>"  id="preview_img" height="100px" width="100px" />
+                            <img src="assets/images/NIT/department/<?php echo $fetch['photo'];?>"  id="preview_img" height="100px" width="100px" />
                     <?php
                         }
                     ?>
                 </div>
-						
-
+                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
 						<div class="form-group row">
 							<div class="col-md-5"></div>
 							<div class="col-sm-6">
@@ -177,7 +173,7 @@
                 photo='".$a."'
                 where fld_department_id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
 
-                $desired_dir="../NIT/department/";
+                $desired_dir="assets/images/NIT/department/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
         //             if(is_dir($desired_dir)==false)
@@ -224,15 +220,15 @@
         if($query)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Department Information Added Successfully.');";
+         echo " alert('Department Information Update Successfully.');";
          echo 'window.location.href = "departmentinfo_view.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Department Information Not Added.');";
-         echo 'window.location.href = "add_department.php";';
+         echo " alert('Department Information Not Update.');";
+         echo 'window.location.href = "departmentinfo_view.php";';
          echo '<script>';
        }
     }

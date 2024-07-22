@@ -67,11 +67,12 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_newsletters.php?newsletters_id=<?php echo $fetch['newsletters_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Newsletters Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="delete_newsletters.php?newsletters_id=<?php echo $fetch['newsletters_id'] ?>" onclick="return confirm('Are you sure to Delete Newsletters Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_newsletters.php?newsletters_id=<?php echo $fetch['newsletters_id'] ?>" class="fa fa-edit"  style="color:green;font-size: 20px;"></a>
                         
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
-                    <td><a href="assets/images/newsletters/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                    <td><a href="assets/images/newsletters/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['newsletters_created_date'];?></td>

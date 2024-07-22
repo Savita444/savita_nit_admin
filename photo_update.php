@@ -20,8 +20,8 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Gallery</a></li>
-                  <li class="breadcrumb-item"><a href="view_photo.php">Photo</a></li>
+									<li class="breadcrumb-item">Gallery</li>
+                  <!-- <li class="breadcrumb-item"><a href="view_photo.php">Photo</a></li> -->
                   <li class="breadcrumb-item active" aria-current="page">Update Photo</li>
 								</ol>
 							</nav>

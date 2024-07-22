@@ -59,7 +59,7 @@
 							<li><a href="plan_view.php">Add Syllabus</a></li>
 							<li><a href="newsletters_view.php">Newsletters</a></li>
 							<li><a href="view_staff.php">Faculty</a></li>
-							<li><a href="view_non_teaching_staff.php">Non Teaching Staff</a></li>
+							<!-- <li><a href="view_non_teaching_staff.php">Non Teaching Staff</a></li> -->
 						</ul>
 					</li>
 					

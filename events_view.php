@@ -22,7 +22,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<li class="breadcrumb-item">Activities and Events </li>
+									<li class="breadcrumb-item">View Activities and Events </li>
 									
 								</ol>
 							</nav>
@@ -30,7 +30,7 @@
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary" href="add_events.php" role="button">
-									ADD Activities and Events 
+									Add Activities and Events 
 								</a>
 							</div>
 						</div>
@@ -74,8 +74,8 @@
 								<tr>
 									<td class="table-plus"><?php echo ++$count; ?></td>
 									<td>	
-										<!--<a href="photo_update.php?fld_gallery_id=<?php echo $fetch['fld_gallery_id'] ?>"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>-->
 										<a href="events_delete.php?fld_gallery_id=<?php echo $fetch['fld_gallery_id'] ?>" onclick="return confirm('Are You Sure To Delete Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a>	
+										<a href="events_update.php?fld_gallery_id=<?php echo $fetch['fld_gallery_id'] ?>" class="fa fa-edit" style="color: green; font-size: 20px"></a>	
 									</td>
 									
 									<td><?php echo $fetch['Department'];?></td>

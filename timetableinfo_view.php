@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="timetableinfo_view.php">Time Table Information</a></li>
+                  <li class="breadcrumb-item">View Time Table Information</li>
                   
                 </ol>
               </nav>
@@ -70,14 +70,13 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_timetableinfo.php?timetable_id=<?php echo $fetch['timetable_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Time Table Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <!--<a href="update_achievementinfo.php?fld_achievement_id=<?php echo $fetch['fld_achievement_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>-->
+                        <a href="delete_timetableinfo.php?timetable_id=<?php echo $fetch['timetable_id'] ?>" onclick="return confirm('Are you sure to Delete Time Table Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_timetableinfo.php?timetable_id=<?php echo $fetch['timetable_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <!--<td><?php echo $fetch['year'];?></td>-->
                      <td><?php echo $fetch['semister'];?></td>
-                     <!--<td><a href="assets/images/syllabus/<?php echo $fetch['file'];?>" target="_blank"><img src="assets/images/syllabus/<?php echo $fetch['file'];?>" height="75px" width="75px" ></a></td> -->
-                     <td><a href="assets/documents/timetable/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary">
+                     <td><a href="assets/documents/timetable/<?php echo $fetch['file'];?>" class="btn btn-small btn-primary" target="_blank">
 										<i class="btn-icon-only icon-ok">Download</i>										
 									</a></td>
                     <td><?php echo $fetch['syllabus_date'];?></td>

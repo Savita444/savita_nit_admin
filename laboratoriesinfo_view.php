@@ -21,7 +21,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="laboratoriesinfo_view.php">Laboratories Information</a></li>
+                  <li class="breadcrumb-item">View Laboratories Information</li>
                   
                 </ol>
               </nav>
@@ -70,7 +70,7 @@
                     <td>
                         
                         <a href="delete_laboratoriesinfo.php?fld_laboratories_id=<?php echo $fetch['fld_laboratories_id'] ?>" onclick="refld_admin_idturn confirm('Are you sure to Delete Laboratories Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <a href="update_laboratoriesinfo.php?fld_laboratories_id=<?php echo $fetch['fld_laboratories_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['laboratories_description'];?></td>
