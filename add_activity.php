@@ -58,7 +58,7 @@
                 <select name="activity_id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by activity_id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
