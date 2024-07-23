@@ -170,7 +170,7 @@ include('include/sidebar.php'); ?>
 
                                     </td>
                                     <td><?php echo $fetch['activities'];?></td>
-                                    <td><?php echo $fetch['activities_date'];?></td>
+                                    <td><?php echo $fetch['created_at'];?></td>
 
                                     <div class="modal fade bs-example-modal-lg"
                                         id="activities_update<?php echo $fetch['id'] ?>" tabindex="-1"
