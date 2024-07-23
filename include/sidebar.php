@@ -1,7 +1,7 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="#">
-				<h2 style="font-family: cursive; color: #2f89fc">NIT</h2>
+				<h2 style="font-family: cursive; color: #2f89fc"><img src="NIT.jpg" width="100px" height="100px"></h2>
 			</a>
 		</div>
 		<div class="menu-block customscroll">
