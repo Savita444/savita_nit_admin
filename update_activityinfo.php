@@ -46,7 +46,7 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_activity where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_activity where id='".$_GET['id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
@@ -155,7 +155,7 @@
                 activity_id='".$_POST['activity_id']."',
                 activity_description='".$_POST['activity_description']."',
                 photo='".$a."'
-                where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
                 $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);

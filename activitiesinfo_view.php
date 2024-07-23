@@ -59,7 +59,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*, dp.* from tbl_activity s, activities dp where s.id=dp.id and s.is_delete='0' order by s.fld_activity_id desc";
+                  $query="select s.*, dp.* from tbl_activity s, activities dp where s.id=dp.id and s.is_delete='0' order by s.id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
@@ -70,8 +70,8 @@
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
-                        <a href="delete_activityinfo.php?fld_activity_id=<?php echo $fetch['fld_activity_id'] ?>" onclick="return confirm('Are You Sure To Delete Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_activityinfo.php?fld_activity_id=<?php echo $fetch['fld_activity_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <a href="delete_activityinfo.php?id=<?php echo $fetch['id'] ?>" onclick="return confirm('Are You Sure To Delete Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_activityinfo.php?id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['activities'];?></td>
                     <td><?php echo $fetch['activity_description'];?></td>
