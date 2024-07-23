@@ -83,7 +83,7 @@ include('include/sidebar.php'); ?>
 
 						$activities=$_POST['activities'];
 						$coulmn=array();
-						$query1=mysqli_query($connect,"select * from activities where activities_delete='0'");
+						$query1=mysqli_query($connect,"select * from activities where is_delete='0'");
 						while ($row=mysqli_fetch_assoc($query1))
 						{
 							$coulmn[]=$row['activities'];
