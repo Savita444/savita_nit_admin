@@ -51,7 +51,7 @@
                   <th>Name</th>
                   <th>Designation</th>
                   <th>Department</th>
-                  <!-- <th>Staff</th> -->
+                  <th>Staff</th>
                   <th>Qualification</th>
                   <!--<th>Experiance</th>-->
                   <th>Email</th>
@@ -81,7 +81,18 @@
                     <td><?php echo $fetch['fld_staff_name'];?></td>
                     <td><?php echo $fetch['Designation'];?></td>
                     <td><?php echo $fetch['Department'];?></td>   
-                    <!-- <td><?php //echo $fetch['fld_staff'];?></td> -->
+                    <?php
+                        if($fetch['fld_staff']=='1'){
+                          ?>
+                          <td>Non Teaching Staff</td>
+                          <?php
+                        }
+                        else{
+                          ?>
+                          <td>Teaching Staff</td>
+                          <?php
+                        }
+                    ?>
                     <td><?php echo $fetch['fld_staff_qualification'];?></td>
                     <!--<td><?php //echo $fetch['fld_staff_experiance'];?></td>-->
                     <td><?php echo $fetch['fld_staff_email'];?></td> 
