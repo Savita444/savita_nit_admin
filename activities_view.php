@@ -146,7 +146,7 @@ include('include/sidebar.php'); ?>
                             <tbody>
                                 <?php 
                                     $count=0; 
-                                    $query="select * from activities where activities_delete='0' order by activity_id desc ";
+                                    $query="select * from activities where is_delete='0' order by activity_id desc ";
                                     $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                     
                                     while($fetch=mysqli_fetch_array($row)) {
