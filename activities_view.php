@@ -146,7 +146,7 @@ include('include/sidebar.php'); ?>
                             <tbody>
                                 <?php 
                                     $count=0; 
-                                    $query="select * from activities where is_delete='0' order by activity_id desc ";
+                                    $query="select * from activities where is_delete='0' order by id desc ";
                                     $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                                     
                                     while($fetch=mysqli_fetch_array($row)) {
@@ -156,11 +156,11 @@ include('include/sidebar.php'); ?>
                                 <tr>
                                     <td class="table-plus"><?php echo ++$count; ?></td>
                                     <td><a href="#" data-toggle="modal"
-                                            data-target="#activities_update<?php echo $fetch['activity_id'] ?>"
+                                            data-target="#activities_update<?php echo $fetch['id'] ?>"
                                             title="Edit Activities"><i class="fa fa-pencil-square-o text-success"
                                                 style="font-size: 20px"></i> </a>
 
-                                        <a href="activities_trash.php?activity_id=<?php echo $fetch['activity_id'] ?>"
+                                        <a href="activities_trash.php?id=<?php echo $fetch['id'] ?>"
                                             onclick="return confirm('Are You Sure To Delete Activities Record')"
                                             title="Delete Activities"><i class="fa fa-trash text-danger"
                                                 style="font-size: 20px; padding-left: 10px"></i></a>
@@ -173,7 +173,7 @@ include('include/sidebar.php'); ?>
                                     <td><?php echo $fetch['activities_date'];?></td>
 
                                     <div class="modal fade bs-example-modal-lg"
-                                        id="activities_update<?php echo $fetch['activity_id'] ?>" tabindex="-1"
+                                        id="activities_update<?php echo $fetch['id'] ?>" tabindex="-1"
                                         role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
                                             <div class="modal-content">
@@ -185,11 +185,11 @@ include('include/sidebar.php'); ?>
 
                                                 <?php 
 
-	$abc=mysqli_query($connect,"select * from activities where activity_id='".$fetch['activity_id']."'") or die(mysqli_error($connect));
+	$abc=mysqli_query($connect,"select * from activities where id='".$fetch['id']."'") or die(mysqli_error($connect));
 	$view=mysqli_fetch_array($abc);
 ?>
                                                 <form method="post"
-                                                    action="activities_update.php?activity_id=<?php echo $fetch['activity_id'] ?>">
+                                                    action="activities_update.php?id=<?php echo $fetch['id'] ?>">
                                                     <div class="modal-body">
                                                         <div class="form-group row">
                                                             <label class="col-sm-12 col-md-3 col-form-label">Activities
