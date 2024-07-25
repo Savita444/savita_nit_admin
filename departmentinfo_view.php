@@ -60,7 +60,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.fld_delete='0' order by s.fld_department_id desc";
+                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.is_delete='0' order by s.fld_department_id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                 
                 
