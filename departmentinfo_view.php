@@ -60,7 +60,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.is_delete='0' order by s.fld_department_id desc";
+                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.is_delete='0' order by s.id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                 
                 
@@ -73,8 +73,8 @@
                     <td>
                         
                         
-                        <a href="delete_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>" onclick="return confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <a href="delete_departmentinfo.php?id=<?php echo $fetch['id'] ?>" onclick="return confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_departmentinfo.php?id=<?php echo $fetch['id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['department_description'];?></td>
