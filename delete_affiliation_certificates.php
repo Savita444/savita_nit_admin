@@ -18,7 +18,7 @@ $back="view_affiliation_images.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Gallery Photo delete');";
+            echo "alert('Affiliation Certificates delete');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -26,7 +26,7 @@ $back="view_affiliation_images.php";
          else
          {
             echo '<script type="text/javascript">';
-            echo "alert('Gallery Photo not delete');";
+            echo "alert('Affiliation Certificates not delete');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

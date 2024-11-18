@@ -46,8 +46,9 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_department where fld_department_id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
-                $fetch=mysqli_fetch_array($sel);
+                 $query=mysqli_query($connect,"select * from tbl_department where id='".$_GET['id']."'") or die(mysqli_error($connect));
+                 $fetch = mysqli_fetch_array($query);
+                
               ?>
 						<!--<div class="form-group row">-->
 						<!--	<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>-->
@@ -56,20 +57,24 @@
 						<!--	</div>-->
 						<!--</div>-->
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Department<span style="color: red;">*</span></label>
-                <div class="col-sm-12 col-md-10">
-                  <select name="Department_id" class="form-control">
-                      <option value="">Select Department</option>
-                          <?php
-                              $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
-                              while($row=mysqli_fetch_assoc($query1)){
-                                extract($row);
-                            ?>
-                        <option value="<?php echo $row['id']; ?>"<?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>><?php echo $row['Department']; ?></option>	
-                      <?php  }?>
-                  </select>
+                    <label class="col-sm-12 col-md-2 col-form-label">Department<span
+                            style="color: red;">*</span></label>
+                    <div class="col-sm-12 col-md-10">
+                        <select name="Department_id" class="form-control">
+                            <option value="">Select Department</option>
+                            <?php
+                      $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
+                      while($row=mysqli_fetch_assoc($query1)){
+                        extract($row);
+                      
+                    ?>
+                            <option value="<?php echo $row['id']; ?>"
+                                <?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>>
+                                <?php echo $row['Department']; ?></option>
+                            <?php  }?>
+                        </select>
+                    </div>
                 </div>
-            </div>
             <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Department Description</label>
 							<div class="col-sm-12 col-md-10">
@@ -96,7 +101,7 @@
 						<!--	<div class="form-group row">-->
 						<!--	<label class="col-sm-12 col-md-2 col-form-label">Department Specification</label>-->
 						<!--	<div class="col-sm-12 col-md-10">-->
-						<!--		<textarea class="textarea_editor form-control border-radius-0" name="department_specification" placeholder="Enter Department Specification"><?php echo $fetch['department_specification'];?></textarea>-->
+						<!--		<textarea class="textarea_editor form-control border-radius-0" name="department_specification" placeholder="Enter Department Specification"><?php //echo $fetch['department_specification'];?></textarea>-->
 						<!--	</div>-->
 						<!--</div>-->
            
@@ -171,7 +176,7 @@
                 department_mission='".$_POST['department_mission']."',
                 department_vision='".$_POST['department_vision']."',
                 photo='".$a."'
-                where fld_department_id='".$_GET['fld_department_id']."'") or die(mysqli_error($connect));
+                where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
                 $desired_dir="assets/images/NIT/department/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);

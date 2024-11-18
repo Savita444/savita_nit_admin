@@ -135,14 +135,14 @@
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Achievement Information Added Successfully.');";
+         echo " alert('Affiliation Certificates Added Successfully.');";
          echo 'window.location.href = "view_affiliation_images.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Achievement Information Not Added.');";
+         echo " alert('Affiliation Certificates Not Added.');";
          echo 'window.location.href = "achievementsinfo_view.php";';
          echo '<script>';
        }

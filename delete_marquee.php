@@ -15,7 +15,7 @@ $back="view_marquee.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Marquee Description deleted');";
+            echo "alert('Latest News Marquee deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -23,7 +23,7 @@ $back="view_marquee.php";
          else
           {
             echo '<script type="text/javascript">';
-            echo "alert('Marquee Description not deleted');";
+            echo "alert('Latest News Marquee not deleted');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

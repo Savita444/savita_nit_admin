@@ -136,7 +136,7 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query="insert into tbl_activity(id,activity_description,photo) VALUES('$id','$activity_description','$a');";
+                $query="insert into tbl_activity(activity_id,activity_description,photo) VALUES('$id','$activity_description','$a');";
                 $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
@@ -183,7 +183,6 @@
                 // echo "Success";
             }
         }
-
         if($add2)
        {
          echo '<script type="text/javascript">';

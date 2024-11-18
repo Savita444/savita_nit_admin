@@ -52,6 +52,13 @@
                     
                         ?>
                     <div class="form-group row">
+                        <label class="col-sm-12 col-md-2 col-form-label">Title<span style="color: red;">*</span> :
+                            </label>
+                            <div class="col-sm-12 col-md-10">
+                                <input class="form-control" type="text" placeholder="Enter Title" name="title"
+                                    required="" value="<?php echo $fetch['title']?>">
+                            </div>
+
                         <label class="col-sm-12 col-md-2 col-form-label">Upload PDf<span style="color: red;">*</span></label>
                         <div class="col-sm-12 col-md-10">
                         <div class="preview_box">
@@ -123,6 +130,7 @@ if(isset($_POST['submit']))
     $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
     $add2=mysqli_query($connect,"update student_download set
+    title='".$title."',
     file='".$a."'
     where student_id='".$_GET['student_id']."'") or die(mysqli_error($connect)); 
            

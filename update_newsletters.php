@@ -59,16 +59,17 @@
                                     <option value="">Select Department</option>
                                     <?php
                               $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
-                              while($row=mysqli_fetch_assoc($query1)){
+                              while($row=mysqli_fetch_array($query1)){
                                 extract($row);
                             ?>
                                     <option value="<?php echo $row['id']; ?>"
-                                        <?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>>
+                                        <?php if($fetch['department_id']==$row['id']) {echo "selected";} ?>>
                                         <?php echo $row['Department']; ?></option>
                                     <?php  }?>
                                 </select>
                             </div>
                         </div>
+                        
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Upload PDf<span style="color: red;">*</span></label>
                         <div class="col-sm-12 col-md-10">

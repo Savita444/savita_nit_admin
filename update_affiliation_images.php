@@ -149,7 +149,7 @@ error_reporting(0);
      if($update)
                               {
            echo '<script type="text/javascript">';
-           echo " alert('Photo Updated Successfully');";
+           echo " alert('Affiliation Certificates Updated Successfully');";
            echo 'window.location.href = "view_affiliation_images.php";';
            echo '</script>';
       
@@ -157,7 +157,7 @@ error_reporting(0);
                          else
                          {
            echo '<script type="text/javascript">';
-           echo "alert('Photo not Updated');";
+           echo "alert('Affiliation Certificates not Updated');";
              echo '<script>';
                             //echo $cQry;
       

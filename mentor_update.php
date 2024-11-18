@@ -86,7 +86,7 @@
                         <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Class Name<span style="color: red;">*</span> : </label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Enter Class" name="class_name" required="" value="<?php echo $fetch['class_name    ']?>">
+								<input class="form-control" type="text" placeholder="Enter Class" name="class_name" required="" value="<?php echo $fetch['class_name']?>">
 							</div>
 						</div>
 						<div class="form-group row">

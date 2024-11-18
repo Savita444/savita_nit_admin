@@ -17,20 +17,20 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div class="title">
-                <h4>View Marquee</h4>
+                <h4>View Latest News Marquee</h4>
               </div>
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Marquee</li> -->
-                  <li class="breadcrumb-item active" aria-current="page">View Marquee</li>
+                  <li class="breadcrumb-item active" aria-current="page">View Latest News Marquee</li>
                 </ol>
               </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
-                <a class="btn btn-primary" href="add_marquee.php" role="button">
-                  Add Marquee
+              <a class="btn btn-primary" href="add_marquee.php" role="button">
+                  Add Latest News Marquee
                 </a>
               </div>
             </div>
@@ -53,7 +53,7 @@
                   <th class="table-plus datatable-nosort">Sr No</th>
                   <th class="datatable-nosort">Action</th>
                                    <!--  <th>Image Title</th> -->
-                                    <th>Marquee Discription</th>
+                                    <th>Latest News Marquee</th>
                                     <!-- <th>Photo Description</th> -->
                                     <th>Created Date</th>
                                     <!-- <th>Modified Date</th> -->

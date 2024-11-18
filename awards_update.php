@@ -119,7 +119,7 @@
                             <div class="col-sm-6">
                                 <input type="submit" name="submit" class="btn btn-success" value="Submit">&nbsp;
                                 <input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                                <a href="events_view.php" class="btn btn-warning">Back</a>
+                                <a href="achievements_view.php" class="btn btn-warning">Back</a>
                             </div>
                         </div>
                     </form>

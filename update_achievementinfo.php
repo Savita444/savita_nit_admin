@@ -99,7 +99,7 @@
                                         }
                                     ?>
                             </div>
-                                <input name="files[]" type="file" multiple accept=" .jpg , .jpeg , .png , .gif"
+                                <input name="files" type="file" multiple accept=" .jpg , .jpeg , .png , .gif"
                                     id="fileupload">
                                 <p class="help-block" style="color: red">In width-750 X height-500 Size.</p>
 
@@ -127,93 +127,44 @@
 
 </html>
 
-
 <?php
+if(isset($_POST['submit']))
+{
+    extract($_POST);
+    
+    $fileName=$_FILES["files"]["name"];
+    $fileSize=$_FILES["files"]["size"];
+    $fileType=$_FILES["files"]["type"];
+    $fileTmpName=$_FILES["files"]["tmp_name"];  
+    $a=uniqid().$fileName;
+    $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
+    $add2=mysqli_query($connect,"update tbl_achievement set
+    achievement_title='".$achievement_title."',
+    achievement_description='".$achievement_description."',
+    photo='".$a."'
+    where fld_achievement_id='".$_GET['fld_achievement_id']."'") or die(mysqli_error($connect)); 
+           
+    $desired_dir="assets/images/achievement/";
+    move_uploaded_file($fileTmpName,"$desired_dir/".$a);
 
-// error_reporting(0);
-
-    if(isset($_POST['submit']))
-    {
-        extract($_POST);
-
-
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query="insert into tbl_achievement(achievement_title,achievement_description,photo) VALUES('$achievement_title','$achievement_description','$a');";
-                $desired_dir="assets/images/achievement/";
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 $add2=mysqli_query($connect,$query); 
-
-                //  $save = "$desired_dir/" . $a; //This is the new file you saving
-                //   $file = "$desired_dir/" . $a; //This is the original file
-
-                //   list($width, $height) = getimagesize($file) ;
-
-                //   $modwidth = 750;
-
-                 
-                //   $modheight = 500;
-                //   $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                //  if($extension=="jpg" || $extension=="jpeg" )
-                //   {
-                 
-                //   $image = imagecreatefromjpeg($file);
-
-                //   }
-                //   else if($extension=="png")
-                //   {
-                  
-                //   $image = imagecreatefrompng($file);
-
-                //   }
-
-                //   imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-
-                //   imagejpeg($tn, $save, 100) ;        
-                
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
-        }
-
-        if($add2)
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Achievement Information Update Successfully.');";
-         echo 'window.location.href = "achievementsinfo_view.php";';
-         echo '</script>';
-        }
-        else
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Achievement Information Not update.');";
-         echo 'window.location.href = "achievementsinfo_view.php";';
-         echo '<script>';
-       }
+    if($add2)
+   {
+     echo '<script type="text/javascript">';
+     echo " alert('Achievement Information Update Successfully.');";
+     echo 'window.location.href = "achievementsinfo_view.php";';
+     echo '</script>';
     }
-?>
+    else
+   {
+     echo '<script type="text/javascript">';
+     echo " alert('Achievement Information Not update.');";
+     echo 'window.location.href = "achievementsinfo_view.php";';
+     echo '<script>';
+   }
+}
+?>  
+
 
 <!-- <script language="javascript" type="text/javascript">
 $(function () {

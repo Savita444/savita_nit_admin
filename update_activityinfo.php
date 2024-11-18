@@ -58,14 +58,14 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Activity<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <select name="activity_id" class="form-control"  required="">
+                <select name="id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
-                            while($row=mysqli_fetch_assoc($query1)){
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                            while($row=mysqli_fetch_array($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['activity_id'];?>" <?php if ($fetch['activity_id']==$row['activity_id']){echo "selected";} ?>><?php echo $row['activities'];?></option>
+                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['id']==$row['id']){echo "selected";} ?>><?php echo $row['activities'];?></option>
                     <?php  }?>
                  </select>
               </div>
@@ -152,7 +152,7 @@
                 // }       
                 $query1=mysqli_query($connect,"update tbl_activity set
                 
-                activity_id='".$_POST['activity_id']."',
+                activity_id='".$_POST['id']."',
                 activity_description='".$_POST['activity_description']."',
                 photo='".$a."'
                 where id='".$_GET['id']."'") or die(mysqli_error($connect));
