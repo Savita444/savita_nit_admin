@@ -35,7 +35,6 @@
             </div>
           </div>
         </div>
-        <!-- Export Datatable start -->
         <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
           <div class="clearfix mb-20">
             <div class="pull-left">
