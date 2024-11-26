@@ -84,7 +84,7 @@
                                 <div id="dvPreview"></div>
                                 <input name="photo" type="file" required="" accept=" .jpg , .jpeg , .png , .gif"
                                     id="fileupload">
-                                <!-- <p class="help-block" style="color: red">Select multiple images. In width-1680 X height-700 Size.</p> -->
+                                <p class="help-block" style="color: red">Select image. In width-1680 X height-700 Size.</p>
                                 <br>
 
                             </div>
