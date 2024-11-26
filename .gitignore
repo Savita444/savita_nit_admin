@@ -7,7 +7,7 @@ node_modules/
 .env
 
 # Build or output directories
-# /asseets/
+/asseets/
 /vendor/
 
 # Source files (if not needed in the repo)
