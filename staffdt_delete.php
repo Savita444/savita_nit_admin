@@ -2,8 +2,6 @@
 include "config.php";
 
 
-
-
 $delete1 = mysqli_query($connect,"delete from staff_download where staff_id='".$_GET['staff_id']."' ")or die(mysqli_error($connect));
 
 

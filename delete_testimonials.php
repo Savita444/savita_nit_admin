@@ -1,7 +1,5 @@
 <?php
 include "config.php";
-
-
           $delete1 = mysqli_query($connect,"Update tbl_testimonials set fld_delete='1' where testimonials_id='".$_GET['testimonials_id']."' ")or die(mysqli_error($connect));
 
          

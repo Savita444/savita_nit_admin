@@ -10,7 +10,6 @@
         margin-top: 10px;
         text-align: left;
     }
-
     .preview_box img {
         max-width: 150px;
         max-height: 150px;

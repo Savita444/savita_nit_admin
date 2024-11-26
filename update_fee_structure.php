@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php include('include/head.php'); ?>
-
 	 <script type="text/javascript">
   function fn1()
 {

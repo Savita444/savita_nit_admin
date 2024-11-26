@@ -1,9 +1,6 @@
 <?php
 include "config.php";
 
-
-
-
 $delete1 = mysqli_query($connect,"delete from msbte_notice where msbte_notice_id='".$_GET['msbte_notice_id']."' ")or die(mysqli_error($connect));
 
 

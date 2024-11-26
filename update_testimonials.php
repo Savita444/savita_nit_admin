@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 	<?php include('include/head.php'); ?>
 	 <style>
+
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
@@ -27,6 +30,8 @@
 								</ol>
 							</nav>
 						</div>
+
+						
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="facilitiesinfo_view.php" role="button">

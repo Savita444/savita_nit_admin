@@ -71,7 +71,6 @@
     {
         extract($_POST);
 
-
         if(isset($_FILES['files'])){
             $errors= array();
             foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){

@@ -2,8 +2,6 @@
 include "config.php";
 
 
-
-
 $delete1 = mysqli_query($connect,"Update tbl_laboratories set fld_delete='1' where fld_laboratories_id='".$_GET['fld_laboratories_id']."' ")or die(mysqli_error($connect));
 
 

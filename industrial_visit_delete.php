@@ -13,7 +13,6 @@ $delete1 = mysqli_query($connect,"update industrial_visit set industrial_visit_d
 
 
 $back="industrial_visit_view.php";
-
   if($delete1)
 
           {

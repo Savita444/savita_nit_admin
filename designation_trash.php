@@ -1,7 +1,6 @@
 <?php
 include "config.php";
 
-
           $delete1 = mysqli_query($connect,"Update designation set fld_delete='1' where Designation_id='".$_GET['designation_id']."' ")or die(mysqli_error($connect));
 
          

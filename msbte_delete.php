@@ -8,7 +8,6 @@ $delete1 = mysqli_query($connect,"delete from msbte where msbte_id='".$_GET['msb
 
 
 $back="msbte_view.php";
-
   if($delete1)
 
           {

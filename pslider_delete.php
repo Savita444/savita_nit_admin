@@ -12,7 +12,6 @@ include "config.php";
 //           $delete1 = mysqli_query($connect,"Delete from home_slider where Slider_id='".$_GET['Slider_id']."'")or die(mysqli_error($connect));
 
 $delete1 = mysqli_query($connect,"Update tbl_prize_slider set fld_delete='1' where fld_pslider_id='".$_GET['fld_pslider_id']."' ")or die(mysqli_error($connect));
-
 $back="view_pslider.php";
   if($delete1)
 

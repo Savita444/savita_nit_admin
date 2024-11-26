@@ -1,7 +1,5 @@
 <?php
 include "config.php";
-
-
 $delete1 = mysqli_query($connect,"Update documents set fld_delete='1' where documents_id='".$_GET['documents_id']."'")or die(mysqli_error($connect));
 
 $back="documents_view.php";

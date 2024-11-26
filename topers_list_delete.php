@@ -1,4 +1,5 @@
 <?php
+
 include "config.php";
 // $sel=mysqli_query($connect,"select * from home_slider where Slider_id='".$_GET['Slider_id']."'") or die(mysqli_error($connect));
 //         while ($fetch=mysqli_fetch_array($sel))

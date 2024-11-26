@@ -4,7 +4,6 @@ if (isset($_POST['update']))
     {
         error_reporting(0);
         extract($_POST);
-
         $activities1=$_POST['activities'];
          $activities=ucwords(strtolower($activities1));
         $coulmn=array();

@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php include('include/head.php'); ?>
-	
 	<!-- <title>Add Gallery </title> -->
 </head>
 <body>

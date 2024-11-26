@@ -3,7 +3,6 @@ include "config.php";
 
 $delete1 = mysqli_query($connect,"update scholarship set fld_delete='1' where scholarship_id='".$_GET['scholarship_id']."' ")or die(mysqli_error($connect));
 
-
 $back="scholarship_view.php";
 
   if($delete1)

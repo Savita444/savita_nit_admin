@@ -1,6 +1,7 @@
 <?php
 include "config.php";
 
+
 // $sel=mysqli_query($connect,"select * from expert_lecture where expert_lecture_id='".$_GET['expert_lecture_id']."' ");
 // 		while ($fetch=mysqli_fetch_array($sel))
 //          {

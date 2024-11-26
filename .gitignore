@@ -8,8 +8,7 @@ node_modules/
 
 # Build or output directories
 assets/
-
-/vendor/
+vendor/
 
 # Source files (if not needed in the repo)
 src/

@@ -1,7 +1,6 @@
 <?php
 include "config.php";
 
-
 // $delete1 = mysqli_query($connect,"Delete from index_count where count_id='".$_GET['count_id']."' ")or die(mysqli_error($connect));
 
 $delete1 = mysqli_query($connect,"Update tbl_placement_cell_member set fld_delete='1' where fld_pcm_id='".$_GET['fld_pcm_id']."' ")or die(mysqli_error($connect));

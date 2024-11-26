@@ -3,7 +3,6 @@ include "config.php";
 
 
 
-
 $delete1 = mysqli_query($connect,"delete from department_notice where department_notice_id='".$_GET['department_notice_id']."' ")or die(mysqli_error($connect));
 
 

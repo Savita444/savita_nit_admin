@@ -7,7 +7,6 @@ $delete1 = mysqli_query($connect,"update journals_magazines set fld_delete='1' w
 $back="journals_magazines_view.php";
 
   if($delete1)
-
           {
             echo '<script type="text/javascript">';
             echo "alert('Journals and magazines Deleted');";

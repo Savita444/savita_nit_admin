@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>View Department</title>
     <?php include('include/head.php'); ?>

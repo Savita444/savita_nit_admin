@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+
 // $sel=mysqli_query($connect,"select * from image where image_id='".$_GET['image_id']."'") or die(mysqli_error($connect));
 //         while ($fetch=mysqli_fetch_array($sel))
 //          {

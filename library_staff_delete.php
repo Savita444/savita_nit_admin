@@ -10,7 +10,6 @@ include "config.php";
 //           unlink($photo);
 
 //           $delete1 = mysqli_query($connect,"Delete from photo where photo_id='".$_GET['photo_id']."'")or die(mysqli_error($connect));
-
 $delete1 = mysqli_query($connect,"Update library_staff set staff_delete='1' where library_staff_id='".$_GET['library_staff_id']."'")or die(mysqli_error($connect));
 
 $back="library_staff_view.php";

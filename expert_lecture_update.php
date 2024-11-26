@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 	<?php include('include/head.php'); ?>
 	 <style>
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}

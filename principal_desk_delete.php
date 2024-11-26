@@ -10,7 +10,6 @@ include "config.php";
 //           unlink($photo);
 
 //           $delete1 = mysqli_query($connect,"Delete from home_slider where Slider_id='".$_GET['Slider_id']."'")or die(mysqli_error($connect));
-
 $delete1 = mysqli_query($connect,"update tbl_principal_desk set fld_delete='1' where fld_principal_id='".$_GET['fld_principal_id']."' ")or die(mysqli_error($connect));
 
 $back="view_principal_desk.php";
