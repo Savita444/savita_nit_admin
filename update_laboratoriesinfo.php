@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <?php include('include/head.php'); ?>
-    <style>
-    .preview_box {
-        clear: both;
-        padding: 5px;
-        margin-top: 10px;
-        text-align: left;
-    }
-    .preview_box img {
-        max-width: 150px;
-        max-height: 150px;
-    }
-    </style>
+	<?php include('include/head.php'); ?>
 </head>
 
 <body>
-    <?php include('include/header.php'); ?>
-    <?php include('include/sidebar.php'); ?>
-    <div class="main-container">
-        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-            <di class="min-height-200px">
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="title">
-                                <h4>Update Laboratories Information</h4>
-                            </div>
-                            <nav aria-label="breadcrumb" role="navigation">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                    <!-- <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li> -->
-                                    <li class="breadcrumb-item active" aria-current="page">Update Laboratories Information
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-right">
-                            <div class="dropdown">
-                                <a class="btn btn-primary" href="laboratoriesinfo_view.php" role="button">
-                                    View Laboratories Information
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Default Basic Forms Start -->
-                <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <!-- <h4 class="text-blue">Add Slider Images</h4> -->
-                        </div>
-                    </div>
-                    <br>
-                    <form method="post" enctype="multipart/form-data">
-                        <?php 
+	<?php include('include/header.php'); ?>
+	<?php include('include/sidebar.php'); ?>
+	<div class="main-container">
+		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>Update Laboratories Information</h4>
+							</div>
+							<nav aria-label="breadcrumb" role="navigation">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+									<!-- <li class="breadcrumb-item">Gallery</li> -->
+                                    <li class="breadcrumb-item active" aria-current="page">Update Laboratories Information</li>
+								</ol>
+							</nav>
+						</div>
+			       <div class="col-md-6 col-sm-12 text-right">
+              <div class="dropdown">
+                <a class="btn btn-primary" href="laboratoriesinfo_view.php" role="button">
+                  View Laboratories Information
+                </a>
+              </div>
+            </div>
+					</div>
+				</div>
+
+
+				
+<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+					<div class="clearfix">
+						<div class="pull-left">
+							<!-- <h4 class="text-blue">Update Photo</h4> -->
+						</div>
+						
+					</div><br> 
+					
+					<form method="post" enctype="multipart/form-data">
+		 				  <?php 
                 $sel=mysqli_query($connect,"select * from tbl_laboratories where fld_laboratories_id='".$_GET['fld_laboratories_id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
-              ?>
-                        <!--<div class="form-group row">-->
-                        <!--	<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>-->
-                        <!--	<div class="col-sm-12 col-md-10">-->
-                        <!--		<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php //echo $fetch['fld_staff_name'];?>">-->
-                        <!--	</div>-->
-                        <!--</div>-->
-                        <div class="form-group row">
+              ?>       
+						<div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Department<span
                                     style="color: red;">*</span></label>
                             <div class="col-sm-12 col-md-10">
@@ -84,178 +67,126 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Laboratories Description</label>
 							<div class="col-sm-12 col-md-10">
 								<textarea class="textarea form-control border-radius-0" name="laboratories_description" placeholder="Enter Laboratories Description"><?php echo $fetch['laboratories_description'];?></textarea>
 							</div>
-                              </div>
-                        <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Photo<span
-                                    style="color: red;">*</span></label>
-                            <div class="col-sm-12 col-md-10">
-                                <div id="dvPreview">
-                                    <?php
+                        </div>
+						
+						<div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Photo <span class="text-danger">*</span> : </label>
+              <div class="col-sm-12 col-md-10">               
+                 <div class="preview_box">
+                    <?php
                         if ($fetch['photo']=="") 
                         {
                     ?>
-                                    <img src="assets/images/laboratories/No-image-full.jpg" alt="John Doe"
-                                        id="preview_img" height="100px" width="100px" />
-                                    <?php
+                            <img src="assets/images/laboratories/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
+                    <?php
                         }
                         else
                         {
-                    ?>
-                                    <img src="assets/images/laboratories/<?php echo $fetch['photo'];?>"
-                                        id="preview_img" height="100px" width="100px" />
-                                    <?php
+                    ?>                                        
+                            <img src="assets/images/laboratories/<?php echo $fetch['photo'];?>" alt="John Doe" id="preview_img" height="100px" width="100px" />
+                    <?php
                         }
                     ?>
-                                </div>
-                                <input name="files[]" type="file" multiple required=""
-                                    accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-                                <div class="form-group row">
-                                    <div class="col-md-5"></div>
-                                    <div class="col-sm-6">
-                                        <input type="submit" name="update" class="btn btn-success" value="Submit">&nbsp;
-                                        <input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                                        <a href="departmentinfo_view.php" class="btn btn-warning">Back</a>
-                                    </div>
-                                </div>
-                    </form>
+                    
                 </div>
+                <input type="file" name="photo" id="image"  />  
+                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>   
+              </div>
+            </div>
 
-        </div>
-    </div>
-    <?php include('include/footer.php'); ?>
-    <?php include('include/script.php'); 
-        // include('include/footer.php');
-  ?>
-</body>
-
-</html>
-
-
+						<!-- <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Description : </label>
+							<div class="col-sm-12 col-md-10">
+								<textarea class="textarea_editor form-control border-radius-0"  name="photo_description" placeholder="Enter text..."><?php //echo $fetch['photo_description'];?></textarea>
+							</div>
+						</div> -->
+												
+						<div class="form-group row">
+							<div class="col-sm-12 col-md-10">
+							<center><input class="btn btn-success" value="Update" type="submit" name="update">&nbsp;
+								
+								<a href="view_photo.php" class="btn btn-warning">Back</a></center>
+							</div>
+						</div>
+					</form>
 <?php
-
-
-// error_reporting(0);
-
+error_reporting(0);
     if(isset($_POST['update']))
     {
-        extract($_POST);
-
-
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // } 
+     extract($_POST);
+    $name=$_FILES['photo']['name'];
+    $size=$_FILES['photo']['size'];
+    $type=$_FILES['photo']['type'];
+    $temp=$_FILES['photo']['tmp_name'];
+        if($name)
+            {
+                 $desired_dir="assets/images/laboratories/";  
+                 unlink($desired_dir.$fetch['photo']);             
+                $gallery_photo=uniqid().$name;
                 
+                
+                 move_uploaded_file($temp,"$desired_dir/".$gallery_photo);
+                // $a1 = $a;
+                  $save = "$desired_dir/" . $gallery_photo; //This is the new file you saving
+                  $file = "$desired_dir/" . $gallery_photo; //This is the original file
 
+                  list($width, $height) = getimagesize($file) ;
+
+                  $modwidth = 4928;
+
+                  // $diff = $width / $modwidth;
+
+                  // $modheight = $height / $diff;
+                  $modheight = 3264;
+                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
+                  $image = imagecreatefromjpeg($file) ;
+                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
+
+                  imagejpeg($tn, $save, 100) ;
+
+            }
+        else
+            {
+                $gallery_photo=$fetch['photo'];
+            }  
+      
                 $query=mysqli_query($connect,"update tbl_laboratories set
                 
                 Department_id='".$_POST['Department_id']."',
                 laboratories_description='".$_POST['laboratories_description']."',
-                photo='".$a."'
+                photo='".$gallery_photo."'
                 where fld_laboratories_id='".$_GET['fld_laboratories_id']."'") or die(mysqli_error($connect));
-
-                $desired_dir="assets/images/laboratories/";
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 // $add2=mysqli_query($connect,$query); 
-
-                //  $save = "$desired_dir/" . $a; //This is the new file you saving
-                //   $file = "$desired_dir/" . $a; //This is the original file
-
-                //   list($width, $height) = getimagesize($file) ;
-
-                //   $modwidth = 750;
-
-                //   $modheight = 500;
-                //   $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                //   if($extension=="jpg" || $extension=="jpeg" )
-                //   {
-                 
-                //   $image = imagecreatefromjpeg($file);
-
-                //   }
-                //   else if($extension=="png")
-                //   {
-                 
-                //   $image = imagecreatefrompng($file);
-
-                //   }
-                //   imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-                //   imagejpeg($tn, $save, 100) ;        
-                
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
-        }
-
-        if($query)
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Laboratories Information Update Successfully.');";
-         echo 'window.location.href = "laboratoriesinfo_view.php";';
-         echo '</script>';
-        }
-        else
-       {
-         echo '<script type="text/javascript">';
-         echo " alert('Laboratories Information Not Update.');";
-         echo 'window.location.href = "laboratoriesinfo_view.php";';
-         echo '<script>';
-       }
+     if($update)
+                              {
+           echo '<script type="text/javascript">';
+           echo " alert('Laboratories Information Update Successfully.');";
+           echo 'window.location.href = "laboratoriesinfo_view.php";';
+           echo '</script>';
+      
+                          }
+                         else
+                         {
+           echo '<script type="text/javascript">';
+           echo "alert('Laboratories Information Update Successfully.');";
+             echo '<script>';
+                            //echo $cQry;
+      
+                         }
     }
-?>
 
-<!-- <script language="javascript" type="text/javascript">
-$(function () {
-    $("#fileupload").change(function () {
-        if (typeof (FileReader) != "undefined") {
-            var dvPreview = $("#dvPreview");
-            dvPreview.html("");
-            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
-            $($(this)[0].files).each(function () {
-                var file = $(this);
-                if (regex.test(file[0].name.toLowerCase())) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        var img = $("<img />");
-                        img.attr("style", "height:100px;width: 100px");
-                        img.attr("src", e.target.result);
-                        dvPreview.append(img);
-                    }
-                    reader.readAsDataURL(file[0]);
-                } else {
-                    alert(file[0].name + " is not a valid image file.");
-                    dvPreview.html("");
-                    return false;
-                }
-            });
-        } else {
-            alert("This browser does not support HTML5 FileReader.");
-        }
-    });
-});
-</script> -->
+
+?>                 
+	</div>
+			 <?php include('include/footer.php'); ?>
+		</div>
+	</div>
+	<?php include('include/script.php'); ?>
+	
+</body>
+</html>

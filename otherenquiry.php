@@ -71,7 +71,7 @@
                                 <tr>
                                    <td><?php echo ++$count; ?></td>
 									<td>
-										<a href="contact_delete.php?fld_contact_id=<?php echo $fetch['fld_contact_id'] ?>" onclick="return confirm('Are you sure to Delete Other Enquiry Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
+										<a href="otherenquiry_delete.php?enquiry_id=<?php echo $fetch['enquiry_id'] ?>" onclick="return confirm('Are you sure to Delete Other Enquiry Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;">
                                         </a>
 									</td>
 									<td><?php echo $candidate_name; ?></td>              

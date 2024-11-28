@@ -1,150 +1,192 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<?php include('include/head.php'); ?>
-	 <style>
-    
-        .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
-        .preview_box img{max-width: 150px; max-height: 150px;}
+    <?php include('include/head.php'); ?>
+    <style>
+    .preview_box {
+        clear: both;
+        padding: 5px;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .preview_box img {
+        max-width: 150px;
+        max-height: 150px;
+    }
     </style>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#image").change(function() {
+            readImageData(this);
+        });
+    });
+
+    function readImageData(imgData) {
+        if (imgData.files && imgData.files[0]) {
+            var readerObj = new FileReader();
+
+            readerObj.onload = function(element) {
+                $('#preview_img').attr('src', element.target.result);
+            }
+
+            readerObj.readAsDataURL(imgData.files[0]);
+        }
+    }
+    </script>
 </head>
+
 <body>
-	<?php include('include/header.php'); ?>
-	<?php include('include/sidebar.php'); ?>
-	<div class="main-container">
-		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-			<di class="min-height-200px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>Update Department Information</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-									<!-- <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li> -->
-									<li class="breadcrumb-item active" aria-current="page">Update Department Information</li>
-								</ol>
-							</nav>
-						</div>
-            <div class="col-md-6 col-sm-12 text-right">
-              <div class="dropdown">
-                <a class="btn btn-primary" href="departmentinfo_view.php" role="button">
-                  View Department Information
-                </a>
-              </div>
-            </div>						
-					</div>
-				</div>
-				<!-- Default Basic Forms Start -->
-				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-					<div class="clearfix">
-						<div class="pull-left">
-							<!-- <h4 class="text-blue">Add Slider Images</h4> -->
-						</div>
-					</div>
-					<br>
-					<form method="post" enctype="multipart/form-data">
-            <?php 
-                 $query=mysqli_query($connect,"select * from tbl_department where id='".$_GET['id']."'") or die(mysqli_error($connect));
-                 $fetch = mysqli_fetch_array($query);
-                
-              ?>
-						<!--<div class="form-group row">-->
-						<!--	<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>-->
-						<!--	<div class="col-sm-12 col-md-10">-->
-						<!--		<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php //echo $fetch['fld_staff_name'];?>">-->
-						<!--	</div>-->
-						<!--</div>-->
-            <div class="form-group row">
-                    <label class="col-sm-12 col-md-2 col-form-label">Department<span
-                            style="color: red;">*</span></label>
-                    <div class="col-sm-12 col-md-10">
-                        <select name="Department_id" class="form-control">
-                            <option value="">Select Department</option>
-                            <?php
-                      $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
-                      while($row=mysqli_fetch_assoc($query1)){
-                        extract($row);
-                      
-                    ?>
-                            <option value="<?php echo $row['id']; ?>"
-                                <?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>>
-                                <?php echo $row['Department']; ?></option>
-                            <?php  }?>
-                        </select>
+    <?php include('include/header.php'); ?>
+    <?php include('include/sidebar.php'); ?>
+    <div class="main-container">
+        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+            <di class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="title">
+                                <h4>Update Department Information</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                    <!-- <li class="breadcrumb-item"><a href="departmentinfo_view.php">Department Information</a></li> -->
+                                    <li class="breadcrumb-item active" aria-current="page">Update Department Information
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-right">
+                            <div class="dropdown">
+                                <a class="btn btn-primary" href="departmentinfo_view.php" role="button">
+                                    View Department Information
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Department Description</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="department_description" placeholder="Enter Department Description"><?php echo $fetch['department_description'];?></textarea>
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Department Mission</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="department_mission" placeholder="Enter Department Mission"><?php echo $fetch['department_mission'];?></textarea>
-							</div>
-						</div>
-						
-						
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Department Vision</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="department_vision" placeholder="Enter Department Vision"><?php echo $fetch['department_vision'];?></textarea>
-							</div>
-						</div>
-			
-						
-						<!--	<div class="form-group row">-->
-						<!--	<label class="col-sm-12 col-md-2 col-form-label">Department Specification</label>-->
-						<!--	<div class="col-sm-12 col-md-10">-->
-						<!--		<textarea class="textarea_editor form-control border-radius-0" name="department_specification" placeholder="Enter Department Specification"><?php //echo $fetch['department_specification'];?></textarea>-->
-						<!--	</div>-->
-						<!--</div>-->
-           
-            <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Photo<span style="color: red;">*</span></label>
-              <div class="col-sm-12 col-md-10">
-                <div id="dvPreview">
-                  <?php
-                        if ($fetch['photo']=="") 
-                        {
-                    ?>
-                            <img src="assets/images/NIT/department/No-image-full.jpg" alt="John Doe" id="preview_img" height="100px" width="100px"/>
-                    <?php
-                        }
-                        else
-                        {
-                    ?>                                        
-                            <img src="assets/images/NIT/department/<?php echo $fetch['photo'];?>"  id="preview_img" height="100px" width="100px" />
-                    <?php
-                        }
-                    ?>
+                <!-- Default Basic Forms Start -->
+                <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <!-- <h4 class="text-blue">Add Slider Images</h4> -->
+                        </div>
+                    </div>
+                    <br>
+                    <form method="post" enctype="multipart/form-data">
+                        <?php 
+                                    $query=mysqli_query($connect,"select * from tbl_department where id='".$_GET['id']."'") or die(mysqli_error($connect));
+                                    $fetch = mysqli_fetch_array($query);
+                                    
+                                ?>
+                        <!--<div class="form-group row">-->
+                        <!--	<label class="col-sm-12 col-md-2 col-form-label">Name<span style="color: red;">*</span></label>-->
+                        <!--	<div class="col-sm-12 col-md-10">-->
+                        <!--		<input class="form-control" type="text" placeholder="Enter Name" name="name" required="" value="<?php //echo $fetch['fld_staff_name'];?>">-->
+                        <!--	</div>-->
+                        <!--</div>-->
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Department<span
+                                    style="color: red;">*</span></label>
+                            <div class="col-sm-12 col-md-10">
+                                <select name="Department_id" class="form-control">
+                                    <option value="">Select Department</option>
+                                    <?php
+                                            $query1=mysqli_query($connect,"select * from department where Department_delete='0' order by id desc");
+                                            while($row=mysqli_fetch_assoc($query1)){
+                                                extract($row);
+                                            
+                                            ?>
+                                    <option value="<?php echo $row['id']; ?>"
+                                        <?php if($fetch['Department_id']==$row['id']) {echo "selected";} ?>>
+                                        <?php echo $row['Department']; ?></option>
+                                    <?php  }?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Department Description</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="textarea_editor form-control border-radius-0"
+                                    name="department_description"
+                                    placeholder="Enter Department Description"><?php echo $fetch['department_description'];?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Department Mission</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="textarea_editor form-control border-radius-0" name="department_mission"
+                                    placeholder="Enter Department Mission"><?php echo $fetch['department_mission'];?></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Department Vision</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="textarea_editor form-control border-radius-0" name="department_vision"
+                                    placeholder="Enter Department Vision"><?php echo $fetch['department_vision'];?></textarea>
+                            </div>
+                        </div>
+
+
+                        <!--	<div class="form-group row">-->
+                        <!--	<label class="col-sm-12 col-md-2 col-form-label">Department Specification</label>-->
+                        <!--	<div class="col-sm-12 col-md-10">-->
+                        <!--		<textarea class="textarea_editor form-control border-radius-0" name="department_specification" placeholder="Enter Department Specification"><?php //echo $fetch['department_specification'];?></textarea>-->
+                        <!--	</div>-->
+                        <!--</div>-->
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Slider Images</label>
+                            <div class="col-sm-12 col-md-10">
+                                <div class="preview_box">
+                                    <?php 
+                                        if($fetch['photo']=="")
+                                        { 
+                                    ?>
+                                    <img id="preview_img" src="assets/images/NIT/department/No-image-full.jpg" height="100" width="100" />
+                                    <?php }
+                                        else
+                                        {
+                                    ?>
+                                    <img id="preview_img"
+                                        src="assets/images/NIT/department/<?php echo $fetch['photo']?>"
+                                        height="100" width="100" />
+
+                                    <?php } ?>
+
+                                    <input type="file" id="image" name="photo"
+                                        accept=" .png, .jpg, .jpeg " />
+                                        <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
+                                </div>
+                            
+
+                        
+                                
+                                <div class="form-group row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-sm-6">
+                                        <input type="submit" name="update" class="btn btn-success" value="Submit">&nbsp;
+                                        <input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
+                                        <a href="departmentinfo_view.php" class="btn btn-warning">Back</a>
+                                    </div>
+                                </div>
+                    </form>
                 </div>
-                <input  name="files[]" type="file" multiple required="" accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
-                <p class="help-block" style="color: red">In width-121 X height-120 Size.</p>
-						<div class="form-group row">
-							<div class="col-md-5"></div>
-							<div class="col-sm-6">
-								<input type="submit" name="update" class="btn btn-success" value="Submit">&nbsp;
-								<input type="reset" name="reset" class="btn btn-danger" value="Reset">&nbsp;
-                <a href="departmentinfo_view.php" class="btn btn-warning">Back</a>
-							</div>
-						</div>
-					</form>
-			</div>
-			
-		</div>
-	</div>
-  <?php include('include/footer.php'); ?>
-	<?php include('include/script.php'); 
+
+        </div>
+    </div>
+    <?php include('include/footer.php'); ?>
+    <?php include('include/script.php'); 
         // include('include/footer.php');
   ?>
 </body>
+
 </html>
 
 
@@ -170,8 +212,9 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query=mysqli_query($connect,"update tbl_department set
+
                 
+                $query=mysqli_query($connect,"update tbl_department set
                 Department_id='".$_POST['Department_id']."',
                 department_description='".$_POST['department_description']."',
                 department_mission='".$_POST['department_mission']."',
@@ -179,6 +222,9 @@
                 photo='".$a."'
                 where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
+                // echo $query;
+                //    die();
+               
                 $desired_dir="assets/images/NIT/department/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
@@ -238,7 +284,7 @@
          echo '<script>';
        }
     }
-?>               
+?>
 
 <!-- <script language="javascript" type="text/javascript">
 $(function () {

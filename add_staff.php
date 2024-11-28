@@ -122,7 +122,7 @@
 							<div class="col-sm-12 col-md-10">
                 <!-- <div id="preview_img"></div> -->
                 <div id="dvPreview"></div>
-								<input name="files[]" type="file" multiple accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
+								<input name="file" type="file" multiple accept=" .jpg , .jpeg , .png , .gif" id="fileupload">
                 <!-- <p class="help-block" style="color: red">In width-750 X height-500 Size.</p>  -->
 
 							</div>
@@ -159,70 +159,18 @@
         extract($_POST);
 
 
-        if(isset($_FILES['files'])){
-            $errors= array();
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];  
-                $a=uniqid().$file_name;
-                $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));
-                // if($file_size > 10485760){
-                //     $errors[]='File size must be less than 10 MB';
-                // }       
-                $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$fld_staff','$qualification','$experiance','$email','$mobile','$a');";
-                $desired_dir="assets/images/staff/";
-             
-                move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //         if(empty($errors)==true){
-        //             if(is_dir($desired_dir)==false)
-        // {                mkdir("$desired_dir", 0700);       // Create directory if it does not exist
-        //             }
-        //             if(is_dir("$desired_dir/".$a)==false){
-        //                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
-        //             }else{                                  // rename the file if another one exist
-        //                 $new_dir="$desired_dir/".$a.time();
-        //                  rename($file_tmp,$new_dir) ;               
-        //             }
-                 $add2=mysqli_query($connect,$query); 
+        $fileName=$_FILES["file"]["name"];
+            $fileSize=$_FILES["file"]["size"];
+            $fileType=$_FILES["file"]["type"];
+            $fileTmpName=$_FILES["file"]["tmp_name"];  
+            $a=uniqid().$fileName;
+            $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
-                 $save = "$desired_dir/" . $a; //This is the new file you saving
-                  $file = "$desired_dir/" . $a; //This is the original file
-
-                  list($width, $height) = getimagesize($file) ;
-
-                  $modwidth = 750;
-
-                  // $diff = $width / $modwidth;
-
-                  // $modheight = $height / $diff;
-                  $modheight = 500;
-                  $tn = imagecreatetruecolor($modwidth, $modheight) ;
-                 if($extension=="jpg" || $extension=="jpeg" )
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefromjpeg($file);
-
-                  }
-                  else if($extension=="png")
-                  {
-                  // $size = $_FILES['file']['tmp_name'];
-                  $image = imagecreatefrompng($file);
-
-                  }
-
-                  imagecopyresampled($tn, $image, 0, 0, 0, 0, $modwidth, $modheight, $width, $height) ;
-
-                  imagejpeg($tn, $save, 100) ;        
-                // }else{
-                //         print_r($errors);
-                // }
-            }
-            if(empty($error)){
-                // echo "Success";
-            }
-        }
+            $query="insert into tbl_staff(fld_staff_name,Designation_id,Department_id,fld_staff,fld_staff_qualification,fld_staff_experiance,fld_staff_email,fld_staff_mobile,fld_staff_photo) VALUES('$name','$designation','$department','$fld_staff','$qualification','$experiance','$email','$mobile','$a');";
+            
+            $desired_dir="assets/images/staff/";
+            move_uploaded_file($fileTmpName,"$desired_dir/".$a);
+            $add2=mysqli_query($connect,$query); 
 
         if($add2)
        {

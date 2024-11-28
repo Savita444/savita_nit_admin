@@ -212,7 +212,7 @@
 					</li>				 -->
 					<li class="dropdown">
 						<a href="view_marquee.php" class="dropdown-toggle no-arrow">
-							<span class="fa fa-magic" style="font-size: 20px;"></span><span class="mtext">Marquee</span>
+							<span class="fa fa-magic" style="font-size: 20px;"></span><span class="mtext">Latest News</span>
 						</a>
 					</li>
 					<!--<li class="dropdown">-->
