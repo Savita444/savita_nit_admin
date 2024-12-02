@@ -66,7 +66,16 @@
                             while($row=mysqli_fetch_array($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['id']==$row['id']){echo "selected";} ?>><?php echo $row['activities'];?></option>
+                               <option value="<?php echo $row['id']; ?>" 
+            <?php 
+            // Check if the current value matches the old value or preselected value
+            if ($oldValue == $row['id'] || (isset($fetch['id']) && $fetch['id'] == $row['id'])) { 
+                echo "selected"; 
+            } 
+            ?>>
+            <?php echo $row['activities']; ?>
+        </option>
+                    <!-- <option value="<?php echo $row['id'];?>" <?php if ($fetch['id']==$row['id']){echo "selected";} ?>><?php echo $row['activities'];?></option> -->
                     <?php  }?>
                  </select>
               </div>
