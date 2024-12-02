@@ -71,33 +71,18 @@
                  </select>
 
 
-
-
-
-                 <select name="Department_id" class="form-control">
-    <option value="">Select Department</option>
-    <?php
-    // Perform the query
-    $query1 = mysqli_query($connect, "SELECT * FROM activities WHERE is_delete='0' ORDER BY id DESC");
-    
-    // Check if the query executed successfully
-    if ($query1) {
-        // Fetch the rows one by one
-        while ($row = mysqli_fetch_assoc($query1)) {
-            ?>
-            <option value="<?php echo $row['id']; ?>"
-                <?php if ($fetch['activity_id'] == $row['id']) echo "selected"; ?>>
-                <?php echo htmlspecialchars($row['activities']); ?>
-            </option>
-            <?php
-        }
-    } else {
-        // Handle the error in query execution
-        echo '<option value="">Error fetching departments</option>';
-    }
-    ?>
-</select>
-
+                 <select name="activity_id" class="form-control">
+                                    <option value="">Select Department</option>
+                                    <?php
+                              $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                              while($row=mysqli_fetch_assoc($query1)){
+                                extract($row);
+                            ?>
+                                    <option value="<?php echo $row['id']; ?>"
+                                        <?php if($fetch['activity_id']==$row['id']) {echo "selected";} ?>>
+                                        <?php echo $row['activities']; ?></option>
+                                    <?php  }?>
+                                </select>
               </div>
             </div>
             	<div class="form-group row">
