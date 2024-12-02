@@ -58,7 +58,7 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*, dp.* from tbl_activity s, activities dp where s.id=dp.id and s.is_delete='0' order by s.id desc";
+                  $query="select s.*, dp.* from tbl_activity s, activities dp where s.activity_id=dp.id and s.is_delete='0' order by s.id desc";
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
