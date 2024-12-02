@@ -78,6 +78,8 @@
                                     <option value="">Select Department</option>
                                     <?php
                               $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                            echo $query1;
+                            
                               while($row=mysqli_fetch_assoc($query1)){
                                 extract($row);
                             ?>
