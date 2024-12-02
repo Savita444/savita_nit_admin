@@ -86,7 +86,7 @@
         while ($row = mysqli_fetch_assoc($query1)) {
             ?>
             <option value="<?php echo $row['id']; ?>"
-                <?php if ($fetch['id'] == $row['id']) echo "selected"; ?>>
+                <?php if ($fetch['activity_id'] == $row['id']) echo "selected"; ?>>
                 <?php echo htmlspecialchars($row['activities']); ?>
             </option>
             <?php
