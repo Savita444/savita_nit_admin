@@ -72,12 +72,17 @@
 
 
                  <select name="activity_id" class="form-control">
+
+
+                
+
+
     <option value="">Select Department</option>
     <?php
-    $query1 = mysqli_query($connect, "SELECT * FROM activities WHERE is_delete='0' ORDER BY id DESC");
+    $query1 = mysqli_query($connect, "SELECT * FROM activities WHERE is_delete='0' ORDER BY activity_id DESC");
     while ($row = mysqli_fetch_assoc($query1)) {
-        $selected = ($fetch['activity_id'] == $row['id']) ? 'selected' : ''; // Check if it's the selected activity
-        echo "<option value='{$row['id']}' $selected>{$row['activities']}</option>";
+        $selected = ($fetch['activity_id'] == $row['activity_id']) ? 'selected' : ''; // Check if it's the selected activity
+        echo "<option value='{$row['activity_id']}' $selected>{$row['activities']}</option>";
     }
     ?>
 </select>
