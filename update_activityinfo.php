@@ -59,28 +59,25 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Activity<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-              <?php
-// Assume $oldValue stores the previously selected value from the POST data.
-$oldValue = isset($_POST['id']) ? $_POST['id'] : ''; // Default to empty if not set
-?>
-<select name="id" class="form-control" required="">
+              <select name="id" class="form-control" required="">
     <option value="">Select Activity</option>
     <?php
+    // Retrieve previously selected value from POST or database
+    $selectedValue = isset($_POST['id']) ? $_POST['id'] : $fetch['id'];
+
     $query1 = mysqli_query($connect, "SELECT * FROM activities WHERE is_delete='0' ORDER BY id DESC");
     while ($row = mysqli_fetch_array($query1)) {
-        extract($row);
+        // Check if the current option should be selected
+        $isSelected = $selectedValue == $row['id'] ? 'selected' : '';
         ?>
-        <option value="<?php echo $row['id']; ?>" 
-            <?php 
-            // Check if the current value matches the old value or preselected value
-            if ($oldValue == $row['id'] || (isset($fetch['id']) && $fetch['id'] == $row['id'])) { 
-                echo "selected"; 
-            } 
-            ?>>
+        <option value="<?php echo $row['id']; ?>" <?php echo $isSelected; ?>>
             <?php echo $row['activities']; ?>
         </option>
-    <?php } ?>
+        <?php
+    }
+    ?>
 </select>
+
               </div>
             </div>
             	<div class="form-group row">
