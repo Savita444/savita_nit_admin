@@ -79,7 +79,7 @@
                                 extract($row);
                             ?>
                                     <option value="<?php echo $row['id']; ?>"
-                                        <?php if($fetch['activity_id']==$row['id']) {echo "selected";} ?>>
+                                        <?php if($fetch['id']==$row['id']) {echo "selected";} ?>>
                                         <?php echo $row['activities']; ?></option>
                                     <?php  }?>
                                 </select>
