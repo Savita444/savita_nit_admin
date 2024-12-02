@@ -78,8 +78,8 @@
                               while($row=mysqli_fetch_assoc($query1)){
                                 extract($row);
                             ?>
-                                    <option value="<?php echo $row['activity_id']; ?>"
-                                        <?php if($fetch['activity_id']==$row['activity_id']) {echo "selected";} ?>>
+                                    <option value="<?php echo $row['id']; ?>"
+                                        <?php if($fetch['activity_id']==$row['id']) {echo "selected";} ?>>
                                         <?php echo $row['activities']; ?></option>
                                     <?php  }?>
                                 </select>
