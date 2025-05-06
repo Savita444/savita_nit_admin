@@ -1,3 +1,4 @@
+<?php include('include/header_session.php'); ?>
 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
 					<a href="enquiry.php"><div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
 						<div class="project-info clearfix">

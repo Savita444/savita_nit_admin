@@ -3,12 +3,8 @@ session_start();
 include 'config.php';
 
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Sanitize input (optional but recommended)
-    $email = mysqli_real_escape_string($connect, $email);
-    $password = mysqli_real_escape_string($connect, $password);
+    $email = mysqli_real_escape_string($connect, $_POST['email']);
+    $password = mysqli_real_escape_string($connect, $_POST['password']);
 
     // Query to check user credentials
     $log = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE fld_email='$email' AND fld_password='$password'")
@@ -17,15 +13,55 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($log) > 0) {
         $fetch = mysqli_fetch_array($log);
 
+        // Generate random token
+        $token = bin2hex(random_bytes(32)); // 64-character secure token
+
+        // Get admin ID
+        $admin_id = $fetch['fld_id'];
+
+        // Save token to DB
+        $updateToken = mysqli_query($connect, "UPDATE tbl_admin SET token='$token' WHERE fld_id='$admin_id'")
+            or die(mysqli_error($connect));
+
         // Set session variables
         $_SESSION['admin_email'] = $fetch['fld_email'];
         $_SESSION['admin_name'] = $fetch['fld_name'];
+        $_SESSION['admin_token'] = $token;
 
         echo "<script>alert('Login successful'); window.location.href='dashboard.php';</script>";
     } else {
         echo "<script>alert('Login failed. Please check your email or password.');</script>";
     }
 }
+?>
+<?php
+// session_start(); 
+// include 'config.php';
+
+// if (isset($_POST['login'])) {
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     // Sanitize input (optional but recommended)
+//     $email = mysqli_real_escape_string($connect, $email);
+//     $password = mysqli_real_escape_string($connect, $password);
+
+//     // Query to check user credentials
+//     $log = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE fld_email='$email' AND fld_password='$password'")
+//            or die(mysqli_error($connect));
+
+//     if (mysqli_num_rows($log) > 0) {
+//         $fetch = mysqli_fetch_array($log);
+
+//         // Set session variables
+//         $_SESSION['admin_email'] = $fetch['fld_email'];
+//         $_SESSION['admin_name'] = $fetch['fld_name'];
+
+//         echo "<script>alert('Login successful'); window.location.href='dashboard.php';</script>";
+//     } else {
+//         echo "<script>alert('Login failed. Please check your email or password.');</script>";
+//     }
+// }
 ?>
 
 <!DOCTYPE html>

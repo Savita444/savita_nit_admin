@@ -1,3 +1,4 @@
+<?php include('include/header_session.php'); ?>
 <?php
 include "config.php";
 if (isset($_POST['update'])) 
