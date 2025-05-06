@@ -2,8 +2,6 @@
 include "config.php";
 
 
-
-
 $delete1 = mysqli_query($connect,"delete from tbl_redressal_members where fld_bm_id='".$_GET['fld_bm_id']."' ")or die(mysqli_error($connect));
 
 

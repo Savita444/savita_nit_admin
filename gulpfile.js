@@ -1,5 +1,4 @@
 var autoprefixer, browserSync, concat, config, gulp, imagemin, minify, path, plumber, rename, sass, streamqueue, uglify,changed;
-
 gulp = require('gulp');
 sass = require('gulp-sass');
 plumber = require('gulp-plumber');

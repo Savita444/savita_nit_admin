@@ -6,7 +6,6 @@
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
-
     <script type="text/javascript">
             $(document).ready(function(){
                

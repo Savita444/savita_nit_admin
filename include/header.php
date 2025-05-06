@@ -6,7 +6,8 @@
 		<div class="header-right">
 			<div class="brand-logo">
 				<a href="#">
-					<img src="vendors/images/logo.png" alt="" class="mobile-logo">
+					<img src="NIT.jpg" width="50px" height="50px" class="mobile-logo">
+					<!-- <img src="vendors/images/logo.png" alt="" class="mobile-logo"> -->
 				</a>
 			</div>
 			<div class="menu-icon">

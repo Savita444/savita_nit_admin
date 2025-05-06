@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <?php include('include/head.php'); ?>
     <title>Add Gallery Title</title>
 </head>

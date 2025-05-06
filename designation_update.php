@@ -2,7 +2,6 @@
 include "config.php";
 if (isset($_POST['update'])) 
     {
-        
         extract($_POST);
 
         $designation=$_POST['designation'];

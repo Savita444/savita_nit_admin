@@ -4,7 +4,6 @@ include "config.php";
 if(isset($_POST['submit']))
 {
     extract($_POST);
-
         $sname=$_FILES['fld_student_photo']['name'];
         $type=$_FILES['fld_student_photo']['type'];
         $size=$_FILES['fld_student_photo']['size'];

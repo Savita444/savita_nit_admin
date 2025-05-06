@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/dataTables.bootstrap4.css">
   <link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/responsive.dataTables.css">
 </head>
+
 <body>
   <?php include('include/header.php'); ?>
   <?php include('include/sidebar.php'); ?>
@@ -17,20 +18,20 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div class="title">
-                <h4>View Marquee</h4>
+                <h4>View Latest News</h4>
               </div>
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                   <!-- <li class="breadcrumb-item active" aria-current="page">Marquee</li> -->
-                  <li class="breadcrumb-item active" aria-current="page">View Marquee</li>
+                  <li class="breadcrumb-item active" aria-current="page">View Latest News</li>
                 </ol>
               </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
-                <a class="btn btn-primary" href="add_marquee.php" role="button">
-                  Add Marquee
+              <a class="btn btn-primary" href="add_marquee.php" role="button">
+                  Add Latest News 
                 </a>
               </div>
             </div>
@@ -53,7 +54,7 @@
                   <th class="table-plus datatable-nosort">Sr No</th>
                   <th class="datatable-nosort">Action</th>
                                    <!--  <th>Image Title</th> -->
-                                    <th>Marquee Discription</th>
+                                    <th>Latest News </th>
                                     <!-- <th>Photo Description</th> -->
                                     <th>Created Date</th>
                                     <!-- <th>Modified Date</th> -->
@@ -75,7 +76,7 @@
                   <td class="table-plus"><?php echo ++$count; ?></td>
                   <td>  
                     <a href="update_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>"><i class="fa fa-edit" style="color: green; font-size: 20px"></i></a>
-                    <a href="delete_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>" onclick="return confirm('Are You Sure To Delete Marquee Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
+                    <a href="delete_marquee.php?fld_marquee_id=<?php echo $fetch['fld_marquee_id'] ?>" onclick="return confirm('Are You Sure To Delete Latest News Record')"><i class="fa fa-trash-o" style="color: red; font-size: 20px"></i></a> 
                   </td>
                   <td><?php echo $fetch['marquee_text']; ?></td>
                   <td><?php echo $fetch['created_date']; ?></td>

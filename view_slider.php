@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/dataTables.bootstrap4.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/responsive.dataTables.css">
 </head>
+
 <body>
 	<?php include('include/header.php'); ?>
 	<?php include('include/sidebar.php'); ?>
@@ -75,8 +76,8 @@
                                                 <td><?php echo $fetch['fld_slider_title'];?></td>                     
                                                 <td><a href="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" target="_blank"><img src="assets/images/slider_img/<?php echo $fetch['fld_slider_image'];?>" height="75px" width="75px" ></a></td>
                                                 <td><?php echo $fetch['fld_slider_subtitle'];?></td>
-                                                <td><?php echo $fetch['fld_slider_created_date'];?></td>   
-                                                <td><?php echo $fetch['fld_slider_modified_date'];?></td>   
+                                                <td><?php echo $fetch['created_at'];?></td>   
+                                                <td><?php echo $fetch['updated_at'];?></td>   
                                             </tr>
                                             <?php } ?>
 							</tbody>

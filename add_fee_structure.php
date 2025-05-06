@@ -2,8 +2,8 @@
 <html>
 <head>
 	<?php include('include/head.php'); ?>
-
 	 <script type="text/javascript">
+    
   function fn1()
 {
   var pri=parseInt(document.getElementById('n1').value);

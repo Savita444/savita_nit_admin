@@ -21,7 +21,6 @@ $back="view_photo.php";
             echo "alert('Gallery Photo delete');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
-
           }
          else
          {

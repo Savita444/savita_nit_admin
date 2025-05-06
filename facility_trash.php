@@ -1,7 +1,6 @@
 <?php
 include "config.php";
 
-
           $delete1 = mysqli_query($connect,"Update facility set facility_delete='1' where facility_id='".$_GET['facility_id']."' ")or die(mysqli_error($connect));
 
           

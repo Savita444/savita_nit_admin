@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/responsive.dataTables.css">
 </head>
-
 <body>
     <?php include('include/header.php');
 include('include/sidebar.php'); ?>

@@ -1,6 +1,7 @@
 <?php
 include "config.php";
 
+
 $delete1 = mysqli_query($connect,"delete from trainingplacement where trainingplacement_id='".$_GET['trainingplacement_id']."' ")or die(mysqli_error($connect));
 
 

@@ -1,3 +1,17 @@
-/bower_components/
-/node_modules/
+# Dependency directories
+bower_components/
+node_modules/
+
+# Cache and environment files
 .sass-cache/
+.env
+
+# Build or output directories
+assets/
+vendor/
+
+# Source files (if not needed in the repo)
+src/
+
+# Database files
+database/

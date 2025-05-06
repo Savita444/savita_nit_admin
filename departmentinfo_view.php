@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
 <head>
   <?php include('include/head.php'); ?>
   <link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/jquery.dataTables.css">
@@ -59,23 +60,27 @@
               </thead>
               <tbody>
                 <?php 
-                  $count=0; 
-                  $query="select s.*,dp.* from tbl_department s,department dp where s.Department_id=dp.id  and s.fld_delete='0' order by s.fld_department_id desc";
-                  $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
-                
-                
-                  while($fetch=mysqli_fetch_array($row)) {
-
-                  extract($fetch);
+                   $count = 0; 
+                  //  $query = "SELECT td.*, d.* FROM tbl_department td, department d WHERE d.id = td.Department_id ORDER BY td.id";
+                  $query = "SELECT td.id AS sub_dept_id, td.*, d.id AS main_dept_id, d.* 
+                  FROM tbl_department td
+                  JOIN department d ON d.id = td.Department_id";
+        
+        
+                  //  echo $query;
+                  //  die();
+                   $row = mysqli_query($connect, $query) or die(mysqli_error($connect));
+                   
+                   while($fetch = mysqli_fetch_array($row)) {
+                     extract($fetch);
                  ?> 
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
                         
                         
-                        <a href="delete_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>" onclick="return confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_departmentinfo.php?fld_department_id=<?php echo $fetch['fld_department_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
-                    </td> 
+                        <a href="delete_departmentinfo.php?id=<?php echo $fetch['id'] ?>" onclick="return confirm('Are you sure to Delete Department Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_departmentinfo.php?id=<?php echo $fetch['sub_dept_id']; ?>" class="fa fa-edit" style="color: green; font-size: 20px;"></a>                    </td> 
                     <td><?php echo $fetch['Department'];?></td>
                     <td><?php echo $fetch['department_description'];?></td>
                     <td><?php echo $fetch['department_mission'];?></td>

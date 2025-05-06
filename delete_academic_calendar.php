@@ -1,6 +1,5 @@
 <?php
 include "config.php";
-
 $delete1 = mysqli_query($connect,"update academic_calendar set academic_cal_delete='1' where academic_cal_id='".$_GET['academic_cal_id']."' ")or die(mysqli_error($connect));
 
 

@@ -6,7 +6,6 @@
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
-
     <script type="text/javascript">
             $(document).ready(function(){
                
@@ -45,14 +44,14 @@
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									<!-- <li class="breadcrumb-item"><a href="view_marquee.php">Marquee</a></li> -->
-									<li class="breadcrumb-item active" aria-current="page">Update Marquee</li>
+									<li class="breadcrumb-item active" aria-current="page">Update Latest News Marquee</li>
 								</ol>
 							</nav>
 						</div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="view_marquee.php" role="button">
-                  View Marquee
+                  View Latest News Marquee
                 </a>
               </div>
             </div>						
@@ -93,7 +92,7 @@
 							</div>
 						</div> -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Marquee Description</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Latest News Marquee</label>
 							<div class="col-sm-12 col-md-10">
 								<textarea class="textarea_editor form-control border-radius-0" name="marquee_description" placeholder="Enter Marquee Description"><?php echo $fetch['marquee_text'];?></textarea>
 							</div>
@@ -118,7 +117,6 @@
 </body>
 </html>
 
-
 <?php
 
 
@@ -134,14 +132,14 @@
         if($query)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Marquee Update Successfully.');";
+         echo " alert('Latest News Marquee Update Successfully.');";
          echo 'window.location.href = "view_marquee.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Marquee Not Updated.');";
+         echo " alert('Latest News Marquee Not Updated.');";
          echo 'window.location.href = "add_marquee.php";';
          echo '<script>';
        }

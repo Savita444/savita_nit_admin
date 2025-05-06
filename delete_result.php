@@ -1,5 +1,6 @@
 <?php 
 include "config.php";
+
 if(isset($_GET['result_id']))
 {
 $sel=mysqli_query($connect,"select * from tbl_result where fld_student_id='".$_GET['result_id']."' ");

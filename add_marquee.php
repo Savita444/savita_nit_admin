@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
 <head>
 	<?php include('include/head.php'); ?>
 	 <!-- <style>
@@ -39,20 +40,20 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Add Marquee</h4>
+								<h4>Add Latest News</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
 									<!-- <li class="breadcrumb-item"><a href="view_marquee.php">Marquee</a></li> -->
-									<li class="breadcrumb-item active" aria-current="page">Add Marquee</li>
+									<li class="breadcrumb-item active" aria-current="page">Add Latest News </li>
 								</ol>
 							</nav>
 						</div>
             <div class="col-md-6 col-sm-12 text-right">
               <div class="dropdown">
                 <a class="btn btn-primary" href="view_marquee.php" role="button">
-                  View Marquee
+                  View Latest News 
                 </a>
               </div>
             </div>						
@@ -89,9 +90,9 @@
 							</div>
 						</div> -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Marquee Description</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Latest News</label>
 							<div class="col-sm-12 col-md-10">
-								<textarea class="textarea_editor form-control border-radius-0" name="marquee_text" placeholder="Enter Marquee Description"></textarea>
+								<textarea class="textarea_editor form-control border-radius-0" name="marquee_text" placeholder="Enter Latest News Description"></textarea>
 							</div>
 						</div>
 
@@ -133,14 +134,14 @@
         if($add2)
        {
          echo '<script type="text/javascript">';
-         echo " alert('Marquee Added Successfully.');";
+         echo " alert('Latest News Latest News Added Successfully.');";
          echo 'window.location.href = "view_marquee.php";';
          echo '</script>';
         }
         else
        {
          echo '<script type="text/javascript">';
-         echo " alert('Marquee Not Added.');";
+         echo " alert('Latest News Latest News Not Added.');";
          echo 'window.location.href = "add_marquee.php";';
          echo '<script>';
        }

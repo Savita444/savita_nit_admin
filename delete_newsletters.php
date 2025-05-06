@@ -1,6 +1,7 @@
 <?php
 include "config.php";
 
+
 // $sel=mysqli_query($connect,"select * from newsletters where newsletters_id='".$_GET['newsletters_id']."' ");
 // 		while ($fetch=mysqli_fetch_array($sel))
 //          {

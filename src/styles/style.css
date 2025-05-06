@@ -589,7 +589,7 @@ textarea.form-control{
 	float: right;
 	width: calc(100% - 250px);
 	background: #ffffff;
-	height: 70px;
+	height: 100px;
 	/*padding: 10px 20px;*/
 	-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .4);
 	-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .4);

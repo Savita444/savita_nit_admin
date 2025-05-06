@@ -1,6 +1,7 @@
 <?php include('include/header_session.php'); ?>
 <!DOCTYPE html>
 <html>
+	
 <head>
     
 	<?php include('include/head.php'); ?>

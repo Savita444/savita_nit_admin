@@ -1,4 +1,5 @@
 <?php
+
 include "config.php";
 // $sel=mysqli_query($connect,"select * from tbl_affiliation_certificates where fld_affiliation_id='".$_GET['fld_affiliation_id']."'") or die(mysqli_error($connect));
 //         while ($fetch=mysqli_fetch_array($sel))
@@ -18,7 +19,7 @@ $back="view_affiliation_images.php";
 
           {
             echo '<script type="text/javascript">';
-            echo "alert('Gallery Photo delete');";
+            echo "alert('Affiliation Certificates delete');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
 
@@ -26,7 +27,7 @@ $back="view_affiliation_images.php";
          else
          {
             echo '<script type="text/javascript">';
-            echo "alert('Gallery Photo not delete');";
+            echo "alert('Affiliation Certificates not delete');";
             echo 'window.location.href = "'.$back.'"';
             echo "</script>";
              

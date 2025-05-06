@@ -1,7 +1,6 @@
 <?php
 include "config.php";
 
-
 // $delete1 = mysqli_query($connect,"Delete from service_add where service_id='".$_GET['service_id']."' ")or die(mysqli_error($connect));
 
 $delete1 = mysqli_query($connect,"Update tbl_courese_offered set fld_delete='1' where fld_co_id='".$_GET['fld_co_id']."'")or die(mysqli_error($connect));

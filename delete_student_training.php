@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+
 // $sel=mysqli_query($connect,"select * from tbl_affiliation_certificates where fld_affiliation_id='".$_GET['fld_affiliation_id']."'") or die(mysqli_error($connect));
 //         while ($fetch=mysqli_fetch_array($sel))
 //          {

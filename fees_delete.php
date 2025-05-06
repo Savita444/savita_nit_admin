@@ -2,8 +2,6 @@
 include "config.php";
 
 
-
-
 $delete1 = mysqli_query($connect,"delete from fees where fees_id='".$_GET['fees_id']."' ")or die(mysqli_error($connect));
 
 

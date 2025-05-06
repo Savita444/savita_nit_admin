@@ -2,7 +2,6 @@
 include "config.php";
 if (isset($_POST['update'])) 
     {
-        
         extract($_POST);
 
         $department1=$_POST['department'];

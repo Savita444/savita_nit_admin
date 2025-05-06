@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
 	<?php include('include/head.php'); ?>
 	 <style>
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
@@ -46,7 +47,7 @@
 					<br>
 					<form method="post" enctype="multipart/form-data">
             <?php 
-                $sel=mysqli_query($connect,"select * from tbl_activity where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                $sel=mysqli_query($connect,"select * from tbl_activity where id='".$_GET['id']."'") or die(mysqli_error($connect));
                 $fetch=mysqli_fetch_array($sel);
               ?>
 						<!--<div class="form-group row">-->
@@ -58,16 +59,20 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Activity<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <select name="activity_id" class="form-control"  required="">
+                <select name="id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
-                            while($row=mysqli_fetch_assoc($query1)){
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
+                            while($row=mysqli_fetch_array($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['activity_id'];?>" <?php if ($fetch['activity_id']==$row['activity_id']){echo "selected";} ?>><?php echo $row['activities'];?></option>
+                    <option value="<?php echo $row['id'];?>" <?php if ($fetch['activity_id']==$row['id']){echo "selected";} ?>><?php echo $row['activities'];?></option>
                     <?php  }?>
                  </select>
+
+
+                
+
               </div>
             </div>
             	<div class="form-group row">
@@ -152,10 +157,10 @@
                 // }       
                 $query1=mysqli_query($connect,"update tbl_activity set
                 
-                activity_id='".$_POST['activity_id']."',
+                activity_id='".$_POST['id']."',
                 activity_description='".$_POST['activity_description']."',
                 photo='".$a."'
-                where fld_activity_id='".$_GET['fld_activity_id']."'") or die(mysqli_error($connect));
+                where id='".$_GET['id']."'") or die(mysqli_error($connect));
 
                 $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);

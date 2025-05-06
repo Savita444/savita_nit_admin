@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	
 <head>
 	<title>View Facilities</title>
 	<?php include('include/head.php'); ?>

@@ -35,7 +35,6 @@
             </div>
           </div>
         </div>
-        <!-- Export Datatable start -->
         <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
           <div class="clearfix mb-20">
             <div class="pull-left">
@@ -59,7 +58,21 @@
               <tbody>
                 <?php 
                   $count=0; 
-                  $query="select s.*, dp.* from tbl_activity s, activities dp where s.activity_id=dp.activity_id  and s.fld_delete='0' order by s.fld_activity_id desc";
+                  // $query="select s.*, dp.* from tbl_activity s, activities dp where s.activity_id=dp.id and s.is_delete='0' order by s.id desc";
+                  $query = "SELECT 
+    s.id AS activityId, 
+    s.*, 
+    dp.id AS main_activity_id, 
+    dp.* 
+FROM tbl_activity AS s
+JOIN activities AS dp 
+    ON s.activity_id = dp.id 
+WHERE s.is_delete = '0' 
+ORDER BY s.id DESC;
+";
+
+      
+         
                   $row=mysqli_query($connect,$query) or die(mysqli_error($connect));
                   
                   while($fetch=mysqli_fetch_array($row)) {
@@ -69,16 +82,15 @@
                 <tr>
                     <td><?php echo ++$count; ?></td>
                     <td>
-                        
-                        <a href="delete_activityinfo.php?fld_activity_id=<?php echo $fetch['fld_activity_id'] ?>" onclick="return confirm('Are You Sure To Delete Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
-                        <a href="update_activityinfo.php?fld_activity_id=<?php echo $fetch['fld_activity_id'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
+                        <a href="delete_activityinfo.php?id=<?php echo $fetch['activityId'] ?>" onclick="return confirm('Are You Sure To Delete Activity Information Record')" class="fa fa-trash-o"  style="color: red;font-size: 20px;"></a>
+                        <a href="update_activityinfo.php?id=<?php echo $fetch['activityId'] ?>"  class="fa fa-edit"  style="color: green;font-size: 20px;"></a>
                     </td> 
                     <td><?php echo $fetch['activities'];?></td>
                     <td><?php echo $fetch['activity_description'];?></td>
                   
-                    <!--<td><?php echo $fetch['activity_specification'];?></td>-->
+                    <!--<td><?php //echo $fetch['activity_specification'];?></td>-->
                     <td><a href="assets/images/activity/<?php echo $fetch['photo'];?>" target="_blank"><img src="assets/images/activity/<?php echo $fetch['photo'];?>" height="75px" width="75px" ></a></td> 
-                    <td><?php echo $fetch['fld_created_date'];?></td>
+                    <td><?php echo $fetch['created_at'];?></td>
                 </tr>
                 <?php } ?>
               </tbody>

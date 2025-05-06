@@ -6,7 +6,6 @@
 
     <!-- <title>Add Gallery </title> -->
 </head>
-
 <body>
     <?php include('include/header.php'); ?>
     <?php include('include/sidebar.php'); ?>

@@ -7,6 +7,7 @@
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
 </head>
+
 <body>
 	<?php include('include/header.php'); ?>
 	<?php include('include/sidebar.php'); ?>
@@ -55,14 +56,14 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Activity<span style="color: red;">*</span></label>
               <div class="col-sm-12 col-md-10">
-                <select name="activity_id" class="form-control"  required="">
+                <select name="id" class="form-control"  required="">
                     <option value="">Select Activity</option>
                         <?php
-                            $query1=mysqli_query($connect,"select * from activities where activities_delete='0' order by activity_id desc");
+                            $query1=mysqli_query($connect,"select * from activities where is_delete='0' order by id desc");
                             while($row=mysqli_fetch_assoc($query1)){
                               extract($row);
                           ?>
-                    <option value="<?php echo $row['activity_id'];?>"><?php echo $row['activities'];?></option>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['activities'];?></option>
                         <?php  }?>
                  </select>
               </div>
@@ -136,7 +137,7 @@
                 // if($file_size > 10485760){
                 //     $errors[]='File size must be less than 10 MB';
                 // }       
-                $query="insert into tbl_activity(activity_id,activity_description,photo) VALUES('$activity_id','$activity_description','$a');";
+                $query="insert into tbl_activity(activity_id,activity_description,photo) VALUES('$id','$activity_description','$a');";
                 $desired_dir="assets/images/activity/";
                 move_uploaded_file($file_tmp,"$desired_dir/".$a);
         //         if(empty($errors)==true){
@@ -183,7 +184,6 @@
                 // echo "Success";
             }
         }
-
         if($add2)
        {
          echo '<script type="text/javascript">';

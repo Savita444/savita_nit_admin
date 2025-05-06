@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 	<?php include('include/head.php'); ?>
 	 <style>
         .preview_box{clear: both; padding: 5px; margin-top: 10px; text-align: left;}
@@ -51,6 +52,14 @@
                         
                     
                         ?>
+
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Title<span style="color: red;">*</span> : </label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" placeholder="Enter Title" name="title" required="" value="<?php echo $fetch['title']?>">
+							</div>
+						</div>
+
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Upload PDf<span style="color: red;">*</span></label>
                         <div class="col-sm-12 col-md-10">
@@ -123,6 +132,7 @@ if(isset($_POST['submit']))
     $extension = strtolower(pathinfo($a,PATHINFO_EXTENSION));  
 
     $add2=mysqli_query($connect,"update event set
+    title='".$title."',
     file='".$a."'
     where event_id='".$_GET['event_id']."'") or die(mysqli_error($connect)); 
            

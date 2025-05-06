@@ -7,6 +7,7 @@
         .preview_box img{max-width: 150px; max-height: 150px;}
     </style>
 </head>
+
 <body>
     <?php include('include/header.php'); ?>
     <?php include('include/sidebar.php'); ?>

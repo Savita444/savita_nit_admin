@@ -2,8 +2,6 @@
 include "config.php";
 
 
-
-
 $delete1 = mysqli_query($connect,"delete from aicte where aicte_id='".$_GET['aicte_id']."' ")or die(mysqli_error($connect));
 
 

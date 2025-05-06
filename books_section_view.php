@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	
 <head>
 	<!-- <title>View Gallery Title</title> -->
 	<?php include('include/head.php'); ?>

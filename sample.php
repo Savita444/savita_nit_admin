@@ -6,6 +6,7 @@
 									<i class="fa fa-envelope-open-o"></i>
 								</div>
 							</div>
+							
 							<?php
                             $res13=mysqli_query($connect,"select * from tbl_enquiry where fld_delete='0' order by fld_enquiry_id desc") or die (mysqli_error($connect));
                             $count13=mysqli_num_rows($res13);
