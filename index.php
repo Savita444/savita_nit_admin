@@ -1,4 +1,33 @@
-<?php session_start(); ?>
+<?php
+session_start(); 
+include 'config.php';
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Sanitize input (optional but recommended)
+    $email = mysqli_real_escape_string($connect, $email);
+    $password = mysqli_real_escape_string($connect, $password);
+
+    // Query to check user credentials
+    $log = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE fld_email='$email' AND fld_password='$password'")
+           or die(mysqli_error($connect));
+
+    if (mysqli_num_rows($log) > 0) {
+        $fetch = mysqli_fetch_array($log);
+
+        // Set session variables
+        $_SESSION['admin_email'] = $fetch['fld_email'];
+        $_SESSION['admin_name'] = $fetch['fld_name'];
+
+        echo "<script>alert('Login successful'); window.location.href='dashboard.php';</script>";
+    } else {
+        echo "<script>alert('Login failed. Please check your email or password.');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,33 +69,33 @@
 </html>
 
 <?php
-    include 'config.php';
-    if(isset($_POST['login']))
-    {
-        extract($_POST);
+    // include 'config.php';
+    // if(isset($_POST['login']))
+    // {
+    //     extract($_POST);
         
-        $log=mysqli_query($connect,"select * from tbl_admin where fld_email='$email' and fld_password='$password'") or die (mysqli_error($connect));
+    //     $log=mysqli_query($connect,"select * from tbl_admin where fld_email='$email' and fld_password='$password'") or die (mysqli_error($connect));
             
-        if(mysqli_num_rows($log)>0)
-        {
-            $fetch=mysqli_fetch_array($log);
+    //     if(mysqli_num_rows($log)>0)
+    //     {
+    //         $fetch=mysqli_fetch_array($log);
             
-            $_SESSION['email']=$fetch['fld_email'];
-            $_SESSION['name']=$fetch['fld_name'];
+    //         $_SESSION['email']=$fetch['fld_email'];
+    //         $_SESSION['name']=$fetch['fld_name'];
             
             
-            echo "<script>";
-            echo "alert('Login successfull');";
-            echo 'window.location.href="dashboard.php";';
-            echo "</script>";
-        }else
-        {
-            echo "<script>";
-            echo "alert('Login failed');";
-            echo "</script>";
+    //         echo "<script>";
+    //         echo "alert('Login successfull');";
+    //         echo 'window.location.href="dashboard.php";';
+    //         echo "</script>";
+    //     }else
+    //     {
+    //         echo "<script>";
+    //         echo "alert('Login failed');";
+    //         echo "</script>";
             
-        }
+    //     }
         
-    }
+    // }
 
 ?>

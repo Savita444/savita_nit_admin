@@ -1,5 +1,4 @@
-<?php include('include/header_session.php'); 
-?>
+<?php include('include/header_session.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
